@@ -1,0 +1,6 @@
+C:\Users\claud>magick mogrify -crop 1120x628+86+90 -path "C:\Users\claud\Documents\ShareX\Screenshots\2025-07\impares\imp ordenadas" "C:\Users\claud\Documents\ShareX\Screenshots\2025-07\impares\*.png"
+
+
+C:\Users\claud>magick mogrify -crop 1120x628+86+90 -path 
+"C:\Users\claud\Documents\ShareX\Screenshots\2025-07\impares\imp ordenadas" 
+"C:\Users\claud\Documents\ShareX\Screenshots\2025-07\impares\*.png"

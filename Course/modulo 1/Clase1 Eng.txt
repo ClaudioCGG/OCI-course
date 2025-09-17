@@ -1,0 +1,332 @@
+- Welcome to Data Science
+
+-- Course Overview
+
+Everyone welcome to the Oracle Cloud Infrastructure Data Science course. Data science is the art and science of extracting valuable insights from the data to solve real-world and business problems.
+
+And this is the perfect time for you to upskill and reskill your workforce to meet this huge demand of data science professional. We are excited to have you here and have prepared a wealth of valuable information for you. For simplicity, I will use OCI to refer to Oracle Cloud Infrastructure, which is our powerful platform.
+
+In the following slides, I will guide you through the course's intended audience, prerequisites, objectives, and structure. But before that, let's take a look at the people who contributed towards this course.
+
+In addition to me, you will hear from several experts and specialists throughout this course, including Wes Prichard, John Peach, John Stanesby, JR Gauthier, Lyudmil Pelov, Praveen Patil, and Hemant Gahankari. Although you might not hear their voices, there are dozens of individuals who helped develop this course. They are listed here alphabetically by team.
+
+This course was designed with a specific audience in mind. This course was primarily intended for data scientists, but it's also appropriate for related roles such as ML engineers and AI engineers.
+
+Our objective is to help you become proficient in using OCI Data Science and related cloud services to build data science solutions. To do that, you should be proficient in using Python for machine learning. You should have a general knowledge of open source data science and machine learning libraries and how to apply them.
+
+That means that you have probably have a year or more of experience in one of the roles we mentioned in the previous slide. And it will help if you already have some hands-on experience with OCI.
+
+Since this course is all about helping you prepare take the certification exam, it's helpful to know right up front what the exam will validate. It will test your ability to identify OCI services used to implement a machine learning solution for a business use case. It will see if you can incorporate machine learning cloud best practices.
+
+It will focus heavily on using OCI Data Science to build, train, deploy, and manage ML models. And it will also include using other OCI Data and AI services to create machine learning solutions.
+
+This course is designed into five major modules. Let's take a moment to go through that. A data science introduction will introduce OCI Data Science, setting up an OCI tenancy to use OCI Data Science. Workspace and design setup will focus on setting up using your OCI Data Science environment.
+
+The machine learning lifecycle module takes you through abilities of OCI Data Science that support all the steps of the machine learning lifecycle. MLOps practices focuses on features that support MLOps such as scaling, monitoring.
+
+And finally, related OCI Services covers other cloud services that are useful when building data science solutions. Each of these modules contain multiple lessons presented by different specialists. We recommend that go through the modules in order because later modules build on earlier modules.
+
+Many of the lessons will include a recorded demonstration to illustrate the important concepts and practices presented in the lesson. The course also includes an end-to-end lab that the student can use to provide hands-on experience and reinforce concepts from across the modules.
+
+This lab uses an employee attrition use case. And many of the lesson demos will use this same use case. The employee attrition use case predicts the likelihood of an employee leaving the organization based on multiple characteristics.
+
+To complete the lab, you will need access to an Oracle Cloud account. If you don't already have access to one, you can sign up for a free trial at signup.cloud.oracle.com. You may also want to use GitHub to access the OCI Data Science AI samples repo. And we will introduce you to data science product terminology in the first module.
+
+At any point in time, if you have a specific question about the course material or need any extra help, fill out our Ask Your Instructor form. Our expert instructors will get back to you as soon as possible with personalized support.
+
+We also want you to get the most out of your learning experience. And which is why we have created this community space where you can connect with other learners and subject matter experts. If you have any other question or want to start a discussion on a particular topic, this is the place to do. So don't be shy. Join the OU Community today and start collaborating with your fellow learners. We can't wait to see what you will bring to the table.
+
+I would like to acknowledge that this is a lengthy course. I would also like to offer some tips for increasing retention and giving you the best chance to pass the exam. We suggest that take notes on topics based on your existing knowledge. And remember, you can follow along using the transcript prep.
+
+Schedule breaks each hour and move around. Don't just stay stationary in front of the computer for too long. Sign up for a free cloud account. Get familiar with the OCI platform and complete all the skills checks in the course. And also, complete the exam preparation as well as take the practice exam prior to launching the certification exam.
+
+We here at OCI are continuously building and delivering training, integrating feedback, and monitoring user analytics. If something is broken or not resonating with our users, we want to-- and that's where your ratings come in.
+
+Please feel free to rate this course and leave specific feedback as to what's helpful and what's not. We are constantly tweaking our approach so that we can help our audience achieve their goals. So let's join forces and work together for your learning and certification.
+
+
+-- Expert Tips: Intro
+
+So first of all, let me thank you for choosing to take OCI Data Science Professional course and get certified. My name is Hemant Gahankari. I'm a senior principal training lead at Oracle University.
+
+As a data scientist for a machine learning engineer, it is our day-to-day job to get data, to prepare data, to build and train models, evaluate models, deploy and scale models, and also, automate machine learning pipelines. With OCI Data Science service and AI services, we can do all these tasks efficiently.
+
+Through a series of expert tip videos, we'll show how to use some of the powerful, at the same time, simple to use features of the OCI data science service and AI services. Hope you will find those videos useful. Thanks for listening.
+
+- Introduction and Configuration
+
+-- Data Science: Introduction
+
+This is module 1, covering introduction and configuration. This first lesson is the introduction to the Oracle Cloud Infrastructure Data Science Cloud Service. I'm Wes Pritchard, senior principal product manager for Data Science and AI Services.
+
+Before we get in to data science and Oracle, let's take a fun look back at history and how we got here. In the 1300s, William Ockham, a philosopher and friar, believed that scientists should prefer simpler theories over more complex ones. The principle that bears his name, known as Ockham's razor, can be applied to machine learning by looking for the simplest solution.
+
+In the mid 1700s, astronomer Tobias Mayer made a quantitative argument that more data is better. He was studying the motions of the moon and collected 9 times as many data points as necessary, claiming that this made his observations more accurate. Because of this, he's often considered the first true data scientist.
+
+In 1952, Arthur Samuel, an IBM pioneer in computing, gaming, and AI coined the term machine learning. He designed a game for playing checkers and discovered that the more the computer played the game, the more it learned winning strategies from experience.
+
+In 1962, mathematician John W Tukey predicted the effect of modern day electronic computing on data analysis as an empirical science. However, Tukey's predictions occurred decades before the explosion of big data and the ability to perform complex and large scale analysis.
+
+1997, an IBM supercomputer called Deep Blue defeated chess grandmaster Garry Kasparov in only 19 moves. Kasparov resigned after this match. The highly advanced supercomputer could calculate as many as 100 billion to 200 billion positions in the three minutes traditionally allotted to a player per move in standard chess.
+
+In 2008, Dr. DJ Patil of LinkedIn and Jeff Hammerbacher of Facebook coined the term data science to describe an emerging field of study that focused on teasing out the hidden value and collected data from retail and business sectors.
+
+Given that historical background, let's take a look at how data science is being applied today. 2021, in the midst of a global COVID-19 pandemic, professor and psychologist Anthony Klotz coined the term the Great Resignation to describe a new trend of employment, dissatisfaction, and turnover. Many businesses want to track, analyze, and predict the patterns in their employee retention.
+
+In this course, we will use employee attrition as a use case to connect our machine learning activities to a real world business problem. Better yet, we will help you build a predictive ML model yourself in the independent student lab that accompanies this course.
+
+Now it's time to dive in and discuss Oracle's approach to data science and AI. It's really all about data. For many years, the data available to organizations was the structured data in their business applications. And this is still a very important business data, but it's certainly not the only data. Organizations have many types of unique and often unstructured data from many different sources, things like equipment sensors, mobile apps, social media, customer interactions via voice and text, videos, images, documents, and many more.
+
+Organizations want to use all data to produce new insights and new data products. They want to improve their business operations by creating better customer experiences and anticipating service demand and preventing avoidable equipment outages. The next generation of business problems or scenarios, if you will, means being able to use all data. And we need the capabilities provided by data science, machine learning, and AI understand and use that data.
+
+Oracle AI is this portfolio of cloud services for helping organizations take advantage of all data for the next generation of scenarios. Thus the foundation of all of this is data. It's a bar at the bottom. Obviously, AI and machine learning work on data and require data. Now, the top layer of this diagram is applications, and this loosely refers to all the way AI's consumed. That could be an application, business process, or an analytic system.
+
+Between the application and data layers, you see two groups here, the AI services on top and the machine learning services on the bottom. The difference between the two groups is that machine learning services are used primarily by data scientists to build, train, deploy, and manage machine learning models. Data scientists can work with familiar open-source frameworks and OCI Data Science. And by the way, that's the cloud service, that's the focus of this course.
+
+Data scientists and database specialists can take advantage of machine learning algorithms built into Oracle database. And an important service that supports both machine learning and AI services is OCI data labeling. Because when you're building machine learning models that work on images, text or speech, you need labeled data that can be used to train the models.
+
+AI services contain pre-built machine learning models for specific uses. Some of the AI services are pre trained and some are trained by the customer with their own data. All are used by simply calling the API for the service, passing in data to be processed, and the service returns a result. There's no infrastructure to manage. And even though we will be focusing primarily on OCI Data Science in this course, we also have some lessons on the AI services and on data labeling. There's already a separate course that covers machine learning and Oracle database.
+
+Now, those AI and ML services I just showed you don't standalone. They're supported by many other services available in our cloud infrastructure including business analytics and graph analytics and many forms of data integration and data management, all running on the basic cloud infrastructure. These services can be combined in various architectures to support many different scenarios.
+
+We've defined Oracle AI and the services it comprises. Now, let's take a closer look at Oracle Cloud Infrastructure Data Science. I'm just going to abbreviate it as OCI Data Science. OCI Data Science is the cloud service focused on serving the data scientists throughout the full machine learning lifecycle, with support for Python and open-source. As you can see by the icons in this graphic, the service has many features that we will cover throughout this course.
+
+Now, let's look at the three core principles that guide the product. The first principle is about accelerating the work of the individual data scientists. Data scientists coming out of universities today have been trained using open-source, and that's what they're most comfortable with. But using open-source tools on a laptop means managing lots of libraries from different sources, and being limited to the compute power on the laptop.
+
+OCI Data Science provides data scientists with open source libraries along with easy access to a range of compute power without having to manage any infrastructure. It also includes Oracle's own library to help streamline many aspects of the data scientists work.
+
+Our second principle is collaboration. It goes beyond individual data scientist productivity to enable data science teams to work together. This is done through the sharing of assets reducing duplicative work and supporting reproducibility and auditability of models for collaboration and risk management.
+
+And the third principle is about being enterprise grade. That means it's integrated with all the OCI security and access protocols. Underlying infrastructure is fully managed. Customer doesn't have to think about provisioning compute and storage and the service handles all the maintenance, patching, and upgrades so users can focus on solving business problems with data science.
+
+Let's drill down a bit more into the specifics of OCI Data Science. First of all, it's a cloud service to rapidly build, train, deploy, and manage machine learning models. It serves data scientists and data science teams throughout the full machine learning lifecycle with support for Python and open-source. Users work in a familiar JupyterLab notebook interface where they write Python code. And users preserve their models in the model catalog and deploy their models to manage the infrastructure.
+
+Let's cover some important product terminology that we'll use throughout the course. Take some time to digest these terms and concepts. Projects are containers that enable data science teams to organize their work. They represent collaborative workspaces for organizing and documenting data science assets such as notebook sessions, models. Note that a tenancy can have as many projects as needed without limits.
+
+Notebook sessions are where data scientists work. Notebook sessions provide a JupyterLab environment with pre-installed open-source libraries and the ability to add others. Notebook sessions are interactive coding environments for building and training models. Notebook sessions run in managed infrastructure, and the user can select CPUs or GPUs and the compute shape and the amount of storage without having to do any manual provisioning of environments.
+
+Conda is an open-source environment and package management system that was created for Python programs. It's used in the data science service to quickly install, run, and update packages in their dependencies. Conda easily creates, saves, loads, and switches between environments on or in the notebook environment.
+
+Oracle's Accelerated Data Science, SDK, and we're going to call that ADS throughout this course, but the ADS SDK is a Python library that is included as part of OCI Data Science. ADS has many functions and objects that automate or simplify the steps in the data science workflow, including connecting to data, exploring and visualizing data, training a model with AutoML, evaluating models, and explaining models. In addition, ADS provides a simple interface, access the data side service model catalog and other OCI services, including object storage.
+
+Now, you already know what a model is. Models define a mathematical representation of your data and business. You create models in notebook sessions inside projects. The model catalog is the place to store tracks, share, and manage those models. Model catalog is a centralized and managed repository of model artifacts. A stored model includes metadata about the provenance of the model including get related information and the script or notebook used to push the model to the catalog. Model stored in the model catalog can be shared across members of a team, and they can be loaded back into a notebook session.
+
+Model deployments allow you to deploy models stored in the model catalog as HTTP endpoint on managed infrastructure. Deploying machine learning models as web applications serving predictions in real time is the most common way to operationalize models. HTTP endpoints are flexible and can serve requests for model predictions.
+
+Data science jobs enable you to define and run repeatable machine learning tasks on fully managed infrastructure. We'll see how data science provides multiple methods for access. OCI Console is the most common method. The OCI Console provides an easy to use browser based interface that enables access to notebook sessions and all the features of the service. This will be the interface used throughout the course.
+
+The Rest API provides access to service functionality that requires programming. An API reference is provided in the product documentation. OCI also provides programming language SDKs for Java, Python, TypeScript, JavaScript, .NET, Go, and Ruby. These SDKs enable a user to write code and manage data science resources. We'll provide some examples of how the Python SDK can be used to deploy models and create jobs. The command line interface provides both quick access and full functionality without the need for scripting.
+
+As a Cloud Service on OCI, OCI Data Science is available through regions. Regions are globally distributed data centers that provide secure high performance local environments. That makes OCI Data Science available around the globe in commercial, government, and dedicated regions. Oracle is frequently adding new regions, so visit oracle.com/cloud to get the latest information on Cloud regions.
+
+In this lesson, we introduce OCI Data Science and some of its key features and terminology. The next lesson will cover provisioning and configuring the cloud environment to use OCI Data Science throughout the machine learning lifecycle.
+
+- ADS SDK Overview
+
+Hello, and welcome to this module on the ADS Software Development Kit. My name is John Peach, and I'm a data scientist on the Oracle Cloud Infrastructure Data Science Service team. In this module, you'll gain a high level understanding of the ADS SDK, its goals and capabilities.
+
+The Accelerated Data Science, SDK, is designed by data scientists for data scientists. It covers the end-to-end machine learning lifecycle. The goals are to integrate OCI services in a way that fits the data scientist workflow.
+
+For example, it will integrate the volt into the Autonomous Database and big data service using a bunch of classes around the secret keeper class. This makes it very easy for data scientists to store their credentials and access these services securely.
+
+It also aims to improve common data science tasks such as exploratory data analysis with feature types, and also performing hyperparameter optimization using the ADSTuner. In addition, the ADS library provides auto machine learning and machine learning explainability.
+
+There is two versions of ADS. There is a version that's publicly available that you can download from GitHub or install from PyPi. And then there is a special version that is installed in some kind of packs within the Oracle Cloud Service that has the auto machine learning and machine learning explainability features.
+
+There are several different ways that you can access the SDK. As I mentioned before, it is installed in conda environments in the Data Science Service, and is readily available to you just by simply using the service. You can also install it using PyPi or from GitHub using the pip install command.
+
+What are some of the features of ADS? First, it's to connect to your data sources. You need access to your data no matter where it is. ADS provides connectors to many of the popular data source locations. Data visualization. You need to understand the nature of your data, and visualization is a key method for doing this.
+
+ADS has smart plotting that provides reasonable default plottings for different types of data. ADS also has feature types that allows you to plot your data in a reusable fashion based on the type of measurement that you're using. Understanding the relationships between features and different types of correlation plots is also provided.
+
+Feature type engineering. Often the difference between a good model and a great model is the feature type engineering. ADS can do an analysis of your data, and provide recommendations for future type engineering that you can perform.
+
+Model training. Use Oracle labs auto machine learning to train collections of models, or for more control, you can use the ADS tuner to do hyperparameter tuning optimization. ADS has classes that quickly bundle your model up so that they can be deployed. Model evaluations. Understanding how well your model is performing is key. ADS provides classes that allow you to perform standard evaluations with a couple of lines of code.
+
+Model interpretability. Understanding what the model is learning, and making sure it's learning the correct things is key to developing trust in your model. Also being able to explain what the model is doing, so that you can explain it to others is an important technique for building trust within the model.
+
+Model deployment. A common problem is getting the model into production. ADS makes this easy. It has classes for most common model types, and also supports generic models. So no matter what type of model you have and a couple of lines of code, you can deploy the model into production.
+
+Connecting to data sources. Data is stored all over the place, and you need to be able to access it. Data is often too large to fit into your notebook session. You can use ADS to limit the data transfer over the wire. Local storage is a common location where you would store your data. This is the block storage within the notebook session. ADS provides easy access to that.
+
+For larger data sets for sharing data sets. Object storage is commonly used. ADS uses the APE Spec protocol to allow you to use pandas to access object storage as if it was sitting on your local drive. This is done through the OCI protocol, and Pandas when the file is on object storage.
+
+A lot of our data sits in Oracle databases. ADS provides an easy connection to these databases. Tools such as the Oracle DB secret keeper allow you to store login credentials in the DTP wallet file in an OCI Vault, so that you don't have to expose this information into your notebook.
+
+The ADB secret keeper works with the Autonomous Database. ADS provides integration to third party cloud providers. With ADS installed, Pandas can connect to providers such as S3, Google Cloud Storage, Azure Data Lake Storage, Azure Blob Service, Dropbox, and many more.
+
+For non-relational data, ADS provides access through the data set factory class to make easy connections to NoSQL databases, run queries, and return results. The OCI big data service is a Hadoop-based service that has HDFS for its file storage system.
+
+ADS allows you to easily connect to BDS without having to copy the data to your local storage. ADS also provides access to the web using HTTP and HTTPS to read files that are on the world by web directly into a dataframe.
+
+Data visualization. Exploratory data analysis is critical to understanding your data. It can be time consuming to create and throw away class only to create them again the next time you use similar data. The feature type classes provide the same defaults for visualizing your data. It is also very easy to create feature types that allow you to customize your visualization. You can then reuse these visualizations in different projects or across the organization.
+
+Further, feature type system provides summary statistics, summary visualizations of each features, and correlation heat maps. Feature type engineering can be a challenging problem. Feature engineering can greatly improve the quality of your model by taking existing features and generating new ones from it, is transforming the data that you have into other types of relationships at the model can learn from.
+
+ADS has built-in functionality to support this. There is a class called ADS data set that wraps a pandas dataframe. It provides transformation suggestions, and can do it automatically as well. It supports categorical encoding, null values, and imputation. It can make recommendations on what changes you should make to your data to create better features.
+
+Model training. Once you have your data prepared, it is time to make a model. ADS can fully automate the process using auto machine learning technology. It can try many different types of model classes, tune the hyper parameters, and give performance metrics for each model.
+
+The ADSTuner performs hyperparameter tuning. After a model is trained, ADS can also package up your necessary files to create a model artifact, save that model artifact to the model catalog, and then you can push it to production. No longer do you need to struggle by productionalising your model.
+
+Model evaluations. If you have a model or many models, you may need to understand the performance and compare them. ADS evaluator allows you to perform comparisons of different models. It offers things such as common tools, metrics, and charts.
+
+It understands binary and multinomial classification and regression. It puts metrics and charts that are appropriate for the type of problem that you are working on. No longer do you need to regenerate these types of charts over and over again, and make sure that you have the correct evaluation charts and metrics. ADS does this for you automatically.
+
+Model interpretability and machine learning explainability. You can develop trust in your model if you can explain what it has learned and what it's doing. By interpreting the model behavior is key to understanding what is doing and what improvements can be made in future models. ADS provides tools to interpret models that are agnostic to the model class itself, meaning that the tools are not dependent upon the type of model that you built.
+
+It provides explanations through the ADS module that are interpretable, model-agnostic, and provides tools that allow you to do what-if scenario testings. That is, you can change input values and see how the model behaves.
+
+In addition, it can provide local explainability. This means that you can take a black box model and understand why a model made a prediction that it did on a specific observation. It also provides global explainability, where you can understand what the model learnt and how it's behaving.
+
+It does this through using partial dependence plots and ALE plots, accumulated local effects plots, to understand the general behavior. Use this to see if the model is learning what you want it to learn, and understand the relationships between the data.
+
+Model deployment. Many data scientists face a huge challenge when it comes to production liaising their models. They have it running in their notebook session, but how do they make it available to be used at scale in a secure method?
+
+ADS provides the ADS model framework, which is a set of classes that allows you to deploy models of different types. With a few simple commands, you can have a model enter production. ADS supports collections of models, such as Oracle labs auto machine learning, PyTorch, scikit-learn, TensorFlow, and many more.
+
+It also has the ability to support generic model. No matter what your model type is, it can be supported and deployed with a few simple commands. When your model is in production, you need to understand what is happening.
+
+It integrates with OCI logging service, and creates a prediction and an access logs. These allow you to understand how the logs, how the model is being accessed, and also what the prediction results are from the model.
+
+Let's wrap up. In this module, you have learned the goals of the SDK are three-fold. You've learned how to access and install the library. You've learned some of the ways that you can connect to different types of data, how to visualize your exploratory data analysis quickly and simply. The fact that ADS provides guidance through feature engineering. Different tools that ADS has to help you train and optimize your models.
+
+You've also learned how to perform model evaluations to better explain and understand the quality of your model. We also discussed model interpretation, and tools that allow you to push your model into production. Thank you very much.
+
+- Hello. I'm Jon Stanesby. In this lesson, we're going to cover tenancy configuration basics for data science. While this is common knowledge and most likely just a refresher for you, let's quickly discuss basic tenancy configuration concepts.
+
+Compartments, these are logical containers for organizing OCI resources. User groups, simply a group of users. Dynamic groups are special groups of resource principles, and policies, which are used to grant access to groups within compartments.
+
+Let's quickly discuss how these components work together to enable access to data science resources. Firstly, you assign users to appropriate user groups. Secondly, you create dynamic groups for data science resources. And finally, you create policies that grant access to data science resources within a compartment.
+
+Starting then with compartments, they allow you to organize and control access to your Cloud resources. A compartment is a logical grouping of resources that can be accessed only by certain groups. There have been given permission by an administrator.
+
+When configuring your tenancy, the first step is to make a plan of how you will organize your data science resources going forward. Once you've made a plan, you can start creating one or many compartments. We will demonstrate this at the end of the lesson. However, for now, let's look at the quick and easy three-step process to create a compartment.
+
+From the Identity console, go to Identity and select Compartments. Click Create a Compartment, enter a name and description, and then click Create Compartment. Now moving on to user groups, which are individual users that are grouped in OCI, and granted access to data science resources within compartments.
+
+Admins can perform three simple steps to create user groups. Firstly, create the users. Secondly, create the groups. And finally, add users to groups. When configuring groups, first decide how users will access resources in the compartments.
+
+Now for a special type of group called dynamic groups, they contain resources that match rules that you define. Resources such as data science notebook sessions, job runs, and model deployments can be included in a dynamic group. These matching rules allow group membership to change dynamically as resources that match those rules are created or deleted.
+
+These resources act as principal actors. They can make API calls to services according to policies that you write for the dynamic group. We'll discuss policies shortly. For example, using the resource principle of a data science notebook session where its dynamic group has a policy which enables object storage access, you could make a call to the object storage API to read data from a bucket.
+
+So resources match rules, and rules are applied to dynamic groups. Once you give your dynamic group a name and description, you'll fill in the following matching rules, where the compartment OCID is replaced by the identifier of the compartment you created for data science.
+
+In this example with these rules, the dynamic group will be made up of any and all resources of these three types that exist in the compartment. What those resources have access to do, as mentioned before, will depend upon policies.
+
+Policies define what principles like users and resources have access to in OCI. Access is granted at the group and the compartment level, which means you can write a policy that gives a group a specific type of access within a specific compartment.
+
+Policies have a basic syntax. Allow a group called your group name to do some verb or action upon a resource type within a compartment named compartment name. Let's look a bit closer at each of these variables in the syntax.
+
+Group name, this will be filled in with the name of the user group or dynamic group. Verb, this will define the level of access. We will look at different verb types next. Resource type, this will specify the type of resource or resource family to be accessed. And compartment name, this will be filled in with the name of the compartment.
+
+Verbs define the level of access that would be permitted to the resource or resource family. Verbs include from least to most permissive, inspect, which gives the ability to list resources without access to any user specified metadata. Read, includes inspect plus the ability to get user-specified metadata and the actual resource itself.
+
+Use, includes read plus the ability to work with the resource, including updating it. Generally, this does not include creating or deleting permissions. And finally manage, includes all permissions, including creating and deleting.
+
+Resource type in the policy defines which specific resource you are writing the policy for. For example, data science includes resources such as data science models or data science jobs. You can write a policy for individual resource types.
+
+However, to make writing policies for related resources much easier, there are aggregate resource types which contain a family of related resources. The aggregate resource type for data science is data science family. We are adding the color coding to make the syntax easier to understand here.
+
+But please note these are actually the most critical of the required data science policies, not simply policy examples. The first required policy will be to allow data scientists to manage all data science resources in a specific compartment.
+
+To do this, your policy would say allow your user group to manage data science family in your compartment name. The second required policy is to allow data science resources, such as a notebook session, in a dynamic group you've created, to manage all data science resources. So this time, allow a dynamic group to manage data science family in your compartment name.
+
+The following policies are required to enable user access to metrics and logging for data science resources. First, allow your user group to read metrics in compartment compartment-name. Secondly, allow dynamic groups to use log content in your compartment. Thirdly, allow your user group to manage log groups in your compartment. And finally, allow your user group to use log content in your compartment.
+
+If you plan to use custom networking in data science, which is discussed in depth in the next lesson, you will need the following policies. Allow the service data science to use virtual network family in your compartment, allow your user group to use virtual network family in compartment, and allow dynamic group to use virtual network family in compartment.
+
+The following policies are useful for accessing services related to data science. So you might find it useful to pause the lesson here and take note of them. To create a compartment from the identity console, go to Compartments and click Create Compartment. Give your compartment a name, and give it a description.
+
+In this example, I'm adding tags to keep my workspace clean and tidy. Click Create Compartment, and wait a few moments for your compartment to be created. You may want to take note of the OCID of the compartment for later.
+
+To create a user in the identity console, navigate to users and click Create User. Give your user a username, and add a description. You can also add the email address of the user, and then repeat this process for every user that you want to add. Click Create.
+
+Next, we'll create a group for our users. In the Identity console, go to Groups and click Create Group. Give you a group a name, and add a description. Then click Create. Once we have a user group created, we can begin to add users to the group.
+
+Click Add User to Group, and then select your user, and click Add. Repeat this process for all the users you want to add to this user group. Now moving on to dynamic groups, from the identity console, go to Dynamic Groups and click Create Dynamic Group. Give your dynamic group a name and a description.
+
+Now we're going to enter some matching rules. And remember, we looked at the three important matching rules for data science resources. The first rule is for data science notebook sessions, the second rule is for data science model deployments, and the third rule is for data science job runs. And we're replacing the compartment ID with the compartment we created earlier in the demo. Click Create to create your dynamic group.
+
+Now for the final step, we need to allow our resources and users to access data science in our compartment, but we're going to create a policy. Now in this policy, I'm going to cover the required data science policies. I'm giving it a relevant name and description. In the Policy Builder, I'm going to switch to the manual editor to allow me to paste in my policy statements. Once I've added those statements, I'll click Create to create the policy.
+
+Now there were a few additional required policies specifically for users and dynamic groups to access metrics. So I'm going to edit this policy now and add additional statements that will allow access for my user group to read metrics in the compartment, for my dynamic group, for access log content, for my user group, to access log groups, and finally for my user group to access log content.
+
+And once I've added these statements, I'll save my changes. Now that we've covered the required policies, we did show some useful policies that it may be good to create as well, especially when you want resources or users within a data science service to be able to access other OCI services.
+
+So in this case, I'm adding some useful data science policies. Again, I'm giving a name and a description, and switching to the manual editor to add my policies. These policies are specific for object storage, and so I want to allow both my dynamic group and my user group to manage the object family in my compartment. I can repeat this process for all the policies I want to add.
+
+So to wrap up, we discussed tenancy configuration concepts like compartments, user groups, dynamic groups, and policies. We talked about matching rules for grouping resources into dynamic groups. We covered policy syntax for setting your policies. We discussed the required data science policies. We talked about policies for data science related services. And then covered some optional data science policies you might find useful. Thank you.
+
+- Configure a Tenancy with OCI Resource Manager
+
+Hello. I'm John Stanesby. In this lesson, we're going to show how to configure a tenancy with OCI Resource Manager.
+
+Instead of configuring your tenancy manually, you can use the Data Science Service template, which is preconfigured in Oracle Resource Manager. This template will automatically create the required user groups, dynamic groups, and policies for a basic use case.
+
+The Data Science Service template creates a user group with a name you define, a dynamic group with a name you define, and the following matching rules for resource types-- datasciencenotebooksession, datasciencemodeldeployment, and datasciencejobrun.
+
+It also creates a policy with a name you define and the following statements to allow your user group to manage data-science-family in your compartment, to allow a dynamic group to manage data-science-family of resources in your compartment, to allow your user group to read metrics in your compartment, and to allow the dynamic group to use log-content in your compartment. We will demo this at the end of the lesson.
+
+Let's run through the general process of running the Oracle Resource Manager, or ORM stack for short. Firstly, create the stack. Then, select your template. Next, select your compartment, and run the stack. Finally, add users to your user groups. Remember, templates are only available on the console. And you can always edit your stack later.
+
+As we've discussed, you can configure your tenancy with the Resource Manager using a predefined Data Science sample solution. But that's not the only option. You can also use your Terraform script located at this public GitHub repo.
+
+Now I'm going to show configuring a tenancy with OCR Resource Manager. Navigate to Resource Manager. And then, click Stacks. Click Create Stack. Select Template as your origin. And Select Template. From here, I'll go to Service and choose Data Science. Then, click Select Template. From here, I can scroll down and choose the compartment that I want to use for my Data Science resources. And click Next.
+
+There are some additional variables I can complete if I choose. Click Next to move through the wizard. And then finally, I want to run apply on my stack immediately. Click Create. And wait for this job to run. After running the stack, all you need to do is add your users to the user group that this configuration creates. You can also access the Terraform script at this public Git repo.
+
+To wrap up, we discussed automatic configuration and the Data Science Service template. We talked about the resources that the template creates, like user groups, dynamic groups, and policies. We covered the steps to run the ORM stack and where to access the Terraform script on the public GitHub repo. Thank you.
+
+- Networking for Data Science
+
+Hello. I'm Jon Stanesby. In this lesson, we'll look at networking for data science. Let's begin by introducing a few useful cloud networking components. We'll define these components and give a very high-level introduction to these concepts so that you can understand how they relate to data science. But please note, this course will not go in depth on networking topics.
+
+The first component to know are Virtual Cloud Networks, or VCNs. The next are subnets, as well as Virtual Network Interface Cards or VNICs, also Dynamic Routing Gateway, or DRG, Network Address Translation gateway, or NAT, and finally, service gateway.
+
+Let's show how all these networking components work together. The VCN is a virtual private network that you set up in Oracle data centers. The subnets are subdivisions you define in a VCN. These subnets contain VNICs, which attach to instances. Subnets act as a unit of configuration within the VCN. So all VNICs in a given subnet will use the same root table, security lists, and DHCP options.
+
+These VNICs determine how an instance connects with endpoints inside and outside the VPN. Then there are three types of optional virtual routers you can add to your VCN. A DRG provides a path for private network traffic between your VCN and on-premises network. You can use it with other networking components and a router in your on-premises network to establish a connection by way of site-to-site VPN or Oracle Cloud Infrastructure FastConnect.
+
+It can also provide a path for private network traffic between your VCN and another VCN in a different region. And that gives cloud resources without public IP addresses access to the internet without exposing those resources to incoming internet connections. Finally, a service gateway provides a path for private network traffic between your VCN and supported services in the Oracle services network. For example, database systems in a private subnet in your VCN can back up data to object storage without needing public IP addresses or access to the internet.
+
+In the data science service, you can create a few different types of resources that can execute custom code for different use cases. These resources include notebook sessions, jobs and job runs, and model deployments. In this lesson, we will refer to these types of data science resources as workloads.
+
+Oftentimes, you will want to access external assets from your running workload, such as code files, data, libraries, secrets, and logs. You may also want to create and run other workloads on data science or workloads on another platform like data flow. These external assets could be accessible over the public internet, or they could be in a private network.
+
+In order to access these external assets, you must ensure network connectivity between your workload and the network location of your desired assets. In data science, there are two networking patterns that you can use-- default and custom. When you select default networking, the workload will be attached via secondary VNIC to a pre-configured service managed VCN subnet.
+
+This provided subnet will allow egress to the public internet through a NAT gateway and access to Oracle Cloud Services through a service gateway. Therefore, if you only require access to the public internet and/or OCI services, this is the fastest, easiest way to get started on the service as it does not require you to create your own networking resources or write policies for networking permissions.
+
+When you select custom networking when creating a data science resource, you'll specify a pre-existing subnet that's owned by your own tenancy that you want to use for data science workloads. When the workload is created, the data science service will connect to your selected subnet through a secondary VNIC attachment. This bring-your-own-network configuration achieved through custom networking will allow you to have access to resources and assets as defined by your subnet.
+
+If you require access to external assets that reside in a private network, such as code files in an enterprise Git repository server or data in an on-prem database, you'll need to use custom networking to ensure connectivity for your workloads. Please work with your tenancy networking administrator to configure your VCN subnet for data science. As discussed in the lesson on tenancy configuration, you will need additional policies to use custom networking in data science.
+
+I'm going to show you a quick way to get set up with networking for data science. To do this, we're going to use the VCN Wizard. So navigate to Networking and Virtual Cloud Networks. Click on Start VCN wizard, and then choose Create VCN with Internet Connectivity. When we start the VCN Wizard, we just need to give our VCN a name.
+
+As we scroll down, there are a number of options more likely to be used for advanced users. If you want to continue with default networking, simply click Next and click Create. Wait a moment while various resources are created for you in your compartment. Once it's done, click View Virtual Cloud Network.
+
+We can now see that our network's been created. If I go back to the Virtual Cloud Network screen, you can see my example, DS VCN is now created. Please note that you won't need to complete this step if you configured your tenancy using OCI Resource Manager. As per this example, the VCN is created for you.
+
+In this lesson, we looked at cloud networking components and definitions, an overview of how those components fit together, and the two network connectivity options-- default networking or custom networking. Thank you.
+
+- Authenticate to OCI APIs
+
+Hello. I'm Jon Stanesby. In this lesson, we'll look at how to authenticate to OCI APIs. Data science resources, such as notebook sessions, jobs, and model deployments, allow you to execute custom code.
+
+As a part of your code, you may want to interact with other OCI services via the OCI REST APIs. For example, this would enable you to read and write data to object storage from a job or create and run data flow applications from a notebook session. In order to interact with the OCI APIs, you'll need to operate as an authenticated user.
+
+Most commonly in data science, you'll interact with the OCI APIs via the ADS SDK, the OCI Python SDK, or the OCI Command Line Interface or CLI this lesson will explain the options for handling authentication for each of these interfaces. Please note this lesson is only concerned with authentication which is to say, the process of verifying a valid OCI recognized identity or principal. It is not concerned with authorization, which refers to the access level that a principal has permission for. We will assume authorization has been covered in lesson 2 of this module, Tenancy Configuration.
+
+A resource principal is a feature of Identity and Access Management or IAM that enables resources to be authorized principal actors that can perform actions on service resources. Each resource has its own identity, and it authenticates by using the certificates that are added to it. These certificates are automatically created, assigned to resources, and rotated avoiding the need for you to store credentials in your notebook session or job.
+
+The Data Science service enables you to authenticate by using your notebook sessions or your job run's resource principal to access other OCI resources. Resource principals provide a more secure way to authenticate to resources compared to using the OCI configuration and API key approach. They provide a more practical way to authenticate from a job run which doesn't provide you with an interactive interface like notebook sessions for creating and moving around config files. If you don't explicitly use the resource principals when invoking an SDK or CLI, then the configuration file and API key approach is used.
+
+The resource principal token is cached for 15 minutes. If you change the policy or the dynamic group, you'll have to wait for 15 minutes to see the effect of your changes while the cash expires. The code used to set resource principles as the authentication mechanism vary slightly depending on the interface you are using. You may want to pause the lesson here and take a note of these.
+
+You can operate as your own personal IAM user by setting up an OCI configuration file and API key to access OCI resources. This is the default authentication approach when using ADS, the OCI Python SDK, or OCI CLI. To authenticate using the alternative configuration file in API key approach, you must upload an OCI configuration file into the notebook sessions OCI directory.
+
+For the relevant profile defined in the OCI configuration file, you'll also need to upload or create the required .pem files. Instead of uploading existing OCI configuration and API key files, you can use the api_key's notebook to create them. To launch the api_key's notebook, click Notebook Examples on the JupyterLab Launcher tab.
+
+We discussed the importance of authentication in data science, the need to authenticate different interfaces, the definition of resource principals, how resource principals and the data science service work together, and how to work with resource principals in different interfaces. We also looked at OCI configuration files. Thank you.

@@ -1,0 +1,251 @@
+- Hay otro curso que cubre ML y base de datos Oracle.
+- Saber de Bibliotecas de ciencia de datos y aprendizaje automático de código abierto, y saber cómo aplicarlas.
+
+- Me gustaría verificar si incluye las siguientes terminología de los productos de ciencia de datos, en su defecto sumarla con el mismo criterios al cuadro:
+
+OU Community 
+
+ciclo de vida ML
+modelo ML: Definen una representación matemática de tus datos y negocio. Se crean en sesiones de notebook dentro de proyectos.
+
+entrenar Modelos
+evaluar Modelos
+desplegar Modelos Model Deployments: Permite desplegar modelos desde el catálogo como endpoints HTTP sobre infraestructura gestionada. Este tipo de despliegue como aplicaciones web que sirven predicciones en tiempo real es la forma más común de operacionalizar modelos. Los endpoints HTTP son flexibles y pueden procesar solicitudes de predicción.
+
+escalar Modelos
+supervisión Modelos
+
+automatizar pipelines ML
+
+datos estructurados
+datos únicos y a menudo no estructurados
+
+OCI Data Labeling (etiquetado de datos)
+ADS 
+
+reproducibilidad modelos
+auditabilidad modelos
+
+Enterprise-grade
+
+JupyterLab interfaz familiar donde escriben código Python.
+Model Catalog
+(tenancy) tenencia 
+Projects (Proyectos): Son contenedores
+Notebook Sessions (Sesiones de Notebook):  Es donde trabajan los científicos de datos para codificar, construir y entrenar modelos, puede seleccionar CPU o GPU, el tipo de cómputo (compute shape) y la cantidad de almacenamiento sin necesidad de aprovisionar manualmente.. Proveen un entorno de JupyterLab con bibliotecas de código abierto preinstaladas y la posibilidad de agregar más.
+
+compute shape
+
+Conda: Sistema de gestión de entornos y paquetes de código abierto, creado para programas en Python. Se utiliza en el servicio de ciencia de datos para instalar, ejecutar y actualizar paquetes con sus dependencias rápidamente. Conda permite crear, guardar, cargar y alternar entre entornos de forma sencilla dentro del notebook.
+
+ADS SDK (Accelerated Data Science Software Development Kit): Es una biblioteca en Python incluida en OCI Data Science. Tiene muchas funciones y objetos que automatizan o simplifican pasos del flujo de trabajo en ciencia de datos: conexión a datos, exploración, visualización, entrenamiento con AutoML, evaluación y explicación de modelos. Además, ofrece una interfaz sencilla para acceder al catálogo de modelos y otros servicios de OCI, incluyendo almacenamiento de objetos (Object Storage).
+análisis exploratorio
+Feature Types (tipos de características)
+optimización de hiperparámetros
+ADSTuner
+ AutoML 
+explainability (explicabilidad de modelos).
+
+
+
+Data Science Jobs (Tareas de Ciencia de Datos): Permiten definir y ejecutar tareas repetibles de aprendizaje automático en infraestructura gestionada.
+
+OCI Console: Método más común de acceso. Proporciona una interfaz basada en navegador, fácil de usar, que da acceso a las sesiones de notebook y todas las características del servicio. Esta será la interfaz usada durante el curso.
+
+SDKs (Kits de desarrollo): Estos permiten escribir código para gestionar recursos del servicio. Se mostrarán ejemplos del uso del SDK de Python para desplegar modelos y crear tareas.
+
+CLI (Command Line Interface): Ofrece acceso rápido y funcionalidad completa sin necesidad de scripting.
+
+Regions (Regiones): OCI Data Science como servicio en la nube está disponible a través de regiones, que son centros de datos distribuidos globalmente, ofreciendo entornos seguros y de alto rendimiento local.
+
+SDK de Accelerated Data Science
+
+AutoML 
+MLOps
+servicios OCI
+ML Services
+AI Services
+OCI Data Labeling 
+escalabilidad empresarial
+Projects, 
+Notebook Sessions, 
+Conda
+Data Science Jobs
+object storage
+ Feature Types
+ heatmaps
+Feature Engineering
+AutoML, 
+ADSTuner
+Políticas IAM, 
+Tenencia IAM 
+Configuración IAM
+Compartments, 
+grupos de usuarios, 
+grupos dinámicos
+Politicas, 
+Sintaxis de políticas: verbs, 
+resource types políticas,
+OCI Resource Manager
+Terraform Script
+Networking para Data Science
+VCN, 
+Subnets, 
+VNICs, 
+DRG, 
+NAT, 
+Service Gateway
+Patrones,
+red por defecto
+red personalizada
+VCN Wizard
+workloads
+ctivos externos
+Autenticación
+Interfaces
+Interfaz ADS SDK,
+Interfaz Python SDK,
+Interfaz CLI
+Autorización
+Resource Principals
+Resource seguridad, 
+rotación de certificados
+Archivos de configuración .pem
+credenciales
+Virtual cloud network (VCN)
+Public subnet
+Private subnet
+Internet gateway (IG)
+NAT gateway (NAT)
+Service gateway (SG)
+entorno OCI Data Science
+prácticas de MLOps
+escalado MLOps, 
+monitoreo MLOps
+
+
+pipelines 
+
+
+Servicios OCI
+incorporar buenas prácticas de aprendizaje automático
+OCI Data Science para construir, entrenar, desplegar y gestionar modelos de ML
+uso de otros servicios de datos e inteligencia artificial de OCI
+
+
+Como científico de datos o ingeniero de aprendizaje automático, nuestro trabajo diario consiste en obtener datos, preparar datos, construir y entrenar modelos, evaluar modelos, desplegar y escalar modelos, y también automatizar pipelines (flujos de trabajo) de aprendizaje automático.
+
+caso de uso para conectar nuestras actividades de aprendizaje automático con un problema empresarial del mundo real.
+
+Quieren mejorar sus operaciones creando mejores experiencias para clientes, anticipando demanda de servicios y evitando fallas de equipos que se podrían haber prevenido
+
+Oracle AI es el portafolio de servicios en la nube para ayudar a las organizaciones a aprovechar todos los datos en esta nueva generación de escenarios, la capa escencial que inicia este proceso.
+
+Luego vienen los servicios de ML son utilizados principalmente por los científicos de datos para construir, entrenar, desplegar y administrar modelos de ML.
+
+Le sigue los servicios de IA contienen modelos de ML preconstruidos para usos específicos. Algunos están preentrenados y otros son entrenados por el cliente con sus propios datos. 
+
+La capa superior de este diagrama son las aplicaciones, y esto se refiere de forma amplia a todas las maneras en que se consume la IA. Puede ser una aplicación, un proceso de negocio o un sistema analítico.
+
+Todos se utilizan simplemente llamando a la API del servicio, enviando los datos a procesar, y el servicio devuelve un resultado.
+
+Ahora bien, esos servicios de IA y ML que acabo de mostrarte no funcionan de manera aislada. Están respaldados por muchos otros servicios disponibles en nuestra infraestructura en la nube, incluyendo análisis de negocios, análisis de grafos y muchas formas de integración y gestión de datos, todo funcionando sobre la infraestructura básica de la nube. Estos servicios pueden combinarse en varias arquitecturas para respaldar diferentes escenarios.
+
+
+OCI Data Science proporciona bibliotecas de código abierto junto con acceso fácil a diferentes niveles de potencia de cómputo sin necesidad de gestionar ninguna infraestructura.
+
+Calidad empresarial (Enterprise-grade).El tercer principio trata sobre ser de calidad empresarial. Eso significa que está integrado con todos los protocolos de seguridad y acceso de OCI. La infraestructura subyacente está completamente gestionada. El cliente no tiene que pensar en aprovisionar cómputo ni almacenamiento, ya que el servicio se encarga de todo el mantenimiento, actualizaciones y parches, para que los usuarios puedan enfocarse en resolver problemas empresariales con ciencia de datos.
+
+
+Model Catalog (Catálogo de Modelos): Lugar donde se almacenan, rastrean, comparten y gestionan los modelos. Es un repositorio centralizado y gestionado de artefactos de modelos. Incluye metadatos sobre el origen del modelo, información relacionada con Git, y el script o notebook usado para subirlo al catálogo
+
+Por ejemplo, se integra con Autonomous Database y el servicio de Big Data mediante clases como SecretKeeper, que facilitan el almacenamiento seguro de credenciales y el acceso a esos servicios.
+
+
+
+
+
+| Módulo / Área         | Término clave            | Descripción breve                                                  | Ejemplo aplicado a hotel real                                     |
+|-----------------------|--------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------|
+| Entorno de desarrollo | Conda                    | Gestor de entornos y dependencias para Python                      | Crear entorno “reservas” con pandas y matplotlib                   |
+| Entorno de desarrollo | ADS SDK                  | Librería de Python que simplifica tareas en el ciclo ML            | Entrenar modelo para predecir cancelaciones                       |
+| Entorno de desarrollo | Notebook Session         | Ambiente interactivo en OCI para ejecutar código y analizar datos  | Editar notebook para detección de anomalías en reservas            |
+| IAM                   | Tenancy                  | Entorno raíz que agrupa todos los recursos en OCI                  | Tenencia “HotelCorp” con compartimientos separados                |
+| IAM                   | Compartment              | Contenedor lógico para organizar recursos y políticas              | Compartimiento “Marketing” con notebooks y objetos                |
+| IAM                   | Group / Dynamic Group    | Grupo de usuarios o recursos con políticas asociadas               | Grupo “Analistas” con acceso a métricas y logs                    |
+| IAM                   | User / Principal         | Identidad que puede autenticarse y operar sobre recursos           | Usuario “AnaRecepcion” con acceso a modelos y buckets              |
+| IAM                   | Policy / IAM Settings    | Reglas que autorizan acciones sobre recursos                       | Política que permite acceso al Object Storage                     |
+| IAM                   | OCI CLI / Token          | Herramientas para operar OCI desde la terminal                     | Usar CLI para lanzar notebook desde cron semanal                  |
+| Automatización        | Job / Pipeline / Workload| Ejecuciones automatizadas en infraestructura OCI                   | Job nocturno que actualiza predicción de ocupación                |
+| Automatización        | Scheduler / Cron         | Programador de tareas para ejecución periódica                     | Ejecutar script todos los días a las 6 AM                         |
+| Automatización        | Logging / Audit          | Registro de actividad y monitoreo del sistema                      | Ver quién modificó modelo de predicción ayer                      |
+| Ciencia de datos      | ML Lifecycle             | Ciclo completo: ingestión, entrenamiento, despliegue, monitoreo    | Desde historial de reservas hasta API en producción               |
+| Ciencia de datos      | AutoML / ADSTuner        | Entrenamiento automático y ajuste de hiperparámetros               | Entrenar 20 modelos y elegir el más preciso                       |
+| Ciencia de datos      | Model Catalog / Deployment| Repositorio y endpoints HTTP para modelos ML                       | Compartir modelo con el equipo de recepción                       |
+| Ciencia de datos      | Feature Engineering      | Transformar variables para mejorar modelos                         | Crear “temporada alta” desde campo fecha                          |
+| Ciencia de datos      | Train-Test Split         | División de datos para entrenamiento y evaluación                  | Usar datos de 2021 para entrenar y 2022 para testear              |
+| Ciencia de datos      | Metrics / Evaluation     | Indicadores para medir la calidad de un modelo                     | Ver precisión y F1 Score del modelo de ocupación                  |
+| Visualización         | Feature Types / Heatmap    | Clasificación de variables y visualización de relaciones            | Ver correlación entre ocupación y día de la semana                  |
+| Visualización         | Histogram / Distribution   | Gráfico que muestra frecuencia de valores                           | Distribución de estadías por cantidad de noches                    |
+| Visualización         | Boxplot / Outliers         | Visualización de rango y valores extremos                           | Detectar precios fuera de lo común en reservas                     |
+| Visualización         | Pairplot / Correlation     | Comparación cruzada entre variables numéricas                       | Relación entre tarifa, ocupación y tipo de habitación              |
+| Almacenamiento        | Object Storage / Bucket    | Almacenamiento escalable en OCI para datasets y resultados          | Guardar CSV con reservas históricas                                |
+| Almacenamiento        | Dataset / CSV / JSON       | Formatos de datos para análisis y entrenamiento de modelos          | Subir archivo “cancelaciones_2023.csv” al bucket                   |
+| Almacenamiento        | Data Flow / Data Catalog   | Servicios para procesar y documentar grandes volúmenes de datos     | Catalogar datasets sobre temporada alta y baja                     |
+| Seguridad             | Vault / Secret Keeper      | Gestión segura de credenciales y claves                             | Conectar notebook con base Oracle sin exponer claves               |
+| Seguridad             | Encryption / Access Policy | Protección de datos y reglas de acceso                              | Definir política que prohíba modificar modelos desde marketing     |
+| Redes                 | VCN / Subnet / NAT / SG    | Red virtual y componentes para tráfico interno y externo            | Acceder a Object Storage sin exponer IP pública                    |
+| Redes                 | Public / Private Endpoint  | Configuración de acceso a servicios desde dentro o fuera de OCI     | API de predicción solo accesible desde subnet del hotel            |
+| Redes                 | Internet Gateway / Route   | Permisos para que una red tenga salida a internet                   | Notebook con acceso a repositorios externos                        |
+| Prácticas MLOps       | Escalado / Load Balancer   | Optimización de recursos para alta demanda                          | Aumentar recursos si el uso del modelo crece durante temporada alta|
+| Prácticas MLOps       | Monitoring / Logging       | Seguimiento de métricas y eventos en producción                     | Ver cuántas veces se consultó el modelo desde recepción            |
+| Prácticas MLOps       | Explainability / Feature Importance| Herramientas para interpretar el modelo                     | Mostrar que “tipo de cliente” impacta más en cancelaciones         |
+| Prácticas MLOps       | Retraining / Drift         | Reentrenamiento y detección de cambios en los datos                 | Actualizar modelo si cambian patrones de reserva                   |
+| SDK / Herramientas    | Python SDK / OCI SDK       | Librerías para interactuar con servicios OCI desde código           | Crear bucket y notebook usando Python desde script                    |
+| SDK / Herramientas    | ADS SDK / ADSInterpreter   | Herramientas específicas para ciencia de datos en OCI               | Generar explicación de modelo con gráficos automáticos                |
+| SDK / Herramientas    | OCI CLI                    | Interfaz de línea de comandos para operar servicios OCI             | Lanzar notebook o subir archivos directamente desde consola           |
+| Infraestructura       | Terraform / Resource Manager| Infraestructura como código para automatizar configuración          | Crear compartimientos y políticas de acceso de forma repetible        |
+| Infraestructura       | Stack / Plan / Apply       | Proceso de despliegue con Terraform: definir, previsualizar, ejecutar| Desplegar recursos para nuevo hotel sin errores manuales              |
+| Organización           | Tags / Cost Tracking        | Etiquetado de recursos y seguimiento de costos                      | Ver cuánto cuesta entrenar modelos en entorno “TemporadaAlta”         |
+| Buenas prácticas      | Modularización / Reusabilidad| Separar funciones para claridad y mantenimiento                     | Validaciones de reserva en módulo “utils”                             |
+| Buenas prácticas      | Confirmación / Validación  | Evitar errores críticos con chequeos y confirmaciones explícitas    | Confirmar borrado de modelo con “¿Estás seguro? [y/n]”                |
+| Buenas prácticas      | Documentación / Naming     | Uso de nombres claros y descripciones en código y estructura        | Bucket “datos_cancelaciones_hotelA_2023”                              |
+| Bonus Ctrl+BA         | Ficha técnica / Glosario Ctrl| Recurso con términos clave y ejemplos integrados                    | Usar en mentorías dentro del servidor Ctrl+BA                         |
+| Bonus Ctrl+BA         | Cuestionarios / Flashcards | Material para repasar y autoevaluarse en 3 niveles                  | Fichas para revisar IAM, ML y MLOps antes del examen                  |
+| Bonus Ctrl+BA         | Presentación / Teaching Pack| Recurso didáctico para exponer temas en clase o comunidad           | Explicar el ciclo ML con ejemplos hoteleros y slides visuales         |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*************************************************************
+

@@ -1,0 +1,279 @@
+Punto 2.1: La **Navaja de Ockham** es un principio filosófico que se volvió muy influyente en el campo del *Machine Learning*, y tiene una historia fascinante detrás.
+
+---
+
+## ✂️ ¿Qué es la Navaja de Ockham?
+
+Fue formulada por el fraile y filósofo **Guillermo de Ockham** en el siglo XIV. Su idea central es:
+
+> “**Entre varias explicaciones posibles, la más simple suele ser la mejor**.”
+
+En latín: *Pluralitas non est ponenda sine necessitate* — “No se debe postular la pluralidad sin necesidad.”
+
+---
+
+## 🤖 Aplicación en Machine Learning
+
+En ML, este principio se traduce como:
+
+- **Preferir modelos simples** que expliquen bien los datos, antes que modelos complejos que podrían sobreajustarse.
+- Evitar agregar variables, capas o parámetros innecesarios si no mejoran la capacidad predictiva.
+
+### 🧪 Ejemplo práctico:
+- Un modelo de regresión lineal que predice bien puede ser preferible a una red neuronal profunda si ambos tienen rendimiento similar.
+- Esto ayuda a **evitar el sobreajuste** y mejora la **generalización** en datos nuevos.
+
+---
+
+## 🧠 Aprendizaje Ockham vs. Aprendizaje PAC
+
+En teoría computacional, existe el concepto de **Aprendizaje Ockham**, que busca obtener una **representación concisa** de los datos.  
+Está relacionado con el modelo **PAC (Probably Approximately Correct)**, que evalúa si un algoritmo puede aprender con alta probabilidad y precisión.
+
+📌 Lo interesante: **Aprender con parsimonia (simplicidad)** suele implicar **mejor capacidad predictiva**.
+
+---
+
+## ⚠️ Pero ojo...
+
+La Navaja de Ockham **no es una regla absoluta**. A veces, la explicación más simple **no es suficiente** para capturar la complejidad de un fenómeno.  
+Como dijo Einstein:  
+> “Todo debe hacerse lo más simple posible, pero no más simple.”
+
+---
+
+******************************************************************************************************************************************
+
+
+---
+
+## 🧠 Servicios de IA y ML en Oracle Cloud Infrastructure (OCI)
+
+Oracle ofrece dos grupos principales de servicios para abordar soluciones de inteligencia artificial:
+
+### 🔷 1. OCI AI Services (Modelos preentrenados listos para usar)
+
+Pensados para desarrolladores, analistas y usuarios no técnicos que desean aplicar IA sin entrenar modelos desde cero.
+
+| Servicio                      | Descripción breve                                                     | Caso de uso práctico                                         |
+|------------------------------|------------------------------------------------------------------------|---------------------------------------------------------------|
+| **OCI Vision**               | Reconocimiento de imágenes, documentos y video                        | Control de calidad en productos, verificación de identidad    |
+| **OCI Language**             | Análisis de texto y sentimiento                                       | Clasificación de correos, análisis de reseñas de clientes     |
+| **OCI Speech**               | Transcripción de voz a texto                                          | Subtitulado automático, registro de llamadas                  |
+| **OCI Anomaly Detection**    | Detección de anomalías en series temporales                           | Fraude financiero, fallas en maquinaria, compras inusuales    |
+| **OCI Forecasting**          | Predicción de valores futuros                                         | Estimación de demanda, planificación logística, ventas        |
+| **OCI Generative AI**        | Modelos de lenguaje generativo (LLM)                                  | Chatbots, generación de texto, resumen de documentos          |
+
+---
+
+### 🔶 2. OCI Data Science Services (Entrenamiento y gestión de modelos personalizados)
+
+Dirigidos a científicos de datos y equipos técnicos para construir soluciones a medida.
+
+| Servicio                      | Descripción breve                                                     | Caso de uso práctico                                         |
+|------------------------------|------------------------------------------------------------------------|---------------------------------------------------------------|
+| **OCI Data Science**         | Plataforma para crear, entrenar, desplegar y gestionar modelos ML     | Predicción de rotación de empleados, recomendaciones personalizadas |
+| **Accelerated Data Science (ADS) SDK** | Librería Python para simplificar el flujo de trabajo | AutoML, visualización, conexión con Object Storage            |
+| **Model Catalog**            | Repositorio central de modelos con versión y trazabilidad              | Auditoría de modelos, colaboración entre equipos              |
+| **Model Deployment**         | Exposición de modelos como endpoint HTTP                              | Predicciones en tiempo real desde sistemas externos           |
+| **Data Labeling**            | Herramienta para etiquetar datos en texto, imagen o audio             | Clasificación de sentimientos, identificación visual          |
+
+---
+
+## 📚 Terminología clave de OCI Data Science
+
+| Término               | Definición                                                             | Caso de uso práctico                                      | Relación con otros conceptos                             |
+|----------------------|------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|
+| **Project**           | Contenedor colaborativo para organizar activos de ciencia de datos     | Agrupar notebooks, modelos y sesiones por equipo o tema   | Contiene notebooks, modelos, despliegues y jobs           |
+| **Notebook Session**  | Entorno Jupyter gestionado para escribir y ejecutar código              | Entrenamiento de modelos, exploración de datos            | Se crean dentro de un proyecto, usan ADS SDK y Conda      |
+| **Conda Environment** | Sistema para gestionar librerías y entornos en Python                  | Configurar librerías específicas para un experimento      | Se usa en notebook sessions, facilita replicabilidad      |
+| **ADS SDK**           | Librería Python para tareas de ciencia de datos                        | Entrenar con AutoML, conectar datos, evaluar modelos      | Se integra en notebooks, conecta con Model Catalog y servicios OCI |
+| **Model**             | Representación matemática entrenada con datos                          | Clasificar clientes, predecir demanda                     | Se crea en notebook session, se guarda en el catálogo     |
+| **Model Catalog**     | Repositorio central con versión y metadatos del modelo                  | Compartir, recuperar y gestionar modelos                  | Permite despliegue y auditoría entre usuarios             |
+| **Model Deployment**  | Endpoint HTTP para servir modelos como aplicación web                  | Predicción en tiempo real desde una app                   | Usa modelos del catálogo, se gestiona desde consola o SDK |
+| **Data Science Job**  | Tarea repetible ejecutada en infraestructura gestionada                | Entrenamiento programado, evaluación automática           | Usa notebooks, modelos y puede automatizar flujos         |
+| **OCI Console**       | Interfaz web para operar todos los recursos de Data Science             | Crear proyectos, lanzar sesiones, desplegar modelos       | Punto de entrada principal, gestiona todo el ecosistema   |
+
+---
+
+## 🔄 Relación entre conceptos
+
+Los elementos clave del servicio OCI Data Science forman un ecosistema modular:
+
+- **Projects** organizan los activos y permiten trabajo en equipo.
+- **Notebook Sessions** son el espacio de desarrollo interactivo con Python y ADS SDK.
+- **ADS SDK** es el motor de interacción con datos, entrenamiento y despliegue, simplificando procesos complejos.
+- **Conda** mantiene el entorno limpio y reproducible.
+- Los **Models** se entrenan dentro de notebooks y se almacenan en el **Model Catalog**, donde se trazan y comparten.
+- **Model Deployment** convierte los modelos en servicios web accesibles por otras apps.
+- Los **Jobs** automatizan tareas recurrentes de ML.
+- Todo está disponible y controlado desde la **OCI Console**, facilitando la gestión sin necesidad de infraestructura propia.
+
+---
+
+¿Querés que prepare una versión visual de esto para tu archivo o lo armamos como sección de resumen en tu guía del curso? También lo podemos convertir en fichas temáticas para repasar cada módulo. Vos decís 💡.
+
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+En el contexto de Oracle y la certificación que estás cursando, **ADS** significa **Accelerated Data Science**. Es un módulo de Python desarrollado por Oracle que forma parte del entorno de trabajo en **OCI (Oracle Cloud Infrastructure)**.
+
+### 🧠 ¿Qué es ADS (Accelerated Data Science)?
+
+ADS es una biblioteca que facilita el trabajo de los científicos de datos en OCI. Su objetivo es **acelerar el ciclo completo de desarrollo de modelos de machine learning**, desde la carga de datos hasta el despliegue en producción.
+
+### 🔧 Funcionalidades clave de ADS
+
+- **Conexión a múltiples fuentes de datos**: bases Oracle, Object Storage, S3, Azure, NoSQL, etc.
+- **Visualización y análisis exploratorio**: mapas de calor, estadísticas resumidas, gráficos automáticos.
+- **Ingeniería de características**: sugerencias automáticas, codificación, imputación, transformaciones.
+- **Entrenamiento de modelos**: incluye AutoML, ajuste de hiperparámetros con `ADSTuner`.
+- **Evaluación de modelos**: métricas y gráficos según el tipo de problema (clasificación, regresión).
+- **Interpretabilidad**: explicaciones locales y globales, gráficos PDP y ALE.
+- **Despliegue en producción**: empaquetado, registro en el catálogo de modelos, integración con OCI Logging.
+
+### 🧩 Metáfora Ctrl+BA
+
+Podríamos decir que ADS es como tu **“framework de productividad científica”**: modular, escalable, y con validaciones progresivas. Te permite trabajar como si tuvieras un equipo de asistentes técnicos que automatizan lo tedioso y te dejan enfocarte en lo estratégico.
+
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+Oracle ADS facilita la **integración segura de credenciales** para acceder a servicios como **Autonomous Database** y **Big Data Service**, sin necesidad de que el científico de datos escriba directamente sus claves en el código. Vamos paso por paso:
+
+---
+
+### 🛡️ ¿Qué es el "Vault"?
+El **Vault** en OCI (Oracle Cloud Infrastructure) es un servicio que permite **almacenar secretos, contraseñas, claves, certificados** de forma segura y encriptada.
+
+---
+
+### 🔐 ¿Qué hace la clase “Secret Keeper”?
+ADS incluye un conjunto de clases —la familia de "Secret Keeper"— que se encargan de:
+
+- **Conectarse al Vault**
+- Leer el archivo **DTP Wallet**, que guarda los datos de conexión
+- Usar esas credenciales para establecer conexiones seguras con bases como **ADB (Autonomous Database)** y servicios como **Big Data Service (BDS)**
+
+👉 Esto significa que el usuario no necesita poner su contraseña directamente en el notebook. Todo se hace de forma transparente.
+
+---
+
+### ⚙️ ¿Por qué es útil para el Data Scientist?
+
+- **Seguridad reforzada**: no hay exposición de credenciales en el código.
+- **Reutilización**: se puede usar el mismo mecanismo para múltiples servicios.
+- **Escalabilidad**: ideal para equipos y entornos productivos donde las credenciales se gestionan de forma centralizada.
+
+📦 Es como tener una “llave maestra” que abre las puertas de tus datos sin tener que repetir la clave cada vez. Y ADS se encarga de interpretar esa llave para ti.
+
+---
+
+******************************************************************************************************************************************
+******************************************************************************************************************************************
+
+¡Por supuesto, Claudio! Ese párrafo resume algunas capacidades potentes que trae la biblioteca **ADS (Accelerated Data Science)**, y te lo explico en partes con ejemplos prácticos y enfoque didáctico para tu guía `.md`:
+
+---
+
+## 🧪 Exploratory Data Analysis (EDA) con "Feature Types"
+
+🔍 **¿Qué dice el párrafo?**  
+ADS busca mejorar las tareas comunes del Data Scientist, como el análisis exploratorio de datos, usando "feature types".
+
+🎯 **¿Qué significa?**  
+Un **"feature type"** es una clase que agrupa atributos similares y define cómo deben visualizarse, resumirse o transformarse. En lugar de crear gráficos manuales o estadísticas cada vez, ADS automatiza esto.
+
+🛠️ **Ejemplo práctico**  
+En un hotel, podrías tener variables como `edad_del_cliente`, `número_de_noches`, `calificación_del_servicio`. ADS detecta automáticamente si son numéricas, categóricas, fechas, etc., y aplica visualizaciones y resúmenes adecuados a cada tipo.
+
+---
+
+## 🎛️ Optimización de Hiperparámetros con ADSTuner
+
+🔍 **¿Qué dice el párrafo?**  
+ADS también ayuda a optimizar los hiperparámetros mediante el componente llamado **ADSTuner**.
+
+🎯 **¿Qué significa?**  
+Los **hiperparámetros** son configuraciones internas de un modelo (como el número de árboles en un Random Forest, o la tasa de aprendizaje en XGBoost). Ajustarlos puede mejorar el rendimiento del modelo.
+
+⚙️ **ADSTuner** prueba combinaciones de estos valores y encuentra la mejor configuración automáticamente.
+
+🛠️ **Ejemplo práctico**  
+Si estás entrenando un modelo para predecir la cancelación de reservas, ADSTuner puede mejorar la precisión ajustando los parámetros sin que tengas que hacerlo manualmente.
+
+---
+
+## 🤖 Auto Machine Learning (AutoML)
+
+🔍 **¿Qué dice el párrafo?**  
+La biblioteca ADS también provee AutoML: una forma de automatizar todo el proceso de entrenamiento de modelos.
+
+🎯 **¿Qué significa?**  
+AutoML prueba distintos algoritmos (SVM, árbol de decisión, XGBoost, etc.), ajusta hiperparámetros, y compara el rendimiento entre ellos. Vos solo le das los datos y elegís el objetivo.
+
+🛠️ **Ejemplo práctico**  
+Subís tu dataset de clientes, indicás que querés predecir `cancelación = sí/no`, y ADS elige y entrena los mejores modelos por vos.
+
+---
+
+## 🔍 Explicabilidad del Modelo (Explainability)
+
+🔍 **¿Qué dice el párrafo?**  
+ADS también incluye herramientas para interpretar lo que hace el modelo.
+
+🎯 **¿Qué significa?**  
+Esto te permite entender por qué el modelo tomó ciertas decisiones. ¿Fue por la antigüedad del cliente? ¿Por la calificación de su estadía anterior?
+
+📊 ADS genera gráficos como:
+- **PDP (Partial Dependence Plot)**: cómo cambia la predicción cuando se modifica una sola variable.
+- **ALE (Accumulated Local Effects)**: relaciones locales entre variables y predicción.
+
+🛠️ **Ejemplo práctico**  
+Un modelo predice que cierto huésped cancelará. ADS te muestra que es porque ya canceló dos veces antes y viene en temporada baja.
+
+---
+
+
+
+¡Genial, Claudio! Entonces arrancamos con la primera entrega de la librería base para el server Ctrl+BA 💡📦. Te propongo esta estructura inicial, pensada para mantener orden, claridad, y escalabilidad:
+
+---
+
+### 📚 Librería Base de Snippets – Ctrl+BA
+
+#### 🔑 Autenticación y acceso básico a APIs de OCI
+
+```markdown
+#### Interfaces para interactuar con las APIs de OCI
+
+| Interfaz         | Modo de autenticación                         | Notas clave                         | Script                                                                 |
+|------------------|-----------------------------------------------|-------------------------------------|------------------------------------------------------------------------|
+| **ADS SDK**      | Resource Principal / Config File + API Key    | Recomendado usar Resource Principal | `import ads`<br>`ads.set_auth(auth='resource_principal')`              |
+| **OCI Python SDK** | Resource Principal / Config File + API Key | Config para IAM user                | `import oci`<br>`from oci.data_science import DataScienceClient`<br>`rps = oci.auth.signers.get_resource_principals_signer()`<br>`dsc = DataScienceClient(config={}, signer=rps)` |
+| **OCI CLI**      | Resource Principal / Config File + API Key    | Ideal para automatización           | `oci data-science project list --`<br>`auth resource_principal`        |
+```
+
+#### 🧪 Ejemplo de función para testear SDK en notebooks
+
+```python
+def get_projects():
+    from oci.data_science import DataScienceClient
+    import oci
+
+    signer = oci.auth.signers.get_resource_principals_signer()
+    dsc = DataScienceClient(config={}, signer=signer)
+
+    response = dsc.list_projects(compartment_id='TU_COMPARTMENT_OCID')
+    for project in response.data:
+        print(f"🔸 {project.display_name} – {project.id}")
+```
+
+<!-- 🎯 
+- ¿Querés que lo versionemos en módulos, tipo “Snippets Base”, “Validaciones”, “ETL”, “Deploys”? También puedo ayudarte a subirlo como gist, MD compartido, o incluso documentarlo como canal en el server con permisos de edición para los líderes técnicos.
+- ¿Te gustaría sumar contribuciones de miembros? Podríamos armar una especie de repositorio comunitario, y abrir un canal de "Pull Requests" de snippets, con revisión colaborativa y emojis de aprobación. 😄🤝 -->
+
+
+
