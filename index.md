@@ -1,7 +1,7 @@
 # <center>🌐 Bienvenido a Ciencia de Datos</center>
-
-
   
+
+   
 ## 📚 Índice temático del curso OCI Data Science 
 
 ### 1. **Bienvenida e Introducción General**
