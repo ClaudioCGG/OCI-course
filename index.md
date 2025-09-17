@@ -1,5 +1,7 @@
-# <center><h1>🌐 Bienvenido a Ciencia de Datos</h1></center></br>
+# <center>🌐 Bienvenido a Ciencia de Datos</center>
 
+
+  
 ## 📚 Índice temático del curso OCI Data Science 
 
 ### 1. **Bienvenida e Introducción General**
@@ -56,11 +58,9 @@
 - Notebooks de ejemplo para crear credenciales</br></br>
 
 ************************************************************************************************************
-</br>
-</br>
 
 
-
+  
 ### -- Visión General del Curso
 
 Bienvenidos todos al curso de Ciencia de Datos de Oracle Cloud Infrastructure. La ciencia de datos es el arte y la ciencia de extraer conocimientos valiosos de los datos para resolver problemas del mundo real y de negocios.
@@ -813,21 +813,17 @@ En esta lección cubrimos:
 - Cómo trabajar con resource principals en distintos entornos.
 - Uso de archivos de configuración de OCI.
 
-</br>
-</br>
-</br>
 
 
-
-
+  
 ---
-<h1>## 🧠 Unidad 3: Diseño y configuración del espacio de trabajo</h1>
+# 🧠 Unidad 3: Diseño y configuración del espacio de trabajo
 
 ### 🎓 Módulo 2: Workspace Design and Setup  
 Instructor: *John Stanseby*
 ---
 
-<h2>Projects</h2>
+## Projects
 ## 📌 Tema central: El proyecto como componente principal
 
 Un **proyecto de ciencia de datos** en OCI es un espacio colaborativo donde los equipos organizan su trabajo en torno a un caso de uso o pregunta de negocio.  
@@ -901,7 +897,7 @@ Ejemplo: usar la variable de entorno del notebook para crear el proyecto en el m
 
 ---
 
-<h2>Notebook Sessions en OCI</h2>
+## Notebook Sessions en OCI
 
 ### 🧠 ¿Qué son?
 - Interfaces JupyterLab gestionadas por OCI para construir y entrenar modelos ML.
@@ -936,8 +932,11 @@ Ejemplo: usar la variable de entorno del notebook para crear el proyecto en el m
 - Uso de CPU y memoria.
 - Tráfico de red (bytes in/out).
 
+
+
+  
 ---
-<h2>JupyterLab</h2>
+# JupyterLab
 
 ## 🧪 Unidad: Cómo trabajar con JupyterLab en OCI
 
@@ -960,7 +959,6 @@ Aunque la estructura es similar, en OCI se agregan:
 - **Extensión GitHub**: para control de versiones dentro del notebook.
 
 ---
-
 ## 🧭 Componentes de la interfaz
 
 ### 🔝 Barra superior (Chrome bar)
@@ -991,7 +989,6 @@ Aunque la estructura es similar, en OCI se agregan:
 - **Kernel-backed documents**: permiten ejecutar código desde cualquier archivo de texto.
 - **Vista múltiple**: edición en vivo desde distintos editores o visores.
 - **Gestión de kernels**: desde el menú *Kernel*, se accede a acciones como reiniciar, detener o cambiar kernel.
-
 
 ---
 
@@ -1117,8 +1114,9 @@ Podés usar JupyterLab para:
 - Explorar entornos Conda para pruebas familiares
 
 ---
-</br>
-</br>
+
+
+  
 
 # <h1>Conda Environments en OCI Data Science</h1>
 
@@ -1168,8 +1166,8 @@ Una interfaz gráfica dentro de JupyterLab que te permite:
 
 ---
 
-</br>
-</br>
+
+  
 
 <h1> Conda </h1>
 ---
@@ -1320,9 +1318,8 @@ Los entornos Conda en OCI Data Science son una solución modular, escalable y de
 | **TensorBoard**          | Visualización de métricas de entrenamiento.                                                | TensorFlow                                         |
 
 
-
-</br>
-</br>
+  
+ 
 ---
 
 # 🧠 Gestión de entornos Conda con la herramienta de línea de comandos `odsc`
@@ -1515,10 +1512,7 @@ odsc conda create --file <ruta/environment.yaml>
 La CLI `odsc` es la herramienta más potente para gestionar entornos Conda en OCI. Te permite no solo instalar y explorar, sino también clonar, modificar, publicar y crear entornos personalizados, asegurando control total sobre tu infraestructura de ciencia de datos.
 
 
-
-</br>
-</br>
-
+  
 ---
 
 # 🧠 Demo: Gestión de entornos Conda con la CLI `odsc`
@@ -1777,9 +1771,10 @@ Resumen de operaciones vistas
 | **Crear**     | `odsc conda create --file ...`             | Nuevo entorno desde YAML |
 
 
+  
+  
 
-</br>
-</br>
+  
 ---
 # 🧠 OCI Vault: Gestión segura de secretos y claves para Data Science
 
