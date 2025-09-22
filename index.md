@@ -1,4 +1,4 @@
-# <center><h1>🌐 Bienvenido a Ciencia de Datos</h1></center></br>
+# <center>🌐 Bienvenido a Ciencia de Datos</center>
 
 ## 📚 Índice temático del curso OCI Data Science 
 

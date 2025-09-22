@@ -249,3 +249,253 @@ Por ejemplo, se integra con Autonomous Database y el servicio de Big Data median
 
 *************************************************************
 
+# 🔄 Módulo: Machine Learning Lifecycle  
+## 📘 Capítulo: ML Lifecycle Overview – Parte 1
+
+### 1. Introducción
+
+Bienvenido al módulo sobre el ciclo de vida del aprendizaje automático (*Machine Learning Lifecycle*).  
+Esta primera lección ofrece una **visión general** del ciclo de vida de ML.  
+Soy Wes Prichard, gerente principal de producto para Data Science y Servicios de IA en Oracle.
+
+---
+
+### 2. ¿Por qué es importante el ciclo de vida de ML?
+
+Las organizaciones buscan herramientas **versátiles y productivas** para sus científicos de datos, y desean que esas herramientas cubran **todo el ciclo de vida del aprendizaje automático**.  
+Cuanto más fácil y eficiente sea este ciclo, más rápido y frecuentemente se podrán obtener resultados valiosos para la organización.
+
+---
+
+### 3. Las 6 etapas del ciclo de vida
+
+Usaremos una versión simplificada del ciclo de vida, compuesta por **6 pasos**:
+
+1. **Acceso a los datos**  
+2. **Exploración y preparación de los datos**  
+3. **Modelado** (construcción y entrenamiento del modelo)  
+4. **Validación del modelo**  
+5. **Despliegue del modelo**  
+6. **Monitoreo del modelo** (que puede llevar a su actualización o retiro)
+
+🔹 Todo comienza con un **problema de negocio**, que define el objetivo del modelo.
+
+---
+
+### 4. Un proceso iterativo
+
+Construir un modelo de ML es un proceso **iterativo**.  
+Los pasos se repiten y ajustan hasta que el rendimiento del modelo sea satisfactorio.
+
+💡 Existen representaciones más complejas del ciclo de vida, como **CRISP-DM** (*Cross Industry Standard Process for Data Mining*), que podés explorar por tu cuenta.  
+Para este curso, usaremos el ciclo simplificado como marco para abordar las tareas clave del científico de datos.
+
+---
+
+### 5. Acceso y adquisición de datos
+
+Todo modelo de ML comienza con **datos**.  
+En OCI Data Science, es útil almacenar los datos en la sesión de notebook para acceder rápidamente.
+
+- El primer paso es **acceder y recopilar los datos** en el notebook.
+- Conocer el **ecosistema de datos** de la organización ayuda a identificar fuentes potenciales.
+
+#### Fuentes de datos comunes:
+- **Sistemas de gestión de datos empresariales** (bases de datos, data lakes).
+- **Pipelines de ingestión** desarrollados por ingenieros de datos y ML.
+- **Datos no estructurados**: logs, texto, imágenes, videos.
+- **Catálogo de datos**: útil para localizar conjuntos existentes.
+- **Fuentes externas**:
+  - Datos públicos (gobiernos, open data).
+  - Scraping web.
+  - Proveedores de datos.
+  - Encuestas, sensores, cámaras, clickstream.
+
+---
+
+### 6. Exploración y preparación de datos
+
+Una vez obtenidos los datos, el científico de datos debe:
+
+- **Explorar** y **visualizar** los datos.
+- **Transformarlos** y repetir el proceso si es necesario.
+- **Prepararlos**: limpieza y procesamiento antes del análisis.
+
+#### Tareas típicas:
+- Identificar y corregir datos corruptos, duplicados o incompletos.
+- Determinar si los datos están **etiquetados** (ej. imágenes con bounding boxes).
+- Si no lo están, usar servicios como **OCI Data Labeling Cloud Service**.
+
+---
+
+### 7. Análisis exploratorio y estadístico
+
+Después de la limpieza, se analizan las **features** (variables):
+
+- Identificar relaciones entre variables.
+- Decidir transformaciones adicionales.
+- Usar herramientas de análisis estadístico y visualización.
+
+#### Preguntas clave:
+- ¿Qué tipo de features hay?
+- ¿Cuál es la distribución de valores?
+- ¿Hay valores nulos o inválidos?
+- ¿Existen outliers?
+- ¿Hay sesgos o correlaciones?
+- ¿Es necesario normalizar o transformar (ej. log)?
+- ¿Cómo manejar categorías con cola larga?
+
+---
+
+### 8. Ingeniería de features
+
+Durante la exploración, se pueden crear nuevas features que representen mejor los datos.
+
+Ejemplo:  
+En un dataset de tráfico con conteo por hora, podés crear una feature que agrupe las horas en franjas como:
+
+- Madrugada  
+- Mañana  
+- Tarde  
+- Noche  
+
+Para features categóricas, suele ser necesario convertirlas en binarias (una por categoría).
+
+---
+
+### 9. Modelado (inicio)
+
+La etapa de modelado consiste en:
+
+- Elegir el algoritmo de ML adecuado.
+- Seleccionar las features que alimentarán el modelo.
+
+🔹 En el primer paso, el científico de datos debe decidir **qué tipo de modelo** es apropiado para resolver el problema planteado.
+
+---
+
+### 10. Tipos de aprendizaje automático
+
+Existen dos tipos principales:
+
+- **Aprendizaje supervisado**:  
+  - El modelo aprende a partir de datos de entrada asociados a una **salida o etiqueta**.  
+  - Ejemplos: clasificación, regresión.
+
+- **Aprendizaje no supervisado**:  
+  - El modelo trabaja con datos **sin etiquetas**.  
+  - Ejemplo: segmentación de clientes → el modelo asigna los segmentos automáticamente.
+
+---
+
+### 11. Selección de algoritmos y entrenamiento
+
+- Se utilizan diferentes clases de modelos para problemas supervisados y no supervisados.
+- Los científicos de datos suelen probar **múltiples algoritmos** y generar **varios candidatos de modelos**.
+- No se sabe de antemano cuál funcionará mejor → se experimenta.
+
+Durante el entrenamiento:
+
+- Se prueban distintos **subconjuntos de features** como entrada.
+- Reducir el número de variables:
+  - Disminuye el costo computacional.
+  - Mejora la generalización.
+  - Puede mejorar el rendimiento.
+
+---
+
+### 12. División del conjunto de datos
+
+- **Training set** → para entrenar el modelo.  
+- **Testing set** → para evaluar el rendimiento en datos no vistos.
+
+---
+
+### 13. Evaluación del modelo
+
+Una vez entrenado, se debe evaluar su **idoneidad**.
+
+- Hay herramientas open-source para calcular y visualizar métricas.
+- Elegir las métricas adecuadas depende del **problema de negocio**.
+
+#### Ejemplos:
+
+- **Clasificación**:
+  - Métrica común: **accuracy**.
+  - Pero en casos como detección de enfermedades raras, es mejor usar:
+    - **Precisión** y **recall**.
+    - **Matriz de confusión**: TP, TN, FP, FN.
+
+- **Regresión**:
+  - **RMSE** (error cuadrático medio).
+  - **MAE** (error absoluto medio).
+  - **R²** (coeficiente de determinación).
+
+- **No supervisado**:
+  - Se busca que los **clusters** tengan alta cohesión interna.
+
+---
+
+### 14. Guardado de modelos
+
+- Los modelos se guardan en formatos como:
+  - **Pickle**
+  - **ONNX**
+  - **PMML**
+- OCI Data Science ofrece un **catálogo de modelos** para preservarlos.
+
+Según el objetivo, el trabajo puede ser:
+
+- Prueba de concepto.
+- Experimentación.
+- Despliegue en producción.
+
+---
+
+### 15. Despliegue del modelo
+
+Proceso de poner el modelo en uso.  
+También se debe desplegar el **pipeline de transformación de datos**.
+
+- Los científicos de datos colaboran con **ingenieros MLOps**.
+- El despliegue puede ser:
+  - **Batch**: inferencias programadas (ej. cada hora/día).
+  - **Tiempo real**: activadas por eventos (ej. detección de fraude en pagos).
+
+#### Consideraciones:
+- ¿Qué tan rápido se necesita la respuesta? ¿Milisegundos o segundos?
+- ¿Cuántas solicitudes se esperan?
+- ¿Qué tamaño tienen los datos?
+
+---
+
+### 16. Monitoreo del modelo
+
+Paso desafiante pero esencial para mantener la **eficacia** del modelo.
+
+Dos componentes:
+
+1. **Monitoreo estadístico (drift)**:
+   - Las métricas pueden degradarse con el tiempo.
+   - Ejemplo: valores fuera del rango del entrenamiento, cambios en la distribución.
+
+2. **Monitoreo operacional (ops)**:
+   - Latencia de respuesta.
+   - Uso de memoria y CPU.
+   - Rendimiento y confiabilidad del sistema.
+   - Logs y métricas para diagnóstico.
+
+---
+
+### 17. Iteración continua
+
+El aprendizaje automático es un proceso **altamente iterativo**.  
+Los pasos se repiten múltiples veces hasta alcanzar el objetivo de negocio.
+
+---
+
+### 18. Próximas lecciones
+
+En las siguientes lecciones, veremos cómo **OCI Data Science** ayuda a los científicos de datos a ejecutar cada etapa del ciclo de vida de ML.
+
+---
