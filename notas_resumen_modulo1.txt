@@ -248,254 +248,228 @@ Por ejemplo, se integra con Autonomous Database y el servicio de Big Data median
 
 
 *************************************************************
-
-# 🔄 Módulo: Machine Learning Lifecycle  
-## 📘 Capítulo: ML Lifecycle Overview – Parte 1
+---
+# 📥 Lección: Access Data – Parte 1  
+## 🔍 Acceso a datos en OCI Data Science
 
 ### 1. Introducción
 
-Bienvenido al módulo sobre el ciclo de vida del aprendizaje automático (*Machine Learning Lifecycle*).  
-Esta primera lección ofrece una **visión general** del ciclo de vida de ML.  
-Soy Wes Prichard, gerente principal de producto para Data Science y Servicios de IA en Oracle.
+Hola y bienvenido a la siguiente lección del curso de Oracle Cloud Infrastructure Data Science.  
+Soy Himanshu Raj, científico de datos y líder senior de entrenamiento en AI/ML en Oracle.
+
+En esta lección aprenderemos sobre el **primer paso del ciclo de vida del aprendizaje automático**:  
+👉 **Acceder a los datos**.
+
+También veremos:
+
+- Por qué necesitamos datos.
+- Cómo se recopilan.
+- Cuáles son las fuentes clave para acceder a datos en OCI Data Science.
 
 ---
 
-### 2. ¿Por qué es importante el ciclo de vida de ML?
+### 2. ¿Por qué necesitamos datos?
 
-Las organizaciones buscan herramientas **versátiles y productivas** para sus científicos de datos, y desean que esas herramientas cubran **todo el ciclo de vida del aprendizaje automático**.  
-Cuanto más fácil y eficiente sea este ciclo, más rápido y frecuentemente se podrán obtener resultados valiosos para la organización.
+Toda aplicación o servicio, digital o no, **genera información**.  
+Esta información puede clasificarse según su tamaño o fuente:
 
----
+- **Datos por lotes (batch)**: generados con el tiempo por cargas diarias (ej. backups, migraciones).
+- **Datos de servicios de streaming**: mensajes o logs de eventos de usuario e IoT.
+- **Datos de aplicaciones**: generados por llamadas a APIs, eventos de aplicaciones, archivos de log, etc.
 
-### 3. Las 6 etapas del ciclo de vida
-
-Usaremos una versión simplificada del ciclo de vida, compuesta por **6 pasos**:
-
-1. **Acceso a los datos**  
-2. **Exploración y preparación de los datos**  
-3. **Modelado** (construcción y entrenamiento del modelo)  
-4. **Validación del modelo**  
-5. **Despliegue del modelo**  
-6. **Monitoreo del modelo** (que puede llevar a su actualización o retiro)
-
-🔹 Todo comienza con un **problema de negocio**, que define el objetivo del modelo.
+🔁 Estos datos deben ser **traídos a OCI** para su preprocesamiento y entrenamiento de modelos.  
+Podés acceder a ellos desde la **interfaz gráfica** o desde la **línea de comandos** usando librerías específicas.
 
 ---
 
-### 4. Un proceso iterativo
+### 3. ¿Qué rol cumple el dato en ciencia de datos?
 
-Construir un modelo de ML es un proceso **iterativo**.  
-Los pasos se repiten y ajustan hasta que el rendimiento del modelo sea satisfactorio.
+La ciencia de datos es una disciplina multidisciplinaria que necesita datos para:
 
-💡 Existen representaciones más complejas del ciclo de vida, como **CRISP-DM** (*Cross Industry Standard Process for Data Mining*), que podés explorar por tu cuenta.  
-Para este curso, usaremos el ciclo simplificado como marco para abordar las tareas clave del científico de datos.
+- Formular hipótesis y extraer conclusiones.
+- Realizar investigaciones basadas en datos.
+- Resolver problemas concretos.
 
----
-
-### 5. Acceso y adquisición de datos
-
-Todo modelo de ML comienza con **datos**.  
-En OCI Data Science, es útil almacenar los datos en la sesión de notebook para acceder rápidamente.
-
-- El primer paso es **acceder y recopilar los datos** en el notebook.
-- Conocer el **ecosistema de datos** de la organización ayuda a identificar fuentes potenciales.
-
-#### Fuentes de datos comunes:
-- **Sistemas de gestión de datos empresariales** (bases de datos, data lakes).
-- **Pipelines de ingestión** desarrollados por ingenieros de datos y ML.
-- **Datos no estructurados**: logs, texto, imágenes, videos.
-- **Catálogo de datos**: útil para localizar conjuntos existentes.
-- **Fuentes externas**:
-  - Datos públicos (gobiernos, open data).
-  - Scraping web.
-  - Proveedores de datos.
-  - Encuestas, sensores, cámaras, clickstream.
+💡 Preguntas clave:
+- ¿Qué tipo de datos necesito para resolver este problema?
+- ¿Con los datos que ya tengo, puedo resolver problemas existentes?
 
 ---
 
-### 6. Exploración y preparación de datos
+### 4. Fuentes clave de datos en OCI Data Science
 
-Una vez obtenidos los datos, el científico de datos debe:
+Estas son algunas de las fuentes más comunes (aunque no las únicas):
 
-- **Explorar** y **visualizar** los datos.
-- **Transformarlos** y repetir el proceso si es necesario.
-- **Prepararlos**: limpieza y procesamiento antes del análisis.
-
-#### Tareas típicas:
-- Identificar y corregir datos corruptos, duplicados o incompletos.
-- Determinar si los datos están **etiquetados** (ej. imágenes con bounding boxes).
-- Si no lo están, usar servicios como **OCI Data Labeling Cloud Service**.
-
----
-
-### 7. Análisis exploratorio y estadístico
-
-Después de la limpieza, se analizan las **features** (variables):
-
-- Identificar relaciones entre variables.
-- Decidir transformaciones adicionales.
-- Usar herramientas de análisis estadístico y visualización.
-
-#### Preguntas clave:
-- ¿Qué tipo de features hay?
-- ¿Cuál es la distribución de valores?
-- ¿Hay valores nulos o inválidos?
-- ¿Existen outliers?
-- ¿Hay sesgos o correlaciones?
-- ¿Es necesario normalizar o transformar (ej. log)?
-- ¿Cómo manejar categorías con cola larga?
+- **OCI Object Storage**
+- **Almacenamiento local**
+- **Oracle Autonomous Databases**
+- **MySQL**
+- **Amazon S3**
+- **Endpoints HTTPS**
+- **DatasetBrowser**
+- **PyArrow**
 
 ---
 
-### 8. Ingeniería de features
+### 5. Acceso a Oracle Object Storage
 
-Durante la exploración, se pueden crear nuevas features que representen mejor los datos.
+Para cargar un `DataFrame` desde Object Storage:
 
-Ejemplo:  
-En un dataset de tráfico con conteo por hora, podés crear una feature que agrupe las horas en franjas como:
+- Usá el ejemplo proporcionado, reemplazando el nombre del bucket y archivo.
+- Podés autenticarte usando:
+  - **API Key**
+  - **Resource Principal** (usualmente en funciones serverless)
 
-- Madrugada  
-- Mañana  
-- Tarde  
-- Noche  
+🔐 El módulo `set_auth` permite habilitar o deshabilitar la identidad del principal o del par de claves en una sesión abierta.
 
-Para features categóricas, suele ser necesario convertirlas en binarias (una por categoría).
-
----
-
-### 9. Modelado (inicio)
-
-La etapa de modelado consiste en:
-
-- Elegir el algoritmo de ML adecuado.
-- Seleccionar las features que alimentarán el modelo.
-
-🔹 En el primer paso, el científico de datos debe decidir **qué tipo de modelo** es apropiado para resolver el problema planteado.
+📚 Para más detalles, consultá la documentación de la clase ADS.
 
 ---
 
-### 10. Tipos de aprendizaje automático
+### 6. Acceso a almacenamiento local
 
-Existen dos tipos principales:
+Podés acceder a archivos locales usando funciones como:
 
-- **Aprendizaje supervisado**:  
-  - El modelo aprende a partir de datos de entrada asociados a una **salida o etiqueta**.  
-  - Ejemplos: clasificación, regresión.
-
-- **Aprendizaje no supervisado**:  
-  - El modelo trabaja con datos **sin etiquetas**.  
-  - Ejemplo: segmentación de clientes → el modelo asigna los segmentos automáticamente.
+```python
+pandas.read_csv("ruta/al/archivo.csv")
+```
 
 ---
 
-### 11. Selección de algoritmos y entrenamiento
+### 7. Acceso a Oracle Autonomous Databases
 
-- Se utilizan diferentes clases de modelos para problemas supervisados y no supervisados.
-- Los científicos de datos suelen probar **múltiples algoritmos** y generar **varios candidatos de modelos**.
-- No se sabe de antemano cuál funcionará mejor → se experimenta.
+OCI Data Science soporta ambos servicios de Autonomous Database.
 
-Durante el entrenamiento:
+- Usá `ads.read_sql`, que es **15 veces más rápido** que `pandas.read_sql`.
+- Esto se debe a que **evita el ORM** y está optimizado para bases de datos Oracle.
 
-- Se prueban distintos **subconjuntos de features** como entrada.
-- Reducir el número de variables:
-  - Disminuye el costo computacional.
-  - Mejora la generalización.
-  - Puede mejorar el rendimiento.
+#### Si usás un wallet file:
+- Definí los parámetros de conexión y la ubicación del wallet.
+- Luego ejecutá la consulta con `ads.read_sql`.
+
+#### Si no usás wallet:
+- Definí `hostname` y `port` en el diccionario `connection_parameters`.
+- ⚠️ Esta opción está disponible solo en **ADS versión 2.5.6 o superior**.
+
+🔐 Se recomienda usar **bind variables** para evitar ataques de inyección SQL.
+
+📉 El rendimiento puede verse afectado por factores como la red, latencia, etc.
+
+---
+# 📥 Lección: Access Data – Parte 2  
+## 🔍 Acceso a datos en OCI Data Science (continuación)
+
+### 8. Optimización del acceso a bases de datos
+
+El **tiempo de respuesta** de una base de datos puede mejorar significativamente mediante:
+
+- Uso de **índices**.
+- Escritura de **consultas SQL eficientes**.
+
+🔹 Aunque la red de OCI es muy rápida, factores como VPNs o topologías complejas pueden afectar el rendimiento.  
+Es importante considerar el **tiempo necesario para acceder a los datos**.
 
 ---
 
-### 12. División del conjunto de datos
+### 9. Acceso a MySQL
 
-- **Training set** → para entrenar el modelo.  
-- **Testing set** → para evaluar el rendimiento en datos no vistos.
+Podés seguir los mismos pasos que con Oracle Autonomous Database, pero:
 
----
+- Debés definir el motor como `"MySQL"`.
+- Esta funcionalidad está disponible a partir de **ADS versión 2.5.6**.
 
-### 13. Evaluación del modelo
+Para guardar un `DataFrame` en MySQL:
 
-Una vez entrenado, se debe evaluar su **idoneidad**.
-
-- Hay herramientas open-source para calcular y visualizar métricas.
-- Elegir las métricas adecuadas depende del **problema de negocio**.
-
-#### Ejemplos:
-
-- **Clasificación**:
-  - Métrica común: **accuracy**.
-  - Pero en casos como detección de enfermedades raras, es mejor usar:
-    - **Precisión** y **recall**.
-    - **Matriz de confusión**: TP, TN, FP, FN.
-
-- **Regresión**:
-  - **RMSE** (error cuadrático medio).
-  - **MAE** (error absoluto medio).
-  - **R²** (coeficiente de determinación).
-
-- **No supervisado**:
-  - Se busca que los **clusters** tengan alta cohesión interna.
+```python
+ads.to_sql(df, engine="MySQL", ...)
+```
 
 ---
 
-### 14. Guardado de modelos
+### 10. Acceso a Amazon S3
 
-- Los modelos se guardan en formatos como:
-  - **Pickle**
-  - **ONNX**
-  - **PMML**
-- OCI Data Science ofrece un **catálogo de modelos** para preservarlos.
-
-Según el objetivo, el trabajo puede ser:
-
-- Prueba de concepto.
-- Experimentación.
-- Despliegue en producción.
+- Archivos públicos o privados de **Amazon S3** pueden ser accedidos vía `pandas`.
+- Para archivos privados, debés pasar las **credenciales correctas** usando el diccionario `storage_options` de ADS.
 
 ---
 
-### 15. Despliegue del modelo
+### 11. Acceso vía HTTP/HTTPS
 
-Proceso de poner el modelo en uso.  
-También se debe desplegar el **pipeline de transformación de datos**.
+También podés acceder a datos desde **URLs** usando `pandas`:
 
-- Los científicos de datos colaboran con **ingenieros MLOps**.
-- El despliegue puede ser:
-  - **Batch**: inferencias programadas (ej. cada hora/día).
-  - **Tiempo real**: activadas por eventos (ej. detección de fraude en pagos).
-
-#### Consideraciones:
-- ¿Qué tan rápido se necesita la respuesta? ¿Milisegundos o segundos?
-- ¿Cuántas solicitudes se esperan?
-- ¿Qué tamaño tienen los datos?
+```python
+pd.read_csv("https://ejemplo.com/datos.csv")
+```
 
 ---
 
-### 16. Monitoreo del modelo
+### 12. Uso de DatasetBrowser
 
-Paso desafiante pero esencial para mantener la **eficacia** del modelo.
+ADS incluye el método `DatasetBrowser` para acceder fácilmente a conjuntos de datos bien definidos desde bibliotecas de referencia como:
 
-Dos componentes:
+- **Seaborn**
+- **Scikit-learn**
+- **GitHub**
 
-1. **Monitoreo estadístico (drift)**:
-   - Las métricas pueden degradarse con el tiempo.
-   - Ejemplo: valores fuera del rango del entrenamiento, cambios en la distribución.
+Podés listar los datasets disponibles con:
 
-2. **Monitoreo operacional (ops)**:
-   - Latencia de respuesta.
-   - Uso de memoria y CPU.
-   - Rendimiento y confiabilidad del sistema.
-   - Logs y métricas para diagnóstico.
+```python
+DatasetBrowser.list()
+```
 
----
+Y abrir uno específico con:
 
-### 17. Iteración continua
-
-El aprendizaje automático es un proceso **altamente iterativo**.  
-Los pasos se repiten múltiples veces hasta alcanzar el objetivo de negocio.
+```python
+DatasetBrowser.open("nombre_dataset")
+```
 
 ---
 
-### 18. Próximas lecciones
+### 13. Acceso a datos con PyArrow y OCI FS
 
-En las siguientes lecciones, veremos cómo **OCI Data Science** ayuda a los científicos de datos a ejecutar cada etapa del ciclo de vida de ML.
+ADS también permite editar y procesar datos grandes usando **PyArrow** a través de **OCI File Systems (OCI FS)**.
+
+- OCI FS es un sistema de archivos Pythonic que:
+  - Contiene información de conexión.
+  - Permite operaciones típicas de sistema de archivos.
+
+---
+
+### 14. Detección de tipos semánticos de datos
+
+ADS detecta automáticamente los **tipos semánticos** al abrir un dataset:
+
+- **Categóricos**: ej. color de ojos, talla de camisa.
+- **Ordinales**: ej. nivel educativo (primaria, secundaria, universidad).
+- **Continuos**: ej. altura, versiones de software.
+- **Fechas y horas**: formato datetime.
+
+Podés inspeccionar los tipos con:
+
+```python
+df.feature_types
+df.show_in_notebook()
+```
+
+---
+
+### 15. Fuentes y formatos soportados por ADS
+
+ADS soporta múltiples fuentes y formatos de datos en OCI Data Science.  
+📚 Están listados en la [documentación oficial](https://docs.oracle.com/es-ww/iaas/Content/data-science/using/overview.htm)¹.
+
+🔹 No se soportan directamente:
+- Archivos `.txt`, `.doc`, `.pdf`
+- Imágenes sin procesar
+- Estructuras como `list`, `tuple`, `range`
+
+Pero ADS incluye un **módulo de extracción de texto** para convertir `.PDF` o `.DOC` en texto plano.
+
+---
+
+### 16. Cierre de la lección
+
+Esperamos que esta lección te haya sido útil para aprender cómo acceder a datos desde fuentes comunes en Oracle Data Science.  
+Este paso es esencial para iniciar cualquier flujo de trabajo de machine learning.
 
 ---

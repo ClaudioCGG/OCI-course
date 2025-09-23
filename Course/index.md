@@ -2922,10 +2922,230 @@ Los pasos se repiten múltiples veces hasta alcanzar el objetivo de negocio.
 En las siguientes lecciones, veremos cómo **OCI Data Science** ayuda a los científicos de datos a ejecutar cada etapa del ciclo de vida de ML.
 
 ---
+---
+# 📥 Lección: Access Data – Parte 1  
+## 🔍 Acceso a datos en OCI Data Science
 
+### 1. Introducción
 
+Hola y bienvenido a la siguiente lección del curso de Oracle Cloud Infrastructure Data Science.  
+Soy Himanshu Raj, científico de datos y líder senior de entrenamiento en AI/ML en Oracle.
+
+En esta lección aprenderemos sobre el **primer paso del ciclo de vida del aprendizaje automático**:  
+👉 **Acceder a los datos**.
+
+También veremos:
+
+- Por qué necesitamos datos.
+- Cómo se recopilan.
+- Cuáles son las fuentes clave para acceder a datos en OCI Data Science.
 
 ---
+
+### 2. ¿Por qué necesitamos datos?
+
+Toda aplicación o servicio, digital o no, **genera información**.  
+Esta información puede clasificarse según su tamaño o fuente:
+
+- **Datos por lotes (batch)**: generados con el tiempo por cargas diarias (ej. backups, migraciones).
+- **Datos de servicios de streaming**: mensajes o logs de eventos de usuario e IoT.
+- **Datos de aplicaciones**: generados por llamadas a APIs, eventos de aplicaciones, archivos de log, etc.
+
+🔁 Estos datos deben ser **traídos a OCI** para su preprocesamiento y entrenamiento de modelos.  
+Podés acceder a ellos desde la **interfaz gráfica** o desde la **línea de comandos** usando librerías específicas.
+
+---
+
+### 3. ¿Qué rol cumple el dato en ciencia de datos?
+
+La ciencia de datos es una disciplina multidisciplinaria que necesita datos para:
+
+- Formular hipótesis y extraer conclusiones.
+- Realizar investigaciones basadas en datos.
+- Resolver problemas concretos.
+
+💡 Preguntas clave:
+- ¿Qué tipo de datos necesito para resolver este problema?
+- ¿Con los datos que ya tengo, puedo resolver problemas existentes?
+
+---
+
+### 4. Fuentes clave de datos en OCI Data Science
+
+Estas son algunas de las fuentes más comunes (aunque no las únicas):
+
+- **OCI Object Storage**
+- **Almacenamiento local**
+- **Oracle Autonomous Databases**
+- **MySQL**
+- **Amazon S3**
+- **Endpoints HTTPS**
+- **DatasetBrowser**
+- **PyArrow**
+
+---
+
+### 5. Acceso a Oracle Object Storage
+
+Para cargar un `DataFrame` desde Object Storage:
+
+- Usá el ejemplo proporcionado, reemplazando el nombre del bucket y archivo.
+- Podés autenticarte usando:
+  - **API Key**
+  - **Resource Principal** (usualmente en funciones serverless)
+
+🔐 El módulo `set_auth` permite habilitar o deshabilitar la identidad del principal o del par de claves en una sesión abierta.
+
+📚 Para más detalles, consultá la documentación de la clase ADS.
+
+---
+
+### 6. Acceso a almacenamiento local
+
+Podés acceder a archivos locales usando funciones como:
+
+```python
+pandas.read_csv("ruta/al/archivo.csv")
+```
+
+---
+
+### 7. Acceso a Oracle Autonomous Databases
+
+OCI Data Science soporta ambos servicios de Autonomous Database.
+
+- Usá `ads.read_sql`, que es **15 veces más rápido** que `pandas.read_sql`.
+- Esto se debe a que **evita el ORM** y está optimizado para bases de datos Oracle.
+
+#### Si usás un wallet file:
+- Definí los parámetros de conexión y la ubicación del wallet.
+- Luego ejecutá la consulta con `ads.read_sql`.
+
+#### Si no usás wallet:
+- Definí `hostname` y `port` en el diccionario `connection_parameters`.
+- ⚠️ Esta opción está disponible solo en **ADS versión 2.5.6 o superior**.
+
+🔐 Se recomienda usar **bind variables** para evitar ataques de inyección SQL.
+
+📉 El rendimiento puede verse afectado por factores como la red, latencia, etc.
+
+---
+# 📥 Lección: Access Data – Parte 2  
+## 🔍 Acceso a datos en OCI Data Science (continuación)
+
+### 8. Optimización del acceso a bases de datos
+
+El **tiempo de respuesta** de una base de datos puede mejorar significativamente mediante:
+
+- Uso de **índices**.
+- Escritura de **consultas SQL eficientes**.
+
+🔹 Aunque la red de OCI es muy rápida, factores como VPNs o topologías complejas pueden afectar el rendimiento.  
+Es importante considerar el **tiempo necesario para acceder a los datos**.
+
+---
+
+### 9. Acceso a MySQL
+
+Podés seguir los mismos pasos que con Oracle Autonomous Database, pero:
+
+- Debés definir el motor como `"MySQL"`.
+- Esta funcionalidad está disponible a partir de **ADS versión 2.5.6**.
+
+Para guardar un `DataFrame` en MySQL:
+
+```python
+ads.to_sql(df, engine="MySQL", ...)
+```
+
+---
+
+### 10. Acceso a Amazon S3
+
+- Archivos públicos o privados de **Amazon S3** pueden ser accedidos vía `pandas`.
+- Para archivos privados, debés pasar las **credenciales correctas** usando el diccionario `storage_options` de ADS.
+
+---
+
+### 11. Acceso vía HTTP/HTTPS
+
+También podés acceder a datos desde **URLs** usando `pandas`:
+
+```python
+pd.read_csv("https://ejemplo.com/datos.csv")
+```
+
+---
+
+### 12. Uso de DatasetBrowser
+
+ADS incluye el método `DatasetBrowser` para acceder fácilmente a conjuntos de datos bien definidos desde bibliotecas de referencia como:
+
+- **Seaborn**
+- **Scikit-learn**
+- **GitHub**
+
+Podés listar los datasets disponibles con:
+
+```python
+DatasetBrowser.list()
+```
+
+Y abrir uno específico con:
+
+```python
+DatasetBrowser.open("nombre_dataset")
+```
+
+---
+
+### 13. Acceso a datos con PyArrow y OCI FS
+
+ADS también permite editar y procesar datos grandes usando **PyArrow** a través de **OCI File Systems (OCI FS)**.
+
+- OCI FS es un sistema de archivos Pythonic que:
+  - Contiene información de conexión.
+  - Permite operaciones típicas de sistema de archivos.
+
+---
+
+### 14. Detección de tipos semánticos de datos
+
+ADS detecta automáticamente los **tipos semánticos** al abrir un dataset:
+
+- **Categóricos**: ej. color de ojos, talla de camisa.
+- **Ordinales**: ej. nivel educativo (primaria, secundaria, universidad).
+- **Continuos**: ej. altura, versiones de software.
+- **Fechas y horas**: formato datetime.
+
+Podés inspeccionar los tipos con:
+
+```python
+df.feature_types
+df.show_in_notebook()
+```
+
+---
+
+### 15. Fuentes y formatos soportados por ADS
+
+ADS soporta múltiples fuentes y formatos de datos en OCI Data Science.  
+📚 Están listados en la [documentación oficial](https://docs.oracle.com/es-ww/iaas/Content/data-science/using/overview.htm)¹.
+
+🔹 No se soportan directamente:
+- Archivos `.txt`, `.doc`, `.pdf`
+- Imágenes sin procesar
+- Estructuras como `list`, `tuple`, `range`
+
+Pero ADS incluye un **módulo de extracción de texto** para convertir `.PDF` o `.DOC` en texto plano.
+
+---
+
+### 16. Cierre de la lección
+
+Esperamos que esta lección te haya sido útil para aprender cómo acceder a datos desde fuentes comunes en Oracle Data Science.  
+Este paso es esencial para iniciar cualquier flujo de trabajo de machine learning.
+
 ---
 
 
