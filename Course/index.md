@@ -2666,12 +2666,12 @@ En esta demostración:
 
 ---
 
-📌 **Conclusión**:  
+📌 **Conclusión**:
 Este flujo demuestra cómo **integrar Git y GitHub en un entorno de ciencia de datos con JupyterLab**, permitiendo versionar notebooks, colaborar y mantener sincronizados los repositorios locales y remotos.
 
 ---
----
-# 🔄 Módulo: Machine Learning Lifecycle  
+
+# 🔄 Módulo: Machine Learning Lifecycle - Ciclo de vida del aprendizaje automático
 ---
 ## 📘 Capítulo: ML Lifecycle Overview – Parte 1
 
@@ -2922,11 +2922,9 @@ Los pasos se repiten múltiples veces hasta alcanzar el objetivo de negocio.
 En las siguientes lecciones, veremos cómo **OCI Data Science** ayuda a los científicos de datos a ejecutar cada etapa del ciclo de vida de ML.
 
 ---
----
-# 📥 Lección: Access Data – Parte 1  
-## 🔍 Acceso a datos en OCI Data Science
+# 📥 Lección: Access Data – 🔍 Acceso a datos en OCI Data Science
 
-### 1. Introducción
+## 1. Introducción
 
 Hola y bienvenido a la siguiente lección del curso de Oracle Cloud Infrastructure Data Science.  
 Soy Himanshu Raj, científico de datos y líder senior de entrenamiento en AI/ML en Oracle.
@@ -3148,6 +3146,209 @@ Este paso es esencial para iniciar cualquier flujo de trabajo de machine learnin
 
 ---
 
+---
+
+# 🔍 Lección: Data Exploration and Preparation  
+## 📘 Exploración y preparación de datos en OCI Data Science
+
+### 1. Introducción
+
+Hola y bienvenido a esta nueva lección del curso de Oracle Cloud Infrastructure Data Science.  
+Soy Himanshu Raj, científico de datos y líder de entrenamiento en AI/ML en Oracle.
+
+En esta lección abordaremos el **segundo paso del ciclo de vida del aprendizaje automático**:  
+👉 **Exploración y preparación de datos**.
+
+Veremos:
+
+- Por qué es necesario el preprocesamiento.
+- Qué pasos incluye.
+- Herramientas de transformación de ADS.
+- Cómo dividir los datos en conjuntos de entrenamiento, prueba y validación.
+
+---
+
+### 2. ¿Por qué preprocesar los datos?
+
+Los datos reales suelen tener:
+
+- Valores faltantes.
+- Errores.
+- Outliers.
+- Formatos inconsistentes.
+
+🔧 Por eso, antes de buscar patrones, debemos **limpiar y transformar** los datos.
+
+El preprocesamiento puede incluir varios pasos, según el problema y el tipo de datos.  
+💡 Es común que esta etapa sea la más extensa del ciclo de vida de ML.
+
+---
+
+### 3. Operaciones básicas sobre datos
+
+Cuando los datos provienen de múltiples fuentes, debemos **combinarlos**.  
+ADS permite realizar operaciones como:
+
+- Agregar o eliminar filas/columnas.
+- Filtrar.
+- Concatenar vertical u horizontalmente.
+- Unir por columnas o índices.
+
+📌 Las operaciones de `pandas` también se aplican a objetos `ADSData`.
+
+---
+
+### 4. Limpieza y validación
+
+Es importante verificar:
+
+- Formatos y unidades.
+- Convenciones de nombres.
+- Tipos de datos.
+- Valores nulos.
+- Duplicados.
+- Estadísticas descriptivas.
+
+---
+
+### 5. Imputación de valores faltantes
+
+Los valores faltantes pueden deberse a errores humanos o técnicos.  
+Ejemplo: coordenadas GPS incorrectas por mal clima.
+
+Opciones:
+
+- ❌ Eliminar filas incompletas (no recomendado).
+- ✅ Imputar con:
+  - Media o mediana (para datos numéricos).
+  - Moda (para datos categóricos).
+
+---
+
+### 6. Codificación de variables categóricas
+
+- **Label Encoding** (`label_encoder`): convierte categorías en números.  
+  ⚠️ No recomendable para datos ordinales.
+
+- **One Hot Encoding**:
+  - Convierte una columna categórica en varias columnas binarias.
+  - Se puede hacer con `pandas.get_dummies()` o `fit_transform()`.
+
+---
+
+### 7. Detección de outliers
+
+Los outliers pueden ser errores o datos válidos pero atípicos.
+
+- Se detectan con:
+  - Visualizaciones: scatterplot, boxplot.
+  - Estadísticas: desviación estándar, distribución gaussiana.
+  - Algoritmos de ML (supervisado o no supervisado).
+
+📌 En aprendizaje no supervisado, se asume que los outliers son pocos y no siguen la misma tendencia.
+
+---
+
+### 8. Escalado de características
+
+El escalado ajusta las variables a una misma escala.  
+Es útil en algoritmos sensibles a distancias (ej. regresión).
+
+- **Normalización (Min-Max)**: valores entre 0 y 1.
+- **Estandarización**: media 0, desviación estándar 1 → distribución normal.
+
+---
+
+### 9. Reducción de dimensionalidad
+
+La **dimensionalidad** es el número de variables de entrada.
+
+- Alta dimensionalidad = mayor costo computacional.
+- Dos enfoques:
+  - **Selección de características**: elegir un subconjunto.
+  - **Extracción de características**: crear nuevas variables a partir de las existentes.
+
+---
+
+### 10. Preprocesamiento de texto
+
+Para datos textuales, se aplican técnicas como:
+
+- Vectorización.
+- Eliminación de stop words.
+- Tokenización.
+- POS tagging.
+- Stemming y lematización.
+
+---
+
+### 11. Herramientas de transformación en ADS
+
+#### a. `suggest_recommendations`
+
+- Detecta problemas en el dataset.
+- Sugiere transformaciones.
+- Podés aceptar los cambios desde el menú.
+- Luego se obtiene el dataset transformado con `get_transformed_dataset()`.
+
+#### b. `auto_transform`
+
+- Aplica todas las recomendaciones automáticamente.
+- Imputa valores faltantes.
+- Elimina columnas altamente correlacionadas.
+- Maneja clases desbalanceadas (upsampling/downsampling).
+- Elimina claves primarias y columnas sin valor predictivo.
+
+#### c. `visualize_transforms`
+
+- Muestra visualmente las transformaciones aplicadas.
+- Solo funciona con transformaciones automáticas.
+
+---
+
+### 12. Ejemplo práctico
+
+En un dataset de rotación de empleados:
+
+- ADS detecta tipos de datos.
+- Sugiere transformaciones.
+- Muestra correlaciones fuertes y desbalance de clases.
+- Visualiza el flujo de transformación.
+
+📌 Los resultados varían según el dataset.
+
+---
+
+### 13. División de datos
+
+Dividir el dataset en:
+
+- **Entrenamiento**
+- **Prueba**
+- **Validación**
+
+Permite evaluar la **generalización** del modelo.
+
+Por defecto, ADS usa:
+
+- 80% entrenamiento
+- 10% prueba
+- 10% validación
+
+💡 En datasets pequeños, puede ser mejor usar 70% o 60% para entrenamiento.
+
+---
+
+### 14. Conclusión
+
+Esta lección cubrió:
+
+- Preprocesamiento de datos reales.
+- Herramientas de transformación en ADS.
+- Codificación, imputación, escalado y detección de outliers.
+- División en conjuntos de entrenamiento, prueba y validación.
+
+---
 
 
 
