@@ -3349,7 +3349,234 @@ Esta lección cubrió:
 - División en conjuntos de entrenamiento, prueba y validación.
 
 ---
+# 🧪 Lección: Demo de Preprocesamiento con ADS  
+## 📘 Ejemplo práctico en OCI Data Science
 
+### 1. Introducción
+
+En esta demo realizaremos un ejercicio práctico de preprocesamiento de datos usando **Accelerated Data Science (ADS)** en una sesión de notebook de OCI Data Science.
+
+Usaremos el dataset **Employee Attrition**, que contiene:
+
+- **1.470 filas**
+- **36 características**:
+  - 22 ordinales
+  - 11 categóricas
+  - 3 constantes
+
+Las variables incluyen información demográfica, nivel de compensación, características del puesto, satisfacción laboral y métricas de desempeño.  
+📉 El dataset está **desbalanceado**: hay menos empleados que se van que los que se quedan.
+
+---
+
+### 2. Carga del dataset
+
+1. Se importan las librerías necesarias, incluyendo ADS.
+2. Se carga el `DataFrame` desde **Object Storage** usando el método de **resource principal**.
+3. Se define el bucket, el namespace y se usa `DatasetFactory.open()` para acceder al dataset.
+4. Se establece la **feature objetivo**: `attrition`.
+
+---
+
+### 3. Transformaciones sugeridas
+
+#### a. `suggest_recommendations`
+
+- Detecta problemas en el dataset.
+- Muestra mensajes con variables afectadas, acciones sugeridas y código para aplicarlas.
+
+#### b. `auto_transform`
+
+- Aplica automáticamente todas las transformaciones recomendadas.
+- Optimiza el dataset:
+  - Imputa valores faltantes.
+  - Elimina columnas altamente correlacionadas.
+  - Maneja clases desbalanceadas.
+  - Elimina claves primarias y columnas sin valor predictivo.
+
+#### c. `visualize_transforms`
+
+- Permite visualizar las transformaciones aplicadas.
+- Muestra diferencias entre aplicar o no `auto_transform`.
+
+---
+
+### 4. Codificación de variables categóricas
+
+Ejemplo con la variable `job_function`:
+
+- Se observan tres categorías distintas.
+- Se usa el codificador categórico de ADS:
+  ```python
+  from ads.dataset.labelencoder import LabelEncoder
+  ```
+- Las categorías se transforman en valores numéricos.
+
+---
+
+### 5. Balanceo de clases
+
+- Se realiza **upsampling** usando:
+  ```python
+  from ads.dataset.helper import upsample
+  ```
+- Se observa la repetición de muestras en la clase minoritaria (`attrition = yes`).
+- Se comparan los conteos antes y después del balanceo.
+
+---
+
+### 6. División del dataset
+
+Una vez completadas las transformaciones:
+
+- Se divide el dataset en:
+  - **Entrenamiento** (80%)
+  - **Prueba** (10%)
+  - **Validación** (10%)
+
+📌 Estos valores pueden ajustarse según el tamaño del dataset.
+
+---
+
+### 7. Recursos adicionales
+
+- Documentación oficial de ADS  
+- Laboratorios en GitHub: [oracle-samples/oci-data-science-ai-samples](https://github.com/oracle-samples/oci-data-science-ai-samples)¹  
+- Ejemplos de notebooks en la sesión de Data Science
+
+---
+
+
+# 📊 Lección: Data Visualization and Profiling  
+## 📘 Visualización de datos y perfilado en OCI Data Science
+
+### 1. Introducción
+
+Hola, soy Jon Stanesby. En esta lección aprenderemos sobre **visualización de datos** y **perfilado**.
+
+La visualización de datos es una parte esencial de la **exploración y análisis de datos** en ciencia de datos moderna.  
+Es uno de los primeros pasos para **extraer valor** de los datos, ya que permite identificar patrones y relaciones de forma rápida y accesible, incluso sin formación técnica especializada.
+
+---
+
+### 2. ¿Qué es Data Visualization (DV)?
+
+DV es la **presentación gráfica de los datos** para ilustrar hallazgos y explicar resultados.  
+Es clave para:
+
+- Analizar datos.
+- Tomar decisiones basadas en datos.
+- Comunicar patrones y relaciones de forma clara.
+
+---
+
+### 3. Herramientas de visualización modernas
+
+Las herramientas de DV suelen:
+
+- Conectarse con fuentes de datos (bases relacionales, cloud, on-premise).
+- Ofrecer múltiples opciones de visualización.
+- Sugerir automáticamente el tipo de gráfico según los datos.
+- Integrar IA/ML para facilitar tareas a usuarios no técnicos.
+- Permitir acceso y colaboración en toda la organización.
+- Ofrecer flexibilidad entre control manual y automatización.
+
+🔹 Buscá herramientas con:
+- Interfaz intuitiva (point & click, drag & drop).
+- Capacidad de edición rápida.
+- Visualización automática de datos.
+
+---
+
+### 4. Visualización inteligente con ADS
+
+ADS ofrece herramientas de visualización **automáticas y personalizables**:
+
+- Detecta automáticamente el tipo de datos.
+- Genera gráficos óptimos para cada variable.
+- Permite usar cualquier librería de visualización (Seaborn, Matplotlib, etc.).
+
+#### Visualizaciones comunes en ADS:
+- Estadísticas resumen.
+- Gráficos de distribución.
+- Mapas de correlación.
+- Detección de anomalías (valores faltantes, alta cardinalidad).
+
+---
+
+### 5. Métodos automáticos en ADS
+
+#### a. `corr` (correlación)
+- Calcula matrices de correlación por tipo de variable:
+  - **Continua-Continua**: coeficiente de Pearson (−1 a 1).
+  - **Continua-Categórica**: ratio de correlación (0 a 1).
+  - **Categórica-Categórica**: Cramer's V (0 a 1).
+
+#### b. `show_in_notebook`
+- Muestra una vista completa del dataset:
+  - Tipo de problema (regresión, clasificación binaria o multiclase).
+  - Número de filas y columnas.
+  - Tipos de features.
+  - Visualizaciones por columna.
+  - Mapa de correlación.
+  - Encabezado del dataset.
+
+📌 Usa una muestra inteligente con 95% de confianza y 1% de intervalo.
+
+#### c. `plot`
+- Herramienta automática de gráficos.
+- Se define `x` (y opcionalmente `y`).
+- ADS elige el tipo de gráfico según los tipos de datos.
+
+Ejemplos:
+
+- `x = attrition` (categórica binaria) → gráfico de barras.
+- `x = edad` (continua) → histograma.
+- `x = categórica`, `y = continua` → violin plot.
+- `x = continua`, `y = continua` → heatmap gaussiano + scatterplot.
+
+---
+
+### 6. Sistema de tipos de features
+
+ADS extiende los `DataFrames` de Pandas para:
+
+- Separar representación física vs significado de los datos.
+- Almacenar propiedades y métodos por feature.
+- Usar herencia múltiple para definir características.
+- Validar y advertir sobre calidad de datos.
+
+📌 `feature_plot`:
+- Sobre una serie → gráfico univariado.
+- Sobre un `DataFrame` → tabla con visualización por feature.
+
+---
+
+### 7. Visualización personalizada
+
+ADS permite usar librerías externas:
+
+#### a. `call` method
+- Permite definir tu propia rutina de visualización.
+
+Ejemplos:
+
+- `Seaborn.pairplot(df)` → relaciones entre pares de features.
+- `Matplotlib` → gráficos personalizados.
+- Dataset de terremotos en California → visualización geográfica.
+
+---
+
+### 8. Conclusión
+
+En esta lección aprendiste a:
+
+- Generar visualizaciones automáticas con ADS.
+- Personalizar gráficos según tus necesidades.
+- Usar métodos como `corr`, `plot`, `feature_plot`, `show_in_notebook`.
+- Integrar librerías externas para visualización avanzada.
+
+---
 
 
 
