@@ -3575,6 +3575,84 @@ En esta lección aprendiste a:
 - Integrar librerías externas para visualización avanzada.
 
 ---
+
+# 🧠 Lección: Model Training  
+## 📘 Entrenamiento de modelos en OCI Data Science
+
+### 1. Introducción
+
+Hola, soy Jon Stanesby. En esta lección aprenderemos sobre el **entrenamiento de modelos**, una etapa crítica dentro de la fase de modelado del ciclo de vida del aprendizaje automático.
+
+---
+
+### 2. ¿Qué es el entrenamiento de modelos?
+
+El entrenamiento de modelos construye la **mejor representación matemática** de las relaciones entre:
+
+- Las **features** y la **etiqueta objetivo** (en aprendizaje supervisado).
+- Todas las **features** (en aprendizaje no supervisado).
+
+🔹 El proceso genera un **artefacto** que captura estos patrones.  
+🔹 Se selecciona el **mejor algoritmo** considerando múltiples dimensiones.
+
+---
+
+### 3. Componentes del proceso de entrenamiento
+
+#### a. Función de puntuación (`score function`)
+- Indica qué tan bien se ajusta el modelo.
+- Puede ser una función de error o de máxima verosimilitud.
+
+#### b. Función de pérdida (`loss function`)
+- Compara las predicciones del modelo con los valores reales.
+- Calcula una **puntuación de pérdida** como número único.
+
+📊 Ejemplo gráfico:
+- Puntos verdes → datos reales.
+- Línea negra → predicciones.
+- Flechas rojas → error (pérdida).
+
+#### c. Función de actualización (`update function`)
+- Ajusta los parámetros del modelo en cada iteración.
+
+---
+
+### 4. Frameworks y entornos de entrenamiento
+
+En ciencia de datos, **open source** se refiere a código libre y modificable.  
+Los frameworks open source:
+
+- Son accesibles.
+- Tienen comunidades activas.
+- Fomentan la innovación y solución de bugs.
+
+🔹 OCI Data Science combina frameworks **propietarios de Oracle** y **open source**.  
+🔹 Podés instalar librerías externas desde la terminal o iniciar con tu propio set de herramientas.
+
+---
+
+### 5. Formas de entrenar modelos en OCI
+
+Podés entrenar modelos de varias maneras:
+
+- 🧪 **Notebooks**: escribiendo y ejecutando código Python en JupyterLab.
+- ⚙️ **Entornos Conda**: usando ADS, MLX o AutoML (veremos más adelante).
+- 🧵 **Jobs**: se cubren en el módulo 4.
+
+---
+
+### 6. Conclusión
+
+En esta lección vimos:
+
+- Qué es el entrenamiento de modelos.
+- Cómo se representa matemáticamente la relación entre variables.
+- Qué funciones intervienen en el proceso.
+- Qué frameworks y entornos se pueden usar.
+- Qué opciones ofrece OCI para entrenar modelos.
+
+---
+
 </br>
 </br>
 </br>
