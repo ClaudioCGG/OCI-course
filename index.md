@@ -3653,6 +3653,90 @@ En esta lección vimos:
 
 ---
 
+# 🚀 Lección: Turning AML Models on OCI  
+## 📘 Entrenamiento y escalado de modelos AML en Oracle Cloud
+
+### 1. Introducción
+
+¡Felicitaciones por llegar tan lejos en el curso de ciencia de datos!  
+Soy Himanshu Raj, líder senior de entrenamiento en AI/ML en Oracle.
+
+En este video experto hablaremos sobre cómo **entrenar y escalar modelos de aprendizaje automático (AML)** en Oracle Cloud Infrastructure (OCI).
+
+---
+
+### 2. Entrenamiento básico de modelos AML
+
+Podés entrenar fácilmente un modelo AML usando **jobs** del servicio de ciencia de datos.
+
+🔹 ¿Qué necesitás?
+
+- Código fuente alojado en **GitHub**.
+- Resultados almacenados en **OCI Object Storage**.
+- Definir recursos y ejecución con **ADS**:
+  - Usando código Python.
+  - O mediante archivos **YAML**.
+
+---
+
+### 3. Entrenamiento distribuido en OCI
+
+Para escalar horizontalmente y paralelizar tareas de entrenamiento en datasets grandes o cargas intensivas:
+
+✅ OCI Data Science permite **entrenamiento distribuido** con ayuda de ADS.
+
+🔹 Frameworks soportados:
+
+- **Dask**
+- **PyTorch Distributed**
+- **Horovod**
+- **TensorFlow Distributed**
+
+📌 Esto permite reducir tiempos de entrenamiento sin perder precisión.
+
+---
+
+### 4. Implementación y comunidad
+
+- Podés usar **Docker** o **GitHub** para tus implementaciones.
+- La documentación oficial detalla cómo configurar cada framework.
+- Se recomienda compartir tus casos de uso en la comunidad **OU**.
+
+---
+
+### 5. AutoMLx en OCI
+
+También cubrimos **AutoML** en el curso.
+
+🔹 Te recomendamos explorar el paquete **AutoMLx**, disponible en el **conda pack** de OCI.
+
+- AutoMLx proporciona un pipeline que:
+  - Encuentra y ajusta automáticamente el mejor modelo.
+  - A partir de una tarea de predicción y un dataset de entrenamiento.
+
+Podés elegir el motor paralelo (`task` o `local`) usando la función `INIT`.
+
+---
+
+### 6. Recursos y seguimiento
+
+- Consultá la documentación de **ADS** y de las clases alias.
+- Revisá las **release notes** para estar al día con nuevas funcionalidades.
+- Compartí tus avances y dudas en la comunidad **OU**.
+
+---
+
+### 7. Conclusión
+
+En esta lección aprendiste:
+
+- Cómo entrenar modelos AML en OCI usando jobs.
+- Cómo escalar horizontalmente con entrenamiento distribuido.
+- Cómo usar AutoMLx para automatizar el ajuste de modelos.
+- Dónde encontrar documentación y cómo participar en la comunidad.
+
+---
+
 </br>
 </br>
 </br>
