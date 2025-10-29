@@ -55,12 +55,8 @@
 - Archivos de configuración y claves API (.pem)
 - Notebooks de ejemplo para crear credenciales</br></br>
 
-************************************************************************************************************
-</br>
-</br>
 
-
-
+---
 ### -- Visión General del Curso
 
 Bienvenidos todos al curso de Ciencia de Datos de Oracle Cloud Infrastructure. La ciencia de datos es el arte y la ciencia de extraer conocimientos valiosos de los datos para resolver problemas del mundo real y de negocios.
@@ -107,7 +103,7 @@ Siéntete libre de calificar este curso y dejar comentarios específicos sobre l
 
 ---
 
-### -- Consejos de Expertos: Introducción
+# Consejos de Expertos: Introducción
 
 Primero que nada, gracias por elegir tomar el curso profesional de OCI Data Science y obtener la certificación. Mi nombre es Hemant Gahankari. Soy líder principal de formación en Oracle University.
 
@@ -3653,12 +3649,12 @@ En esta lección vimos:
 
 ---
 
-# 🚀 Lección: Turning AML Models on OCI  
+# 🚀 Lección: Expert Tips: Training a ML model on OCI
 ## 📘 Entrenamiento y escalado de modelos AML en Oracle Cloud
 
 ### 1. Introducción
 
-¡Felicitaciones por llegar tan lejos en el curso de ciencia de datos!  
+¡Felicitaciones por llegar tan lejos en el curso de ciencia de datos!
 Soy Himanshu Raj, líder senior de entrenamiento en AI/ML en Oracle.
 
 En este video experto hablaremos sobre cómo **entrenar y escalar modelos de aprendizaje automático (AML)** en Oracle Cloud Infrastructure (OCI).
@@ -3734,6 +3730,1104 @@ En esta lección aprendiste:
 - Cómo escalar horizontalmente con entrenamiento distribuido.
 - Cómo usar AutoMLx para automatizar el ajuste de modelos.
 - Dónde encontrar documentación y cómo participar en la comunidad.
+
+---
+
+# 🤖 Lección: AutoML en Accelerated Data Science (ADS)  
+## 📘 Construcción y entrenamiento automatizado de modelos en OCI
+
+### 1. Introducción
+
+Hola, soy John Stanesby. En esta lección aprenderemos a construir y entrenar modelos usando **AutoML** en **Accelerated Data Science (ADS)**.
+
+AutoML significa **aprendizaje automático automatizado**.  
+Durante la fase de modelado del ciclo de vida de ML, se construyen múltiples modelos con distintos algoritmos y configuraciones de hiperparámetros.  
+AutoML automatiza este proceso, optimizando el rendimiento y la precisión.
+
+---
+
+### 2. ¿Por qué AutoML?
+
+El aprendizaje automático requiere muchas **iteraciones y experimentación**.  
+Es raro obtener el modelo óptimo en el primer intento.  
+AutoML ayuda a:
+
+- Elegir y refinar modelos.
+- Ajustar hiperparámetros.
+- Mejorar resultados sin intervención manual.
+
+---
+
+### 3. Enfoques comunes de AutoML
+
+#### a. Optimización bayesiana
+- Usa modelos probabilísticos para evaluar configuraciones.
+- Ejemplo: **AutoSkLearn** con Random Forest y meta-aprendizaje.
+
+#### b. Sistemas de recomendación
+- Basados en similitud con datasets previos.
+- Usan **factorización matricial probabilística**.
+
+#### c. Algoritmos evolutivos
+- Ejemplo: **TPOT**, que optimiza pipelines con Scikit-learn.
+
+🔹 Todos requieren múltiples iteraciones.  
+🔹 Oracle AutoML usa un enfoque **no iterativo** más eficiente.
+
+---
+
+### 4. Enfoque de Oracle AutoML
+
+- Usa **meta-modelos proxy** para predecir el rendimiento de configuraciones.
+- Evita el problema de **cold start** mediante meta-aprendizaje.
+- Solo construye y ajusta el **mejor pipeline candidato**.
+
+---
+
+### 5. Ciclo completo sin escribir código
+
+AutoML permite ejecutar todo el ciclo de ML sin escribir código:
+
+- Entrena múltiples modelos.
+- Ajusta hiperparámetros.
+- Evalúa y compara resultados.
+
+🔹 Mejora la productividad y reduce el tiempo de cómputo.
+
+---
+
+### 6. Flujo típico de AutoML
+
+1. Selección de modelo.
+2. Ajuste de hiperparámetros.
+3. Selección de features predictivas.
+4. Evaluación de generalización.
+
+---
+
+### 7. Etapas automatizadas por Oracle AutoML
+
+#### a. Selección de algoritmo
+- Identifica el mejor algoritmo según el dataset y la tarea.
+- Usa meta-aprendizaje para predecir rendimiento.
+
+#### b. Muestreo adaptativo
+- Evalúa muestras desde subconjuntos hasta el dataset completo.
+- Detecta desbalance de clases.
+- Usa meta-aprendizaje para predecir rendimiento por muestra.
+
+#### c. Selección de características
+- Elimina atributos irrelevantes, constantes o con alta cardinalidad.
+- Genera rankings de features.
+- Evalúa subconjuntos para determinar el óptimo.
+
+#### d. Ajuste de hiperparámetros
+- Optimiza configuraciones sin búsqueda exhaustiva.
+- Ejemplo: profundidad máxima y porcentaje mínimo de división en árboles de decisión.
+
+---
+
+### 8. Parámetros y visualización
+
+- `n_jobs`: controla el paralelismo (−1 = todos los núcleos).
+- `log_level`: controla la verbosidad.
+- Visualización disponible en cada etapa del pipeline.
+
+📌 Si hay menos de 1.000 datos, no se ejecuta muestreo adaptativo.
+
+---
+
+### 9. Personalización
+
+- `model_list`: define qué algoritmos considerar.
+- Métricas personalizadas:
+  - `roc_auc` (clasificación binaria)
+  - `recall_macro` (multiclase)
+  - `neg_mean_squared_error` (regresión)
+- `time_budget`: define tiempo máximo en segundos.
+- `minimum_feature_list`: protege features clave de ser eliminadas.
+
+---
+
+### 10. Conclusión
+
+En esta lección aprendiste:
+
+- Qué es AutoML y cómo funciona en ADS.
+- Enfoques comunes y ventajas del método de Oracle.
+- Flujo de trabajo completo y etapas automatizadas.
+- Cómo personalizar y visualizar el proceso.
+
+---
+
+# 🧪 Demo: Construcción de un Clasificador con AutoMLx – Parte 1  
+## 📘 Clasificación binaria con el dataset de ingresos del censo
+
+### 1. Introducción
+
+Hola y bienvenido a esta demo.  
+Construiremos un **clasificador binario** usando la herramienta **Oracle AutoMLx** con el dataset público **Census Income** del repositorio UCI Machine Learning.
+
+🔹 Exploraremos las opciones de AutoMLx que permiten al usuario controlar el proceso de entrenamiento automatizado.  
+🔹 Evaluaremos distintos modelos entrenados por AutoML.
+
+📦 Usaremos el entorno Conda:  
+**Oracle AutoML and Model Explanation for Python 3.8**, versión **2.0**.
+
+---
+
+### 2. Flujo típico de modelado en ML
+
+Las tareas de modelado incluyen:
+
+1. **Preprocesamiento**: limpieza, imputación, ingeniería de características, normalización.
+2. **Selección de modelo**: según el dataset y la tarea de predicción.
+3. **Ajuste de hiperparámetros**: para mejorar el rendimiento.
+
+⚠️ Estos pasos son intensivos en tiempo y requieren experiencia técnica.  
+Además, no existe una solución universal: el mejor modelo y configuración varían según el dataset.
+
+---
+
+### 3. Ventajas de AutoMLx
+
+Con una simple API en Python, AutoMLx permite:
+
+- Iniciar rápidamente el proceso de ciencia de datos.
+- Obtener un modelo ajustado y un conjunto de características óptimas.
+- Automatizar tareas clave del ciclo supervisado (clasificación o regresión).
+
+---
+
+### 4. Preparación del entorno
+
+- Se ejecutan comandos mágicos para visualizar gráficos con `matplotlib` y recargar módulos.
+- Se importan librerías necesarias:
+  - `gzip`, `pandas`, `numpy`, `matplotlib`, `sklearn`, `seaborn`
+  - Para tareas de acceso, preprocesamiento, visualización y operaciones matemáticas.
+
+Luego se importa la librería AutoMLx y la función `init`.
+
+---
+
+### 5. Carga del dataset
+
+- Se usa `fetch_openml` de `scikit-learn` para descargar el dataset desde OpenML.
+- Se especifica `as_frame=True` para obtener un `DataFrame` de `pandas`.
+
+📌 Objetivo del dataset:  
+Predecir si el ingreso anual de una persona **excede los $50,000**.
+
+---
+
+### 6. Exploración inicial
+
+- El dataset contiene columnas como `age`, `workclass`, `education`, `race`, etc.
+- Mezcla de datos numéricos y categóricos → desafío para entrenar modelos.
+- Algunas columnas están mal etiquetadas como `category` (ej. `age`, `hours-per-week`).
+
+🔍 Se usa `.dtypes` para inspeccionar los tipos de datos.  
+También se calcula el porcentaje de valores faltantes por columna.
+
+✅ AutoMLx maneja automáticamente los valores faltantes:
+- Elimina columnas con demasiados nulos.
+- Imputa valores según el tipo de feature.
+
+---
+
+### 7. Visualización de la variable objetivo
+
+- Se analiza la distribución de la variable `income`.
+- Se observa cuántas personas ganan más o menos de $50,000.
+
+---
+
+### 8. División de datos
+
+- Se separan variables predictoras (`X`) y objetivo (`y`).
+- Se define `train_size = 0.7` → 70% entrenamiento, 30% prueba.
+- Se corrigen columnas mal etiquetadas → se convierten a `int`.
+
+🔁 La variable `income` se transforma a binaria:
+- `>50K` → `1`
+- `<=50K` → `0`
+
+📊 Resultado:
+- **24,189 filas** para entrenamiento.
+- **14 columnas** en total.
+
+---
+
+### 9. Configuración de AutoMLx
+
+- Se inicia el motor con `init`:
+  - Por defecto: `dask` (paralelismo).
+  - En este caso: `local` con `n_jobs = 2`.
+
+🔧 Se crea una instancia de AutoMLx para tareas supervisadas (clasificación o regresión).
+
+---
+
+### 10. Etapas del pipeline AutoMLx
+
+1. **Preprocesamiento**:
+   - Limpieza, imputación, ingeniería y normalización de features.
+
+2. **Selección de algoritmo**:
+   - Identifica el mejor clasificador para el dataset.
+   - Algoritmos disponibles:
+     - `AdaBoost`, `DecisionTree`, `TorchMLP`, `LinearSVC`, `LogisticRegression`, `XGBoost`, `GaussianNB`, entre otros.
+
+3. **Muestreo adaptativo**:
+   - Selecciona subconjuntos de datos para entrenar.
+   - Actualiza la estrategia de muestreo según el rendimiento de modelos anteriores.
+   - Se enfoca en regiones del espacio de características más prometedoras.
+
+11. Selección de características y ajuste de hiperparámetros
+Después del muestreo adaptativo, AutoMLx:
+
+Selecciona un subconjunto de características relevantes.
+
+Ajusta los hiperparámetros del modelo para maximizar el rendimiento.
+
+🔹 Todo esto se realiza automáticamente dentro del pipeline.
+
+12. Entrenamiento del modelo
+Se crea una instancia del pipeline con automl.PipeLine.
+
+Se define la tarea como classification.
+
+Se entrena el modelo con fit(x_train, y_train).
+
+📌 Se usa cv=5 para aplicar validación cruzada con 5 folds.
+
+13. Selección del modelo
+Algunos algoritmos como SVC y KNeighborsClassifier se deshabilitan si el dataset tiene más de 10.000 muestras o 1.000 features.
+
+El modelo elegido fue LGBMClassifier (Light Gradient Boosting).
+
+Se completó el muestreo adaptativo en los 5 folds.
+
+14. Predicción y evaluación
+Se usa predict_proba(x_test) para obtener probabilidades de clase.
+
+Se evalúa con ROC AUC → resultado: 0.91.
+
+15. Resumen del pipeline
+AutoMLx genera un resumen con:
+
+Features seleccionadas: age, workclass, education_num, etc.
+
+Algoritmo elegido: LGBMClassifier.
+
+Hiperparámetros ajustados.
+
+Métricas de CPU y memoria.
+
+Validación media por algoritmo.
+
+🔍 Se puede visualizar con print_summary().
+
+16. Visualización de selección de algoritmos
+Se grafican los scores predichos por algoritmo usando Bayesian Optimization.
+
+Métrica usada: negative log loss.
+
+Menor valor → mejor rendimiento.
+
+LGBM fue el mejor algoritmo según esta métrica.
+
+17. Muestreo adaptativo
+Busca el subconjunto mínimo de datos que mantiene el rendimiento.
+
+En este caso, no se encontró un subconjunto suficiente → se usa el dataset completo.
+
+18. Selección de características
+AutoMLx aplica una estrategia inteligente:
+
+Elige algoritmo de selección (ej. RFE, SFS, PCU).
+
+Rankea las features (correlación, tests estadísticos).
+
+Evalúa subconjuntos con validación cruzada.
+
+Identifica el subconjunto más pequeño sin pérdida de rendimiento.
+
+📌 Features seleccionadas: age, workclass, education_num, marital_status, etc. 📌 Features eliminadas: 4 columnas no relevantes.
+
+19. Matriz de confusión
+Se usa confusion_matrix() de scikit-learn.
+
+Argumentos:
+
+Etiquetas verdaderas (y_test)
+
+Predicciones (y_pred)
+
+Etiquetas binarias (<=50K, >50K)
+
+Se normaliza por filas → porcentajes.
+
+Se visualiza como heatmap con:
+
+Eje X: predicción
+
+Eje Y: valor real
+
+20. Personalización del AutoML
+Podés limitar los algoritmos considerados:
+
+python
+model_list = ["LogisticRegression"]
+🔹 AutoMLx solo optimizará entre los modelos especificados.
+
+21. Validación personalizada
+Podés definir un conjunto de validación personalizado para evaluar la calidad de los modelos y configuraciones:
+
+python
+fit(x_train, y_train, validation_data=(x_val, y_val))
+🔹 Esto permite controlar cómo se evalúan los modelos durante el entrenamiento.
+
+22. Optimización de múltiples modelos
+Por defecto, AutoMLx ajusta los hiperparámetros del mejor modelo seleccionado. Pero podés optimizar los top-N modelos:
+
+python
+model_list = ["LogisticRegression", "XGBClassifier", "LGBMClassifier"]
+top_n = 2
+🔹 En este ejemplo, se ajustan los dos mejores modelos entre los tres especificados. 🔹 Resultado: ROC AUC = 0.855
+
+23. Métricas de evaluación personalizadas
+AutoMLx permite cambiar la métrica de optimización:
+
+Por defecto:
+
+Clasificación binaria: neg_log_loss
+
+Regresión: neg_mean_squared_error
+
+🔹 Podés usar otras métricas como:
+
+Clasificación binaria: accuracy, f1, roc_auc, precision, recall
+
+Multiclase: recall_macro, f1_macro, accuracy
+
+Regresión: r2, explained_variance, mean_absolute_error
+
+Ejemplo:
+
+python
+score_metric = "accuracy"
+🔹 Resultado: ROC AUC ≈ 0.855
+
+24. Funciones de puntuación definidas por el usuario
+Podés crear tu propia función de evaluación:
+
+python
+from sklearn.metrics import make_scorer, f1_score
+
+def custom_score(model, X, y):
+    y_pred = model.predict(X)
+    return f1_score(y, y_pred)
+
+scorer = make_scorer(custom_score)
+🔹 Se pasa como argumento score_metric al pipeline.
+
+25. Límite de tiempo (Time Budget)
+AutoMLx permite definir un presupuesto de tiempo en segundos:
+
+python
+time_budget = 10
+🔹 Si se excede el tiempo, se detiene el proceso y se usan parámetros por defecto. 🔹 Se muestra un mensaje indicando el timeout. 🔹 Resultado: ROC AUC con configuración por defecto.
+
+26. Lista mínima de features
+Podés forzar que ciertas features no sean eliminadas durante la selección:
+
+python
+minimum_features = ["fnlwgt", "native-country"]
+🔹 Esto garantiza que esas columnas estén presentes en el modelo final. 🔹 También podés usar:
+
+int: número mínimo de features.
+
+float: proporción mínima (ej. 0.5).
+
+1.0: desactiva la selección de features.
+
+27. Conclusión
+Esta demo mostró cómo:
+
+Cargar y preparar un dataset real.
+
+Configurar y ejecutar AutoMLx.
+
+Personalizar el pipeline con métricas, modelos, tiempo y features.
+
+Evaluar el rendimiento con ROC AUC y matriz de confusión.
+
+🔧 AutoMLx permite construir modelos precisos con mínima intervención manual, ideal para acelerar el ciclo de vida de ML.
+
+Recurso GIT ejemplo: https://github.com/oracle-samples/automlx/blob/main/demos/OracleAutoMLx_Classification.ipynb
+
+Principal: https://github.com/oracle-samples
+
+
+---
+
+# 🎯 Lección: Hyperparameter Tuning con ADSTuner  
+## 📘 Ajuste de hiperparámetros en Oracle ADS
+
+### 1. Introducción
+
+Hola, soy Jon Stanesby.  
+En esta breve lección veremos cómo ajustar hiperparámetros usando **ADSTuner**, una herramienta de Oracle ADS.
+
+---
+
+### 2. ¿Qué son los hiperparámetros?
+
+- Son parámetros que **controlan el proceso de aprendizaje** de un modelo.
+- No se aprenden directamente de los datos.
+- El ajuste de hiperparámetros consiste en:
+  - Probar múltiples combinaciones.
+  - Evaluar el rendimiento.
+  - Elegir la mejor configuración.
+
+---
+
+### 3. ¿Qué ofrece ADSTuner?
+
+- Estrategias de búsqueda integradas para modelos comunes.
+- Soporte para **espacios de búsqueda personalizados**.
+- Compatible con cualquier librería ML que no tenga ajuste de hiperparámetros.
+- Genera un **informe de ajuste** con:
+  - Pruebas realizadas.
+  - Mejores configuraciones.
+  - Estadísticas.
+
+---
+
+### 4. Inicialización de ADSTuner
+
+Para crear un objeto `ADSTuner` se necesita:
+
+- Referencia al modelo a ajustar.
+- Opcionalmente:
+  - Número de folds para **validación cruzada**.
+  - Estrategia de búsqueda (`strategy`).
+
+---
+
+### 5. Estrategias de búsqueda
+
+Podés definir el espacio de búsqueda de dos formas:
+
+#### a. Usar los valores por defecto
+- ADSTuner ofrece dos opciones optimizadas:
+
+| Tipo | Descripción |
+|------|-------------|
+| **Perfunctory** | Espacio pequeño → ajusta los hiperparámetros más importantes. Ideal para pruebas rápidas. |
+| **Detailed** | Espacio amplio → ajusta más hiperparámetros. Útil cuando ya elegiste el tipo de modelo. |
+
+#### b. Definir un espacio personalizado
+- Se pasa un diccionario con los hiperparámetros y sus rangos.
+- Ideal si ya tenés experiencia con el dataset.
+
+---
+
+### 6. Ejecución del ajuste
+
+Para ajustar el modelo:
+
+```python
+tuner.tune(X, y)
+```
+
+- `X`: observaciones
+- `y`: variable objetivo
+
+---
+
+### 7. Criterios de parada
+
+Podés definir cuándo detener el proceso con `exit_criterion`.  
+ADSTuner se detiene cuando se cumple alguna condición:
+
+- Número máximo de iteraciones.
+- Tiempo límite.
+- Convergencia del score.
+
+---
+
+### 8. Modificación del espacio personalizado
+
+Podés ajustar el espacio de búsqueda en tres formas:
+
+- Agregar hiperparámetros.
+- Eliminar hiperparámetros.
+- Modificar rangos de hiperparámetros no categóricos.
+
+---
+
+### 9. Conclusión
+
+En esta lección aprendiste:
+
+- Qué es el ajuste de hiperparámetros.
+- Cómo usar ADSTuner en Oracle ADS.
+- Qué estrategias de búsqueda están disponibles.
+- Cómo definir criterios de parada y espacios personalizados.
+
+---
+
+---
+
+# 📊 Lección: Model Evaluation
+## 📘 Evaluación de modelos en Oracle ADS
+
+### 1. Introducción
+
+Hola, soy Himanshu Raj.
+En esta lección aprenderemos a **evaluar modelos de aprendizaje automático** usando Oracle ADS.
+
+La evaluación de modelos ocurre después de la fase de entrenamiento en el ciclo de vida de ML.
+Los modelos solo son útiles si sus **predicciones son de calidad**.
+
+---
+
+### 2. ¿Por qué evaluar modelos?
+
+- 📏 **Benchmarking**: comparar el rendimiento entre modelos.
+- 🕵️ **Detección de fallos**: por ejemplo, alta precisión pero baja exactitud.
+- ⚖️ **Análisis de trade-offs**: entender cuándo y cómo cada modelo funciona mejor.
+
+---
+
+### 3. ¿Cómo se evalúa un modelo?
+
+1. Se reserva un **conjunto de validación** con etiquetas reales.
+2. Se comparan las **predicciones** del modelo con los valores reales.
+3. Se generan **métricas** y **gráficos** que resumen el rendimiento.
+
+---
+
+### 4. Evaluadores en ADS
+
+ADS ofrece tres tipos de evaluadores:
+
+| Tipo | Ejemplo de salida |
+|------|-------------------|
+| **Binaria** | 0 o 1 |
+| **Multiclase** | colores, categorías |
+| **Regresión** | precios, longitudes |
+
+También se puede combinar con métodos open source como `scikit-learn`.
+
+---
+
+### 5. Evaluación de clasificación binaria
+
+- Métricas comunes: precisión, recall, F1, ROC AUC, matriz de confusión.
+- Clases usadas: `ADSEvaluator`, `ADSModel`.
+- Se convierte el modelo con `from_estimator()`.
+
+Ejemplo:
+
+```python
+model = from_estimator(LogisticRegression())
+evaluator = ADSEvaluator(model)
+evaluator.metrics
+evaluator.show_in_notebook(perfect=True)
+```
+
+🔹 Se puede agregar métricas personalizadas con `add_metrics()`  
+🔹 Ejemplo: `F2_Score`
+
+📊 Gráficos disponibles:
+- Lift & Gain
+- Curva Precision-Recall
+- Matriz de confusión normalizada
+
+---
+
+### 6. Evaluación de clasificación multiclase
+
+- Métricas: hamming loss, F1 (macro, micro, weighted), recall, ROC AUC.
+- Se deben pasar los niveles de clase (`class=[0,1,2]`).
+- Se usa `from_estimator()` y `show_in_notebook()` igual que en binaria.
+
+📊 Gráficos disponibles:
+- Curva ROC multiclase
+- Precisión por clase
+- F1 por clase
+- Curva PR multiclase
+
+---
+
+### 7. Evaluación de regresión
+
+- Métricas: R², varianza explicada, MSE, MAE, RMSE, residuales.
+- Se usa `evaluator.metrics` y `evaluator.show_in_notebook`.
+
+📊 Gráficos disponibles:
+
+| Gráfico | Descripción |
+|--------|-------------|
+| **Observed vs Predicted** | Comparación directa entre valores reales y predichos |
+| **QQ Plot** | Distribución de residuales vs normal estándar |
+| **Residuals vs Predicted** | Verifica patrones en errores |
+| **Residuals vs Observed** | Detecta sesgos en predicción |
+
+---
+
+### 8. Conclusión
+
+En esta lección aprendiste:
+
+- Por qué es importante evaluar modelos.
+- Qué métricas y gráficos usar según el tipo de problema.
+- Cómo usar `ADSEvaluator` y `ADSModel` para generar evaluaciones completas.
+- Cómo agregar métricas personalizadas y visualizar resultados.
+
+---
+
+
+---
+
+# 🧠 Lección: Expert Tips – ADS Evaluators  
+## 📘 Consejos prácticos para evaluar modelos en Oracle ADS
+
+### 1. Introducción
+
+Hola, soy Hemant Gahankari, líder principal de entrenamiento en Oracle University.  
+En este video veremos cómo usar los **evaluadores de ADS** para simplificar la evaluación de modelos.
+
+---
+
+### 2. Tipos de evaluadores en ADS
+
+ADS ofrece tres tipos de evaluadores:
+
+| Evaluador | Tipo de salida |
+|-----------|----------------|
+| **Binario** | 0 o 1 |
+| **Multiclase** | Categorías discretas |
+| **Regresión** | Valores continuos |
+
+🔹 Estos evaluadores permiten **calcular y graficar métricas relevantes** de forma sencilla.
+
+---
+
+### 3. Ejemplo práctico: Clasificación binaria
+
+#### a. Flujo básico
+
+1. Importar `ADSEvaluator`.
+2. Crear un dataset de clasificación binaria.
+3. Dividir en entrenamiento y prueba.
+4. Entrenar modelos (ej. `LogisticRegression`, `RandomForestClassifier`).
+5. Envolver los modelos con `ADSModel`.
+6. Crear el objeto `evaluator` con `ADSEvaluator`.
+
+#### b. Métricas
+
+```python
+evaluator.metrics
+```
+
+🔹 Muestra métricas para cada modelo, tanto en entrenamiento como en prueba.
+
+#### c. Gráficos
+
+```python
+evaluator.show_in_notebook()
+```
+
+🔹 Genera gráficos como matriz de confusión, curvas ROC, etc.
+
+---
+
+### 4. Conclusión
+
+Los evaluadores de ADS:
+
+- Simplifican el cálculo de métricas.
+- Automatizan la generación de gráficos.
+- Permiten comparar múltiples modelos fácilmente.
+
+📌 Se recomienda probarlos con distintos datasets para familiarizarse con su uso.
+
+*** DOCUMENTACIÓN:  Ver: https://accelerated-data-science.readthedocs.io/en/latest/ ***
+
+---
+
+---
+
+# 🧠 Lección: Model Explanations – Global Explainer
+## 📘 Explicabilidad global de modelos en Oracle ADS
+
+### 1. Introducción
+
+Hola, soy Himanshu Raj.  
+En esta lección aprenderemos sobre **explicabilidad de modelos**, una etapa clave dentro de la **validación de modelos** en el ciclo de vida de ML.
+
+---
+
+### 2. ¿Qué es la explicabilidad?
+
+- **Explicabilidad**: capacidad de explicar por qué un modelo hace una predicción.
+- **Interpretabilidad**: grado en que un humano puede entender esa explicación.
+
+🔍 La creciente complejidad de los algoritmos ML dificulta entender qué aprendió el modelo y por qué predice lo que predice.
+
+---
+
+### 3. Tipos de explicaciones
+
+| Tipo | Descripción |
+|------|-------------|
+| **Global** | Explica el comportamiento general del modelo |
+| **Local** | Explica una predicción específica |
+| **What-if** | Analiza cómo cambios en features afectan la predicción |
+
+📌 En esta lección nos enfocamos en la **explicación global**. Las otras se cubren en la próxima lección.
+
+---
+
+### 4. Técnicas de explicación global
+
+Todas son **agnósticas al modelo** (no dependen del tipo de algoritmo):
+
+1. **Feature Permutation Importance**  
+   - Estima la importancia de cada feature según su impacto en la predicción.
+
+2. **Feature Dependence Explanations**  
+   - Evalúa la relación entre valores de features y predicciones.
+
+3. **Accumulated Local Effects (ALE)**  
+   - Aísla el efecto de cada feature sobre la predicción.
+
+---
+
+### 5. Feature Permutation Importance
+
+- Mide cuánto **empeora el error de predicción** al eliminar (reordenar) una feature.
+- Se usa una métrica de evaluación:
+  - Clasificación → `F1 score`
+  - Regresión → `R²`
+
+#### ¿Cómo funciona?
+
+1. Se calcula el error base del modelo.
+2. Se **reordenan aleatoriamente** los valores de una feature (se introduce ruido).
+3. Se compara el nuevo error con el original.
+
+🔹 Si el error aumenta → la feature es importante.  
+🔹 Si el error no cambia → la feature no aporta valor.
+
+---
+
+### 6. Visualizaciones en ADS
+
+ADS genera tres tipos de gráficos para esta técnica:
+
+| Tipo | Descripción |
+|------|-------------|
+| **Box Plot** | Muestra la dispersión del impacto por feature |
+| **Bar Chart** | Muestra la importancia promedio y desviación estándar |
+| **Scatter Plot** | Muestra el impacto por iteración del algoritmo |
+
+📌 Features con mayor impacto aparecen más arriba en los gráficos.
+
+---
+
+### 7. Ejemplo: Titanic Dataset
+
+- Modelo: `XGBClassifier` entrenado con AutoML de ADS.
+- Gráfico de barras:
+  - Eje X: importancia de la feature.
+  - Barras largas → mayor importancia.
+  - Se muestra promedio y desviación estándar.
+
+- Box plot:
+  - Eje X: impacto en el score.
+  - Eje Y: features ordenadas por importancia.
+  - Se muestran mínimo, cuartiles y máximo.
+
+- Scatter plot:
+  - Impacto por iteración.
+  - Permite ver estabilidad del ranking.
+
+---
+
+### 8. Feature Dependence Explanations
+
+- Evalúa el **efecto marginal** que tiene cada feature sobre la predicción.
+- Es la segunda técnica del explainer global.
+
+---
+
+### 9. ¿Cómo funciona Feature Dependence?
+
+1. Se selecciona una **feature** del modelo entrenado.
+2. ADS toma múltiples valores de la distribución de esa feature.
+3. Se reemplaza el valor de esa feature en todos los registros por un valor fijo.
+4. Se calcula la predicción del modelo sobre este dataset modificado.
+5. Se repite el proceso para cada valor seleccionado.
+
+🔹 Resultado: se obtienen **N datasets modificados**, cada uno con **M predicciones**.
+
+---
+
+### 10. Métodos de explicación en ADS
+
+#### a. PDP (Partial Dependence Plot)
+- Calcula el **promedio de predicciones** para cada valor de la feature.
+- Resultado: N valores promedio.
+
+#### b. ICE (Individual Conditional Expectation)
+- Muestra las **predicciones individuales** para cada muestra.
+- Resultado: N × M valores.
+
+---
+
+### 11. Tipos de gráficos PDP
+
+| Tipo | Visualización |
+|------|----------------|
+| **Una feature categórica** | Gráfico de barras (ej. sexo: mujer/hombre) |
+| **Una feature numérica discreta** | Línea o barras con valores en eje X y predicción promedio en eje Y |
+| **Dos features** | Heatmap con predicción promedio como color |
+
+---
+
+### 12. Gráficos ICE
+
+- Para features continuas: líneas individuales por muestra.
+- Eje X: valores de la feature.
+- Eje Y: predicción del modelo.
+
+🔹 Se puede trazar la **mediana** para visualizar la tendencia.  
+🔹 Para features categóricas: se usa **violin plot** (ej. sexo: mujer/hombre).
+
+---
+
+### 13. ALE (Accumulated Local Effects)
+
+- Método global **agnóstico al modelo**.
+- Evalúa el efecto de una feature **aislando el impacto de otras**.
+- Más robusto ante **features correlacionadas** que PDP.
+
+---
+
+### 14. ¿Cómo funciona ALE?
+
+1. Se selecciona una feature.
+2. Se divide su distribución en **intervalos configurables**.
+3. Para cada intervalo:
+   - Se identifican muestras similares (vecindario).
+   - Se calcula la diferencia en la predicción al modificar el valor de la feature.
+4. Se promedian las diferencias → se obtiene el efecto acumulado.
+
+🔹 Para features categóricas, se requiere un **orden estimado** (ej. usando similitud de distancia entre categorías).
+
+---
+
+### 15. Interpretación del gráfico ALE
+
+- Para features categóricas: gráfico de **barras verticales**.
+- Eje X: valores categóricos.
+- Eje Y: cambio en la predicción respecto al promedio.
+- Barras positivas → aumentan la predicción.
+- Barras negativas → la reducen.
+
+---
+
+### 16. Conclusión
+
+En esta lección aprendiste:
+
+- Cómo funcionan las explicaciones globales en ADS.
+- Qué son PDP, ICE y ALE.
+- Cómo interpretar sus gráficos.
+- Cuándo usar cada técnica según el tipo de feature y modelo.
+
+---
+
+---
+
+# 🧠 Lección: Model Explanations – Local Explainer  
+## 📘 Explicaciones locales y análisis What-If en Oracle ADS
+
+### 1. Introducción
+
+Ya vimos las explicaciones globales.  
+Ahora exploraremos las otras dos técnicas de explicabilidad:
+
+| Técnica | Propósito |
+|--------|-----------|
+| **Local** | Explica por qué el modelo hizo una predicción específica |
+| **What-If** | Muestra cómo cambian las predicciones al modificar los valores de entrada |
+
+---
+
+### 2. Explicaciones locales con LIME
+
+ADS incluye una versión mejorada de **LIME** (Local Interpretable Model-Agnostic Explanations).
+
+🔹 Idea clave: aunque el modelo global sea complejo, su comportamiento **local** puede aproximarse con un modelo simple (ej. lineal).
+
+---
+
+### 3. ¿Cómo funciona LIME?
+
+1. Se parte de un modelo entrenado.
+2. Se selecciona una muestra específica.
+3. Se generan muestras sintéticas en su vecindario.
+4. Se obtienen predicciones del modelo complejo.
+5. Se entrena un **modelo sustituto** (ej. lineal) sobre esas predicciones.
+6. Se interpretan los coeficientes del modelo sustituto como **importancia local de features**.
+
+---
+
+### 4. Estructura del panel de explicabilidad en ADS
+
+#### a. Sección "Model"
+- Columna izquierda: información del modelo y predicción real.
+- Columna derecha: muestra seleccionada (valores de features).
+
+#### b. Sección "Explainer"
+- Columna izquierda: configuración del explainer:
+  - Algoritmo (LIME)
+  - Modelo sustituto (lineal)
+  - Número de muestras sintéticas (ej. 5.000)
+  - Discretización de features continuas
+- Columna derecha: leyenda para interpretar los gráficos.
+
+#### c. Sección "Explanations"
+- Para clasificación:
+  - Se genera una explicación por clase objetivo.
+  - En binaria: una clase es el complemento de la otra.
+  - En multiclase: se muestra cómo cada feature favorece o perjudica a cada clase.
+
+---
+
+### 5. Visualización de importancia local
+
+- Gráfico de **barras horizontales**.
+- Ordenadas por importancia relativa.
+- Barras a la derecha (positivas): aumentan la probabilidad de la clase.
+- Barras a la izquierda (negativas): la reducen.
+
+---
+
+### 6. Calidad de la explicación
+
+ADS evalúa:
+
+- **Distribución de distancias** entre la muestra original y las sintéticas.
+- **Métricas de ajuste** del modelo sustituto (clasificación o regresión).
+
+Esto permite verificar si la explicación es confiable.
+
+---
+
+### 7. What-If Explainer
+
+Permite explorar cómo cambian las predicciones al modificar los valores de entrada.
+
+#### a. Explore Sample
+- Interfaz gráfica con una muestra editable.
+- Al hacer clic en **Run Inference**, se recalcula la predicción.
+- Se muestran valores originales y modificados.
+
+#### b. Explore Predictions
+- Explora predicciones sobre:
+  - **Distribución marginal** (una feature)
+  - **Distribución conjunta** (dos features)
+
+📊 Ejemplos:
+
+- Una feature (`age`): gráfico de `age` vs predicción.
+- Dos features (`age`, `CRIM`): gráfico 2D con color indicando el valor predicho.
+
+---
+
+### 8. Conclusión
+
+En esta lección aprendiste:
+
+- Cómo funciona LIME en ADS para explicaciones locales.
+- Cómo interpretar la importancia de features en una predicción específica.
+- Cómo usar el módulo What-If para explorar sensibilidad del modelo.
+
+---
+
+---
+
+# 🧠 Lección: Expert Tips – Explainers  
+## 📘 Uso de objetos Explainer en Oracle AutoMLx
+
+### 1. Introducción
+
+Hola, soy Hemant Gahankari, líder principal de entrenamiento en Oracle University.  
+En este video veremos cómo usar los objetos **Explainer** para aplicar técnicas de explicabilidad en modelos de ML.
+
+---
+
+### 2. Requisitos
+
+Para usar los objetos `Explainer`, necesitás:
+
+- Tener instalada la librería **Oracle AutoMLx**.
+- Usar el entorno Conda: `automlx_p28_cpu`.
+
+---
+
+### 3. Flujo básico de uso
+
+1. **Inicializar el motor AutoMLx**:
+   ```python
+   from automl import init
+   init(engine="local")
+   ```
+
+2. **Entrenar un modelo**:
+   ```python
+   estimator.fit(X_train, y_train)
+   ```
+
+3. **Crear el objeto Explainer**:
+   ```python
+   explainer = Explainer(estimator)
+   ```
+
+4. **Aplicar métodos de explicabilidad**:
+   - `explainer.global_explanation()`
+   - `explainer.local_explanation(sample)`
+   - `explainer.what_if(sample, feature_changes)`
+
+---
+
+### 4. Tipos de Explainers
+
+Según el tipo de datos, se usan clases específicas:
+
+| Tipo de datos | Clase recomendada |
+|---------------|-------------------|
+| Tabulares     | `TabularExplainer` |
+| Texto         | `TextExplainer`    |
+
+🔹 Cada clase tiene métodos adaptados para generar explicaciones relevantes.
+
+---
+
+### 5. Recomendación
+
+Se sugiere:
+
+- Probar con distintos datasets.
+- Explorar tanto explicaciones **globales** como **locales**.
+- Familiarizarse con la interfaz `MLExplainer`.
 
 ---
 
