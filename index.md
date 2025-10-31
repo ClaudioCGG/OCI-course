@@ -7168,15 +7168,309 @@ En esta unidad aprendiste:
 - Cómo monitorear, registrar y escalar tus ejecuciones
 - Cómo seleccionar y desplegar el mejor modelo automáticamente
 
+
+
+
+---
+---
+# *** 6. Related OCI Services (Servicios de OCI Relacionados) ***
+---
 ---
 
 
+# 🔥 6.1 Lección: Spark Applications, Data Flow y Data Science
+## 📘 Procesamiento escalable y flujos Spark en OCI
 
+### 1. Introducción a OCI Data Flow
 
+**Data Flow** es un servicio serverless para ejecutar aplicaciones Apache Spark a gran escala.  
+Permite a desarrolladores y científicos de datos:
 
+- Ejecutar cargas de trabajo de big data y ML
+- Usar cualquier lenguaje Spark: PySpark, SQL, Java, Scala
+- Realizar tareas como:
+  - Agregación y transformación de datos
+  - Ingeniería de features
+  - Limpieza y joins
 
+🔹 Incluye **MLlib**, la librería de ML nativa de Spark  
+🔹 También se pueden usar otras librerías si se programa en Python
 
+---
 
+### 2. Características clave
+
+| Componente | Descripción |
+|------------|-------------|
+| **Serverless** | No requiere clústeres ni infraestructura |
+| **Batch on demand** | Ejecución por demanda vía REST API |
+| **UI rica** | Crear, editar y ejecutar jobs Spark desde consola |
+| **Seguridad** | IAM integrado, datos cifrados, logs en Object Storage |
+| **Compatibilidad** | Ideal para datos en Object Storage, admite conectores personalizados |
+
+---
+
+### 3. Componentes de Data Flow
+
+| Elemento | Rol |
+|---------|-----|
+| **Library** | Repositorio central de aplicaciones Spark |
+| **Application** | Plantilla reutilizable con código, dependencias y configuración |
+| **Run** | Ejecución individual de una aplicación |
+| **Logs** | Archivos generados por Spark, almacenados automáticamente en Object Storage
+
+---
+
+### 4. Ventajas para ML y AI
+
+- Motor escalable para ETL, procesamiento y entrenamiento
+- Alternativa a Jobs para tareas de wrangling o entrenamiento
+- Compatible con SQL y dataframes
+- MLlib ofrece algoritmos listos para entrenar sobre Spark DataFrames
+
+---
+
+### 5. Arquitectura de ejecución Spark
+
+```plaintext
+Driver → Cluster Manager → Worker Nodes → Executors
+```
+
+- **SparkContext**: punto de entrada
+- **Driver**: coordina ejecución
+- **Executors**: ejecutan tareas distribuidas
+- Se elige:
+  - Shape del driver
+  - Shape y cantidad de executors
+
+🔹 Ejemplo: 500 GB en 10 horas → ~5 OCPUs
+
+---
+
+### 6. Integración con ADS
+
+- ADS SDK permite:
+  - Crear y ejecutar aplicaciones Data Flow
+  - Usar desde notebooks
+  - Sincronizar scripts PySpark
+  - Consultar logs y listar aplicaciones
+
+---
+
+### 7. Prerrequisitos para usar Data Flow con Data Science
+
+| Requisito | Descripción |
+|-----------|-------------|
+| ✅ Usuario con permisos |
+| ✅ Proyecto y notebook en Data Science |
+| ✅ Bucket para logs |
+| ✅ Aplicación Spark en Object Storage |
+| ✅ Datos en Object Storage |
+| ✅ Políticas de acceso configuradas |
+
+---
+
+### 8. Buenas prácticas desde notebooks
+
+- Usar **muestras de datos** para desarrollo
+- Dividir código en celdas
+- Convertir Spark DataFrames a pandas para visualización
+- Usar `matplotlib` para gráficos
+- Convertir notebook a script con:
+
+```bash
+jupyter nbconvert --to script my-notebook.ipynb
+```
+
+- Probar localmente con:
+
+```bash
+spark-submit my-script.py
+```
+
+- Eliminar referencias a librerías externas (pandas, sklearn, etc.)
+- Consultar documentación para agregar librerías al entorno de Data Flow
+
+---
+
+### 9. Operaciones comunes con ADS
+
+- Cargar aplicaciones existentes
+- Listar aplicaciones
+- Consultar logs
+- Sincronizar scripts
+- Definir argumentos y parámetros
+- Agregar librerías externas
+
+---
+
+### 10. Recapitulación del módulo
+
+En esta lección cubrimos:
+
+- Una **visión general de OCI Data Flow** como servicio serverless para ejecutar Spark
+- Cómo **interactúa con OCI Data Science**, especialmente desde notebooks
+- Buenas prácticas para desarrollar aplicaciones **PySpark** dentro de sesiones de notebook
+
+---
+
+### 11. Recomendaciones finales
+
+✅ Usá muestras de datos para desarrollo  
+✅ Iterá tu código en celdas y visualizá resultados  
+✅ Convertí tu notebook en script con `nbconvert`  
+✅ Probá localmente con `spark-submit`  
+✅ Eliminá dependencias externas no compatibles con Spark  
+✅ Consultá la documentación oficial para agregar librerías a Data Flow  
+✅ Usá el SDK de ADS para gestionar aplicaciones y ejecuciones
+
+---
+
+### 12. Cierre
+
+> “Data Flow es una herramienta poderosa para escalar procesamiento y entrenamiento en ML.  
+> Su integración con Data Science notebooks permite desarrollar, probar y ejecutar flujos Spark de forma eficiente.”  
+> — Hemant Gahankari, Oracle University
+
+---
+
+Perfecto, Claudio ✅. Aquí tenés la **traducción al español** de la lección *Oracle Open Data*, estructurada como ficha técnica para tu manual de OCI Data Science.
+
+---
+
+# 🌍 6.2 Lección: Oracle Open Data  
+## 📘 Repositorio abierto de datos científicos para investigación y ciencia de datos
+
+### 1. ¿Qué es Oracle Open Data?
+
+**Oracle Open Data** es un servicio de Oracle for Research que:
+
+- Proporciona acceso libre a grandes conjuntos de datos científicos
+- Está diseñado para quienes **crean, usan o manipulan datasets**
+- No requiere login ni pago
+
+🔹 Ideal para investigadores, científicos de datos y desarrolladores de IA/ML
+
+---
+
+### 2. Tipos de datos disponibles
+
+| Categoría | Ejemplos |
+|-----------|----------|
+| **Geoespaciales** | Imágenes satelitales: GOES, MODIS, Landsat |
+| **Ciencias de la vida** | Compuestos químicos, secuencias de proteínas, imágenes CT, datos genómicos |
+| **IA y ML** | Imágenes, corpus de libros en texto y audio |
+
+---
+
+### 3. Beneficios clave
+
+- ✅ Datos confiables y accesibles
+- ✅ Curados y listos para usar
+- ✅ Actualizaciones frecuentes
+- ✅ Ejemplos de código y herramientas para reproducibilidad
+- ✅ Navegación y descarga sencilla desde la plataforma
+
+🔹 Fuentes reconocidas: NASA, DeepMind, Stanford, entre otras
+
+---
+
+### 4. Acceso al repositorio
+
+- Sitio web: [opendata.oraclecloud.com](https://opendata.oraclecloud.com)
+- Clic en **Explore Repository** para navegar los datasets
+
+---
+
+### 5. Conclusión
+
+Oracle Open Data es un recurso valioso para:
+
+- Acceder a datos abiertos de alta calidad
+- Desarrollar proyectos de investigación, ciencia de datos e inteligencia artificial
+- Explorar dominios diversos con respaldo institucional
+
+---
+
+Perfecto, Claudio ✅. Aquí tenés la **traducción al español** de la lección final *OCI Data Labeling*, estructurada como ficha técnica para cerrar tu manual de OCI Data Science.
+
+---
+
+# 🏷️ 6.3 Lección: OCI Data Labeling  
+## 📘 Etiquetado de datos para entrenar modelos en OCI
+
+### 1. ¿Qué es el data labeling?
+
+El **etiquetado de datos** consiste en identificar propiedades en imágenes o textos y asignarles etiquetas.  
+Ejemplo: etiquetar 100 imágenes de tigres permite entrenar un modelo para detectar tigres en imágenes nuevas.
+
+🔹 Es esencial para entrenar modelos supervisados en proyectos de IA/ML
+
+---
+
+### 2. ¿Qué es el servicio OCI Data Labeling?
+
+- Servicio para **crear, gestionar y exportar datasets etiquetados**
+- Compatible con otros servicios de OCI (Vision, Data Science, AI Services)
+- Permite etiquetar imágenes, texto y documentos
+- Interfaz interactiva o vía API
+
+---
+
+### 3. ¿Quién lo usa?
+
+| Perfil | Uso |
+|--------|-----|
+| **Data Scientists** | Arman datasets, etiquetan, exportan para entrenar modelos personalizados |
+| **Developers / Engineers** | Etiquetan datos para ajustar modelos de AI Services (ej. reconocimiento de imágenes) |
+
+---
+
+### 4. Aplicaciones por industria
+
+| Industria | Ejemplo |
+|----------|---------|
+| **Retail / E-commerce** | Recomendaciones personalizadas |
+| **Salud** | Detección de anomalías en imágenes médicas |
+| **Medios / Entretenimiento** | Moderación de contenido y análisis de sentimiento |
+| **Gobierno / Seguros / Manufactura** | Clasificación, predicción, automatización
+
+---
+
+### 5. Rol en el ciclo de vida de IA/ML
+
+```plaintext
+📥 Etiquetado → 🧠 Entrenamiento → 📊 Evaluación → 🔁 Reentrenamiento
+```
+
+- El etiquetado ocurre **al inicio**
+- Etiquetado deficiente → resultados distorsionados
+- MLOps es iterativo: se reetiqueta si hay drift o baja precisión
+
+🔹 Ejemplo: si una clase está subrepresentada, se agregan más ejemplos etiquetados
+
+---
+
+### 6. Capacidades actuales
+
+- Casos simples y rápidos
+- Subida de datos vía UI o API
+- Etiquetado interactivo
+- Exportación para uso en otros servicios OCI
+
+---
+
+### 7. Conclusión
+
+En esta lección aprendiste:
+
+- Qué es el etiquetado de datos y por qué es esencial
+- Cómo funciona el servicio OCI Data Labeling
+- Quiénes lo usan y en qué industrias
+- Cómo impacta en el ciclo de vida de modelos ML
+- Cómo usarlo para entrenar, ajustar y reentrenar modelos en OCI
+
+---
 
 
 
