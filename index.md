@@ -7196,6 +7196,8 @@ Permite a desarrolladores y científicos de datos:
 🔹 Incluye **MLlib**, la librería de ML nativa de Spark  
 🔹 También se pueden usar otras librerías si se programa en Python
 
+Documentación: https://docs.oracle.com/en-us/iaas/Content/data-science/using/pipelines-data-flow.htm
+
 ---
 
 ### 2. Características clave
@@ -7332,9 +7334,6 @@ En esta lección cubrimos:
 > Su integración con Data Science notebooks permite desarrollar, probar y ejecutar flujos Spark de forma eficiente.”  
 > — Hemant Gahankari, Oracle University
 
----
-
-Perfecto, Claudio ✅. Aquí tenés la **traducción al español** de la lección *Oracle Open Data*, estructurada como ficha técnica para tu manual de OCI Data Science.
 
 ---
 
