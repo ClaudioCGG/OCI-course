@@ -1,5 +1,6 @@
 # <center>🌐 Bienvenido a Ciencia de Datos</center>
-
+---
+---
 ## 📚 Índice temático del curso OCI Data Science 
 
 ### 1. **Bienvenida e Introducción General**
@@ -56,782 +57,1019 @@
 - Notebooks de ejemplo para crear credenciales</br></br>
 
 
+
 ---
-### -- Visión General del Curso
+---
+# *** 1. WELCOME TO DATA SCIENCE ***
+---
+---
 
-Bienvenidos todos al curso de Ciencia de Datos de Oracle Cloud Infrastructure. La ciencia de datos es el arte y la ciencia de extraer conocimientos valiosos de los datos para resolver problemas del mundo real y de negocios.
+# 🎓 Lección 1.1: Course Overview
+## 📘 Introducción al curso de Oracle Cloud Infrastructure Data Science
 
-Y este es el momento perfecto para mejorar o reentrenar a tu fuerza laboral para satisfacer esta enorme demanda de profesionales en ciencia de datos. Estamos emocionados de tenerte aquí y hemos preparado una gran cantidad de información valiosa para ti. Para simplificar, usaré OCI para referirme a Oracle Cloud Infrastructure, que es nuestra poderosa plataforma.
+### 1. Bienvenida
 
-En las siguientes diapositivas, te guiaré a través del público objetivo, los requisitos previos, los objetivos y la estructura del curso. Pero antes de eso, echemos un vistazo a las personas que contribuyeron a este curso.
+¡Bienvenido al curso de **OCI Data Science**!
+La ciencia de datos es el arte y la ciencia de extraer valor de los datos para resolver problemas reales y de negocio.
 
-Además de mí, escucharás a varios expertos y especialistas a lo largo de este curso, incluyendo Wes Prichard, John Peach, John Stanesby, JR Gauthier, Lyudmil Pelov, Praveen Patil y Hemant Gahankari. Aunque tal vez no escuches sus voces, hay docenas de personas que ayudaron a desarrollar este curso. Están listadas aquí alfabéticamente por equipo.
-
-Este curso fue diseñado con una audiencia específica en mente. Está destinado principalmente a científicos de datos, pero también es apropiado para roles relacionados como ingenieros de aprendizaje automático (ML engineers) e ingenieros de inteligencia artificial (AI engineers).
-
-Nuestro objetivo es ayudarte a dominar el uso de OCI Data Science y servicios en la nube relacionados para construir soluciones de ciencia de datos. Para eso, deberías tener habilidades en Python para aprendizaje automático. Deberías tener conocimientos generales de bibliotecas de ciencia de datos y aprendizaje automático de código abierto, y saber cómo aplicarlas.
-
-Eso significa que probablemente tienes un año o más de experiencia en uno de los roles mencionados en la diapositiva anterior. Y será útil si ya tienes algo de experiencia práctica con OCI.
-
-Dado que este curso trata sobre ayudarte a prepararte para el examen de certificación, es útil saber desde el principio lo que el examen va a validar. Evaluará tu capacidad para identificar servicios de OCI utilizados para implementar una solución de aprendizaje automático para un caso de uso empresarial. Verificará si puedes incorporar buenas prácticas de aprendizaje automático en la nube.
-
-Se centrará fuertemente en el uso de OCI Data Science para construir, entrenar, desplegar y gestionar modelos de ML. También incluirá el uso de otros servicios de datos e inteligencia artificial de OCI para crear soluciones de aprendizaje automático.
-
-Este curso está dividido en cinco módulos principales. Tomemos un momento para repasarlos. Una introducción a la ciencia de datos presentará OCI Data Science, y cómo configurar una tenencia de OCI (OCI tenancy) para usar OCI Data Science. La configuración del entorno se centrará en la preparación del entorno de OCI Data Science.
-
-El módulo del ciclo de vida de aprendizaje automático te guiará por las capacidades de OCI Data Science que apoyan todos los pasos del ciclo de vida de ML. Las prácticas de MLOps se enfocan en características que soportan MLOps como escalado, monitoreo.
-
-Y finalmente, Servicios Relacionados de OCI cubre otros servicios en la nube útiles al construir soluciones de ciencia de datos. Cada uno de estos módulos contiene múltiples lecciones presentadas por diferentes especialistas. Recomendamos avanzar en los módulos en orden, porque los módulos posteriores se basan en los anteriores.
-
-Muchas de las lecciones incluirán una demostración grabada para ilustrar los conceptos y prácticas importantes presentadas en la lección. El curso también incluye un laboratorio de extremo a extremo que los estudiantes pueden usar para obtener experiencia práctica y reforzar conceptos de todos los módulos.
-
-Este laboratorio utiliza un caso de uso sobre la deserción de empleados (employee attrition). Y muchas de las demostraciones usarán ese mismo caso. El caso predice la probabilidad de que un empleado deje la organización según múltiples características.
-
-Para completar el laboratorio, necesitarás acceso a una cuenta de Oracle Cloud. Si aún no tienes una, puedes registrarte para una prueba gratuita en signup.cloud.oracle.com. También puedes usar GitHub para acceder al repositorio de ejemplos de OCI Data Science y AI (OCI Data Science AI samples repo). Y vamos a presentarte la terminología de los productos de ciencia de datos en el primer módulo.
-
-En cualquier momento, si tienes una pregunta específica sobre el material del curso o necesitas ayuda adicional, completa nuestro formulario “Ask Your Instructor”. Nuestros instructores expertos se comunicarán contigo lo antes posible con soporte personalizado.
-
-También queremos que saques el máximo provecho de tu experiencia de aprendizaje. Por eso hemos creado este espacio comunitario donde puedes conectar con otros estudiantes y expertos en la materia. Si tienes alguna otra pregunta o quieres iniciar una discusión sobre un tema en particular, este es el lugar. Así que no seas tímido. Únete hoy a la comunidad de Oracle University (OU Community) y empieza a colaborar con tus compañeros de estudio. Estamos ansiosos por ver lo que aportarás.
-
-Me gustaría reconocer que este es un curso extenso. También me gustaría ofrecer algunos consejos para mejorar la retención y darte la mejor oportunidad de aprobar el examen. Sugerimos que tomes notas sobre los temas según tu conocimiento previo. Y recuerda que puedes seguir usando la transcripción de preparación.
-
-Programa descansos cada hora y muévete. No permanezcas estático frente a la computadora por mucho tiempo. Regístrate para una cuenta gratuita en la nube. Familiarízate con la plataforma OCI y completa todos los ejercicios de verificación de habilidades en el curso. También completa la preparación para el examen y toma el examen de práctica antes de presentar el examen de certificación.
-
-Aquí en OCI estamos continuamente creando y entregando formación, integrando comentarios y monitoreando los análisis de uso. Si algo está roto o no está resonando con nuestros usuarios, queremos saberlo—y ahí es donde entran tus valoraciones.
-
-Siéntete libre de calificar este curso y dejar comentarios específicos sobre lo que fue útil y lo que no. Estamos ajustando constantemente nuestro enfoque para ayudar a nuestra audiencia a lograr sus metas. Así que unamos fuerzas y trabajemos juntos para tu aprendizaje y certificación.</br></br>
+Este es un gran momento para **capacitarte o recapacitar a tu equipo** y responder a la creciente demanda de profesionales en ciencia de datos.
 
 ---
 
-# Consejos de Expertos: Introducción
+### 2. ¿Qué es OCI?
 
-Primero que nada, gracias por elegir tomar el curso profesional de OCI Data Science y obtener la certificación. Mi nombre es Hemant Gahankari. Soy líder principal de formación en Oracle University.
-
-Como científico de datos o ingeniero de aprendizaje automático, nuestro trabajo diario consiste en obtener datos, preparar datos, construir y entrenar modelos, evaluar modelos, desplegar y escalar modelos, y también automatizar pipelines (flujos de trabajo) de aprendizaje automático. Con el servicio OCI Data Science y los servicios de IA, podemos realizar todas estas tareas de manera eficiente.
-
-A través de una serie de videos con consejos de expertos, te mostraremos cómo usar algunas de las características poderosas —y al mismo tiempo fáciles de usar— del servicio de ciencia de datos y servicios de IA de OCI. Esperamos que estos videos te resulten útiles. Gracias por escuchar.</br></br>
-
----
-### -- Introducción y Configuración
-
-#### -- Ciencia de Datos: Introducción
-
-Este es el módulo 1, que cubre introducción y configuración. Esta primera lección es la introducción al servicio de Ciencia de Datos en la Nube de Oracle Cloud Infrastructure. Soy Wes Pritchard, gerente principal de producto para Ciencia de Datos y Servicios de IA.
+Usaremos el término **OCI** para referirnos a **Oracle Cloud Infrastructure**, la plataforma en la que se basa este curso.
 
 ---
 
-## 📜 Antes de entrar en ciencia de datos y Oracle
+### 3. Equipo del curso
 
-Echemos una mirada divertida a la historia y cómo llegamos aquí. En los años 1300, William Ockham, un filósofo y fraile, creía que los científicos deberían preferir teorías más simples por sobre las más complejas. El principio que lleva su nombre, conocido como la navaja de Ockham (*Ockham’s razor*), puede aplicarse al aprendizaje automático buscando la solución más simple.
+A lo largo del curso escucharás a varios especialistas, entre ellos:
 
-A mediados de 1700, el astrónomo Tobias Mayer hizo un argumento cuantitativo de que más datos son mejores. Estudiaba los movimientos de la luna y recolectó 9 veces más puntos de datos de los necesarios, afirmando que esto hacía sus observaciones más precisas. Por esto, a menudo se le considera el primer verdadero científico de datos.
+- Wes Prichard  
+- John Peach  
+- John Stanesby  
+- JR Gauthier  
+- Lyudmil Pelov  
+- Praveen Patil  
+- Hemant Gahankari  
 
-En 1952, Arthur Samuel, pionero de IBM en computación, juegos e inteligencia artificial, acuñó el término *machine learning* (aprendizaje automático). Diseñó un juego para jugar damas y descubrió que cuanto más jugaba la computadora, más aprendía estrategias ganadoras mediante la experiencia.
-
-En 1962, el matemático John W. Tukey predijo el efecto de la computación electrónica moderna en el análisis de datos como una ciencia empírica. Sin embargo, sus predicciones ocurrieron décadas antes de la explosión del *big data* y de la capacidad para realizar análisis complejos y a gran escala.
-
-En 1997, una supercomputadora de IBM llamada Deep Blue derrotó al gran maestro de ajedrez Garry Kasparov en solo 19 movimientos. Kasparov se rindió tras este partido. La supercomputadora, altamente avanzada, podía calcular entre 100 mil millones y 200 mil millones de posiciones en los tres minutos tradicionalmente asignados a cada jugador por jugada en ajedrez estándar.
-
-En 2008, el Dr. DJ Patil de LinkedIn y Jeff Hammerbacher de Facebook acuñaron el término *data science* (ciencia de datos) para describir un campo de estudio emergente que se enfocaba en extraer el valor oculto de los datos recolectados en los sectores comerciales y minoristas.
-
-Dado ese contexto histórico, veamos cómo se aplica hoy la ciencia de datos. En 2021, en medio de la pandemia global por COVID-19, el profesor y psicólogo Anthony Klotz acuñó el término *la Gran Renuncia* (*the Great Resignation*) para describir una nueva tendencia de insatisfacción y rotación en el empleo. Muchas empresas quieren rastrear, analizar y predecir los patrones de retención de sus empleados.
-
-En este curso, usaremos la deserción de empleados (*employee attrition*) como un caso de uso para conectar nuestras actividades de aprendizaje automático con un problema empresarial del mundo real. Mejor aún, te ayudaremos a construir un modelo predictivo de ML (*Machine Learning*) por ti mismo en el laboratorio independiente para estudiantes que acompaña este curso.</br></br>
+Además, decenas de personas colaboraron en el desarrollo del curso.
 
 ---
 
-## 🔍 Enfoque de Oracle hacia ciencia de datos e IA
+### 4. Audiencia objetivo
 
-Todo gira en torno a los datos. Durante muchos años, los datos disponibles para las organizaciones eran los datos estructurados de sus aplicaciones empresariales. Y estos siguen siendo datos de negocios muy importantes, pero ciertamente no son los únicos. Las organizaciones tienen muchos tipos de datos únicos y a menudo no estructurados, provenientes de muchas fuentes diferentes: sensores de equipos, aplicaciones móviles, redes sociales, interacciones con clientes vía voz y texto, videos, imágenes, documentos, y muchos más.
+Este curso está diseñado principalmente para:
 
-Las organizaciones quieren usar **todos los datos** para producir nuevos conocimientos y nuevos productos de datos. Quieren mejorar sus operaciones creando mejores experiencias para clientes, anticipando demanda de servicios y evitando fallas de equipos que se podrían haber prevenido. La siguiente generación de problemas empresariales o escenarios exige poder usar todos los datos. Y necesitamos las capacidades que brindan la ciencia de datos, el aprendizaje automático y la inteligencia artificial para comprender y utilizar esos datos.
+- 👩‍🔬 Científicos de datos
+- 🤖 Ingenieros de ML
+- 🧠 Ingenieros de IA
 
-Oracle AI es el portafolio de servicios en la nube para ayudar a las organizaciones a aprovechar todos los datos en esta nueva generación de escenarios. Por lo tanto, la **base de todo esto son los datos**. Es como una barra en la parte inferior. Obviamente, la IA y el aprendizaje automático trabajan sobre datos y requieren datos.
+Se espera que tengas:
 
-Ahora, la capa superior de este diagrama son las aplicaciones, y esto se refiere de forma amplia a todas las maneras en que se consume la IA. Puede ser una aplicación, un proceso de negocio o un sistema analítico.
-
-Entre la capa de aplicaciones y la de datos, hay dos grupos: los servicios de IA (*AI services*) en la parte superior y los servicios de aprendizaje automático (*ML services*) en la parte inferior. La diferencia entre los dos grupos es que los servicios de ML son utilizados principalmente por los científicos de datos para construir, entrenar, desplegar y administrar modelos de ML. Los científicos de datos pueden trabajar con frameworks de código abierto conocidos y con OCI Data Science. Por cierto, ese es el servicio en la nube que es el enfoque de este curso.
-
-Los científicos de datos y especialistas en bases de datos pueden aprovechar algoritmos de ML incorporados en la base de datos de Oracle. Y un servicio importante que respalda tanto a los servicios de ML como de IA es **OCI Data Labeling** (etiquetado de datos), ya que al construir modelos de ML que trabajan con imágenes, texto o voz, se necesita **datos etiquetados** para entrenar los modelos.
-
-Los servicios de IA contienen modelos de ML preconstruidos para usos específicos. Algunos están preentrenados y otros son entrenados por el cliente con sus propios datos. Todos se utilizan simplemente llamando a la API del servicio, enviando los datos a procesar, y el servicio devuelve un resultado. No hay infraestructura que administrar. Y aunque este curso se centrará principalmente en OCI Data Science, también incluimos algunas lecciones sobre servicios de IA y etiquetado de datos. Hay otro curso aparte que cubre ML y base de datos Oracle.
-
-Ahora bien, esos servicios de IA y ML que acabo de mostrarte no funcionan de manera aislada. Están respaldados por muchos otros servicios disponibles en nuestra infraestructura en la nube, incluyendo análisis de negocios, análisis de grafos y muchas formas de integración y gestión de datos, todo funcionando sobre la infraestructura básica de la nube. Estos servicios pueden combinarse en varias arquitecturas para respaldar diferentes escenarios.</br></br>
+- Experiencia en Python para ML
+- Conocimiento general de librerías open source (ej. scikit-learn, pandas, etc.)
+- Idealmente, al menos 1 año de experiencia en roles afines
+- Familiaridad básica con OCI
 
 ---
 
-## 🔧 OCI Data Science: visión general
+### 5. Objetivo del curso
 
-Ya definimos Oracle AI y los servicios que lo componen. Ahora, veamos más de cerca Oracle Cloud Infrastructure Data Science (abreviado como OCI Data Science). Es el servicio en la nube enfocado en asistir al científico de datos durante todo el ciclo de vida de aprendizaje automático, con soporte para Python y software de código abierto. Como verás en los íconos del gráfico, el servicio tiene muchas características que cubriremos a lo largo del curso.
+Prepararte para:
 
-Ahora, repasemos los tres principios fundamentales que guían el producto:
-
-1. **Acelerar el trabajo del científico de datos individual**. Quienes salen hoy de las universidades han sido formados usando herramientas de código abierto, y eso es lo que les resulta más cómodo. Pero usar estas herramientas en una laptop significa gestionar muchas bibliotecas de diferentes fuentes, y estar limitado por la potencia de cómputo de la máquina.
-
-   OCI Data Science proporciona bibliotecas de código abierto junto con acceso fácil a diferentes niveles de potencia de cómputo sin necesidad de gestionar ninguna infraestructura. También incluye una biblioteca propia de Oracle para facilitar varios aspectos del trabajo del científico de datos.
-
-2. **Colaboración**. Va más allá de la productividad individual, permitiendo que los equipos de ciencia de datos trabajen juntos. Esto se logra mediante el **compartir recursos**, lo que reduce el trabajo duplicado y apoya la **reproducibilidad y auditabilidad** de los modelos, para facilitar la colaboración y la gestión de riesgos.
-
-3. **Calidad empresarial (*Enterprise-grade*)**.El tercer principio trata sobre ser de calidad empresarial. Eso significa que está integrado con todos los protocolos de seguridad y acceso de OCI. La infraestructura subyacente está completamente gestionada. El cliente no tiene que pensar en aprovisionar cómputo ni almacenamiento, ya que el servicio se encarga de todo el mantenimiento, actualizaciones y parches, para que los usuarios puedan enfocarse en resolver problemas empresariales con ciencia de datos.</br></br>
+- Usar OCI Data Science y servicios relacionados
+- Construir, entrenar, desplegar y gestionar modelos ML
+- Aplicar buenas prácticas en la nube
+- Aprobar el examen de certificación de OCI Data Science
 
 ---
 
-## ⚙️ Detalles específicos de OCI Data Science
+### 6. Estructura del curso
 
-Primero que nada, es un servicio en la nube para construir, entrenar, desplegar y gestionar modelos de aprendizaje automático de manera rápida. Sirve a científicos de datos y equipos de ciencia de datos a lo largo del ciclo completo de vida del aprendizaje automático, con soporte para Python y herramientas de código abierto. Los usuarios trabajan en una interfaz familiar de JupyterLab, donde escriben código Python. Y los modelos se preservan en el catálogo de modelos (*Model Catalog*) y se despliegan para gestionar la infraestructura.</br></br>
+El curso se divide en 5 módulos principales:
 
----
+| Módulo | Contenido |
+|--------|----------|
+| **1. Introducción a Data Science** | Qué es OCI Data Science y cómo configurar tu tenancy |
+| **2. Configuración del entorno** | Uso del entorno de trabajo en OCI Data Science |
+| **3. Ciclo de vida del ML** | Capacidades de OCI para cada etapa del ciclo de vida |
+| **4. Prácticas de MLOps** | Escalado, monitoreo y automatización |
+| **5. Servicios relacionados de OCI** | Otros servicios útiles para soluciones de ciencia de datos |
 
-## 🧠 Terminología importante del producto
-
-Vamos a cubrir algunos términos clave que se usarán a lo largo del curso. Tómate un tiempo para asimilarlos:
-
-- **Projects (Proyectos)**: Son contenedores que permiten a los equipos de ciencia de datos organizar su trabajo. Representan espacios de colaboración para organizar y documentar recursos como sesiones de notebook y modelos. Una tenencia (*tenancy*) puede tener tantos proyectos como se necesite, sin límites.
-
-- **Notebook Sessions (Sesiones de Notebook)**: Es donde trabajan los científicos de datos. Proveen un entorno de JupyterLab con bibliotecas de código abierto preinstaladas y la posibilidad de agregar más. Son entornos interactivos para codificar, construir y entrenar modelos. Estas sesiones corren sobre infraestructura gestionada, y el usuario puede seleccionar CPU o GPU, el tipo de cómputo (*compute shape*) y la cantidad de almacenamiento sin necesidad de aprovisionar manualmente.
-
-- **Conda**: Sistema de gestión de entornos y paquetes de código abierto, creado para programas en Python. Se utiliza en el servicio de ciencia de datos para instalar, ejecutar y actualizar paquetes con sus dependencias rápidamente. Conda permite crear, guardar, cargar y alternar entre entornos de forma sencilla dentro del notebook.
-
-- **ADS SDK (Accelerated Data Science Software Development Kit)**: Es una biblioteca en Python incluida en OCI Data Science. Tiene muchas funciones y objetos que automatizan o simplifican pasos del flujo de trabajo en ciencia de datos: conexión a datos, exploración, visualización, entrenamiento con AutoML, evaluación y explicación de modelos. Además, ofrece una interfaz sencilla para acceder al catálogo de modelos y otros servicios de OCI, incluyendo almacenamiento de objetos (*Object Storage*).
+🔹 Cada módulo incluye lecciones con demostraciones grabadas.  
+🔹 Se recomienda seguir los módulos en orden.
 
 ---
 
-## 🔍 Modelos, Catálogo y Despliegue
+### 7. Laboratorio de práctica
 
-- **Modelos**: Definen una representación matemática de tus datos y negocio. Se crean en sesiones de notebook dentro de proyectos.
+Incluye un laboratorio de punta a punta con el caso de uso:
 
-- **Model Catalog (Catálogo de Modelos)**: Lugar donde se almacenan, rastrean, comparten y gestionan los modelos. Es un repositorio centralizado y gestionado de artefactos de modelos. Incluye metadatos sobre el origen del modelo, información relacionada con Git, y el script o notebook usado para subirlo al catálogo. Los modelos almacenados pueden compartirse entre miembros del equipo y volverse a cargar en una sesión de notebook.
+> **Predicción de rotación de empleados**  
+> Predice la probabilidad de que un empleado deje la organización según múltiples características.
 
-- **Model Deployments (Despliegue de Modelos)**: Permite desplegar modelos desde el catálogo como endpoints HTTP sobre infraestructura gestionada. Este tipo de despliegue como aplicaciones web que sirven predicciones en tiempo real es la forma más común de operacionalizar modelos. Los endpoints HTTP son flexibles y pueden procesar solicitudes de predicción.
-
----
-
-## 🚀 Tareas, Accesos y Regiones
-
-- **Data Science Jobs (Tareas de Ciencia de Datos)**: Permiten definir y ejecutar tareas repetibles de aprendizaje automático en infraestructura gestionada.
-
-- **OCI Console**: Método más común de acceso. Proporciona una interfaz basada en navegador, fácil de usar, que da acceso a las sesiones de notebook y todas las características del servicio. Esta será la interfaz usada durante el curso.
-
-- **REST API**: Proporciona acceso programático a las funcionalidades del servicio. Hay documentación con referencia de la API.
-
-- **SDKs (Kits de desarrollo)**: OCI ofrece SDKs para varios lenguajes de programación (Java, Python, TypeScript, JavaScript, .NET, Go, Ruby). Estos permiten escribir código para gestionar recursos del servicio. Se mostrarán ejemplos del uso del SDK de Python para desplegar modelos y crear tareas.
-
-- **CLI (Command Line Interface)**: Ofrece acceso rápido y funcionalidad completa sin necesidad de scripting.
-
-- **Regions (Regiones)**: OCI Data Science como servicio en la nube está disponible a través de regiones, que son centros de datos distribuidos globalmente, ofreciendo entornos seguros y de alto rendimiento local. Esto lo hace accesible en todo el mundo para sectores comerciales, gubernamentales y dedicados. Oracle agrega nuevas regiones frecuentemente, más información en [oracle.com/cloud](https://oracle.com/cloud).
+📌 Requiere una cuenta de Oracle Cloud (puede ser gratuita).  
+📌 Se recomienda acceder al repositorio de ejemplos en GitHub: `oci-data-science-ai-samples`.
 
 ---
 
-## 📚 ADS SDK Overview
+### 8. Comunidad y soporte
 
-Hola, bienvenido a este módulo sobre el SDK de Accelerated Data Science. Soy John Peach, científico de datos en el equipo de OCI Data Science Service.
-
-En este módulo obtendrás una comprensión general del ADS SDK, sus metas y capacidades. ADS SDK fue diseñado por y para científicos de datos. Cubre todo el ciclo de vida del aprendizaje automático, con el objetivo de integrar los servicios de OCI en flujos de trabajo típicos de ciencia de datos.
-
-Por ejemplo, se integra con Autonomous Database y el servicio de Big Data mediante clases como *SecretKeeper*, que facilitan el almacenamiento seguro de credenciales y el acceso a esos servicios.
-
-También busca mejorar tareas comunes como análisis exploratorio con *Feature Types* (tipos de características), y optimización de hiperparámetros mediante *ADSTuner*. Además, ADS ofrece AutoML y funcionalidades de *explainability* (explicabilidad de modelos).
-
-Hay dos versiones de ADS:
-
-- Una pública disponible en GitHub o instalable desde PyPI.
-- Otra especial que viene incluida en ciertos packs dentro del servicio de Oracle Cloud, que contiene las funcionalidades de AutoML y explicabilidad.
-
-Se puede acceder al SDK de varias formas. Está instalado en los entornos *Conda* dentro del servicio de Data Science, listo para usarse. También puede instalarse desde PyPI o GitHub mediante el comando `pip install`.
+- Si tenés dudas, podés usar el formulario **Ask Your Instructor**.
+- También podés unirte a la **comunidad de Oracle University (OU)** para interactuar con otros estudiantes y expertos.
 
 ---
 
-## 🌟 Funciones clave de ADS
+### 9. Consejos para el curso y el examen
 
-- **Conexión a fuentes de datos**: ADS provee conectores a muchas ubicaciones populares de datos.
-
-- **Visualización de datos**: ADS tiene gráficos inteligentes (*smart plotting*) con ajustes predeterminados según el tipo de datos. También permite visualizar según tipos de característica, correlaciones y relaciones entre variables.
-
-- **Ingeniería de características (Feature Type Engineering)**: ADS analiza los datos y da recomendaciones para transformar características y mejorar modelos.
-
-- **Entrenamiento de modelos**: ADS permite entrenar modelos con AutoML de Oracle Labs o afinar hiperparámetros con ADSTuner. Tiene clases que empaquetan rápidamente modelos para su despliegue.
-
-- **Evaluación de modelos**: ADS incluye clases para evaluar desempeño de modelos con pocas líneas de código.
-
-- **Interpretabilidad de modelos**: Entender y explicar lo que el modelo está aprendiendo es esencial para confiar en él y comunicarlo a otros.
-
-- **Despliegue de modelos**: ADS lo facilita con clases para los tipos de modelos más comunes, y también para modelos genéricos. Con unas pocas líneas de código, el modelo puede ponerse en producción.
+- Tomá notas según tu conocimiento previo
+- Usá las transcripciones para seguir el contenido
+- Hacé pausas cada hora y movete
+- Completá los ejercicios prácticos y el laboratorio
+- Realizá el examen de práctica antes del examen oficial
 
 ---
 
-## 🔗 Conexión a fuentes de datos
+### 10. Mejora continua
 
-Los datos están almacenados en muchos lugares, y necesitas poder acceder a ellos. A menudo, los datos son demasiado grandes para caber en tu sesión de notebook. Puedes usar ADS para limitar la transferencia de datos por la red.
+El equipo de OCI está en constante mejora del curso.
+Tus comentarios y calificaciones ayudan a optimizar la experiencia de aprendizaje.
 
-**Almacenamiento local** es una ubicación común para guardar tus datos. Este es el almacenamiento en bloques dentro de la sesión de notebook. ADS proporciona acceso fácil a eso.
+---
+---
 
-Para conjuntos de datos más grandes o para compartir conjuntos de datos, se utiliza comúnmente el **almacenamiento de objetos** (*Object Storage*). ADS utiliza el protocolo **APE Spec** para permitirte usar *pandas* y acceder al almacenamiento de objetos como si estuviera en tu disco local. Esto se realiza mediante el protocolo de OCI y *pandas* cuando el archivo está en almacenamiento de objetos.
+# 🎯 Lección 1.2: Expert Tips – Introducción  
+## 📘 Consejos prácticos para profesionales de ciencia de datos en OCI
 
-Gran parte de nuestros datos están en **bases de datos Oracle**. ADS proporciona una conexión fácil a estas bases de datos. Herramientas como **Oracle DB Secret Keeper** permiten almacenar credenciales de inicio de sesión en el archivo **DTP Wallet** dentro de un **OCI Vault**, de modo que no tengas que exponer esa información en tu notebook.
+### 1. Bienvenida
 
-**ADB Secret Keeper** funciona con Autonomous Database. ADS proporciona integración con proveedores de nube de terceros. Con ADS instalado, *pandas* puede conectarse a proveedores como S3, Google Cloud Storage, Azure Data Lake Storage, Azure Blob Service, Dropbox y muchos más.
-
-Para datos no relacionales, ADS proporciona acceso mediante la clase **Data Set Factory** para hacer conexiones simples con bases de datos NoSQL, ejecutar consultas y devolver resultados.
-
-**OCI Big Data Service** es un servicio basado en Hadoop que utiliza **HDFS** como sistema de archivos.
-
-ADS permite conectarse fácilmente a BDS sin necesidad de copiar los datos al almacenamiento local. También proporciona acceso a la web usando HTTP y HTTPS para leer archivos directamente hacia un dataframe.
+Gracias por elegir el curso **OCI Data Science Professional** y por dar el paso hacia tu certificación.  
+Soy **Hemant Gahankari**, líder principal de entrenamiento en Oracle University.
 
 ---
 
-## 📊 Visualización de Datos
+### 2. ¿Qué hacemos como científicos de datos o ingenieros de ML?
 
-El análisis exploratorio de datos es crítico para entender tus datos. Puede llevar tiempo crear y desechar clases, solo para tener que crearlas nuevamente la próxima vez que uses datos similares.
+Nuestro trabajo diario incluye:
 
-Las clases **Feature Type** proporcionan los mismos valores predeterminados para visualizar tus datos. También es muy fácil crear tipos de características personalizados para visualizar según tus preferencias. Luego, puedes reutilizar estas visualizaciones en diferentes proyectos o en toda la organización.
+- 📥 Obtener y preparar datos
+- 🧠 Construir y entrenar modelos
+- 📊 Evaluar resultados
+- 🚀 Desplegar y escalar modelos
+- 🔁 Automatizar pipelines de machine learning
 
-Además, el sistema de tipos de características proporciona **estadísticas resumidas**, **visualizaciones resumen** de cada característica y **mapas de calor de correlaciones**.
-
-La **ingeniería de características** puede ser un problema desafiante. Puede mejorar enormemente la calidad de tu modelo tomando características existentes y generando nuevas a partir de ellas—transformando los datos que tienes en otros tipos de relaciones que el modelo pueda aprender.
-
-ADS tiene funcionalidad integrada para apoyar esto. Hay una clase llamada **ADS Data Set** que envuelve un dataframe de *pandas*. Proporciona sugerencias de transformación y puede hacerlo automáticamente. Soporta codificación categórica, valores nulos e imputación. Puede ofrecer recomendaciones sobre qué cambios hacer a tus datos para crear mejores características.
-
----
-
-## 🧪 Entrenamiento de Modelos
-
-Una vez que tengas tus datos preparados, es hora de crear un modelo. ADS puede automatizar completamente este proceso usando tecnología **Auto Machine Learning**.
-
-Puede probar muchos tipos diferentes de clases de modelo, ajustar hiperparámetros y proporcionar métricas de desempeño para cada modelo.
-
-**ADSTuner** realiza la **optimización de hiperparámetros**. Una vez entrenado el modelo, ADS también puede empaquetar los archivos necesarios para crear un **artifact del modelo**, guardar ese artifact en el catálogo de modelos (*Model Catalog*), y luego puedes enviarlo a producción. Ya no necesitas luchar para poner tu modelo en producción.
+🔹 Con los servicios de **OCI Data Science** y **OCI AI**, podemos realizar todas estas tareas de forma eficiente.
 
 ---
 
-## 📈 Evaluación de Modelos
+### 3. ¿Qué incluye esta serie?
 
-Si tienes uno o varios modelos, puede que necesites entender el rendimiento y compararlos. **ADS Evaluator** permite realizar comparaciones entre modelos diferentes. Ofrece herramientas comunes, métricas y gráficos.
+A través de una serie de **videos de consejos expertos**, aprenderás a usar funciones potentes y a la vez simples de:
 
-Entiende clasificación **binaria**, **multinomial** y **regresión**, y genera métricas y gráficos apropiados para el tipo de problema. Ya no necesitas regenerar constantemente estos gráficos o verificar si estás usando los correctos. ADS lo hace automáticamente por vos.
+- OCI Data Science Service
+- OCI AI Services
+
+🔹 El objetivo es ayudarte a aplicar estas herramientas en tus proyectos reales de forma práctica y efectiva.
+
+---
+---
+# *** 2. INTRODUCTION AND CONFIGURATION ***
+---
+---
+
+# 🧠 2.1 Lección: Data Science – Introducción (Parte 1)
+## 📘 Módulo : Introducción y configuración
+
+### 1. Bienvenida
+
+Hola, soy **Wes Pritchard**, gerente principal de producto para Data Science y AI Services en Oracle.  
+Esta lección presenta el servicio **OCI Data Science Cloud Service**.
 
 ---
 
-## 🔍 Interpretabilidad del Modelo y Explicabilidad
+### 2. Breve historia de la ciencia de datos
 
-Puedes desarrollar confianza en tu modelo si puedes explicar lo que ha aprendido y lo que está haciendo. Interpretar el comportamiento del modelo es clave para entender qué hace y qué mejoras pueden aplicarse en versiones futuras.
-
-ADS ofrece herramientas para interpretar modelos que son **agnósticas al tipo de modelo**, es decir, no dependen del tipo de modelo que se haya construido.
-
-Proporciona explicaciones mediante el módulo de ADS que son interpretables, agnósticas y ofrece herramientas para hacer **tests de escenarios hipotéticos** (*what-if*): cambiar valores de entrada y observar cómo responde el modelo.
-
-También ofrece **explicabilidad local**, es decir, permite entender por qué el modelo hizo una determinada predicción sobre una observación específica. Y ofrece **explicabilidad global**, para comprender qué ha aprendido el modelo y cómo se comporta.
-
-Lo hace mediante gráficos como **Partial Dependence Plots** y **ALE Plots** (*Accumulated Local Effects*), para entender el comportamiento general. Usalos para verificar si el modelo está aprendiendo lo que debería y entender las relaciones entre los datos.
-
----
-
-## 🚀 Despliegue de Modelos
-
-Muchos científicos de datos enfrentan un gran desafío al poner sus modelos en producción. Lo tienen corriendo en su notebook, pero ¿cómo hacerlo escalable y seguro?
-
-ADS proporciona el **ADS Model Framework**, un conjunto de clases que permite desplegar modelos de distintos tipos. Con unos pocos comandos, podés poner un modelo en producción.
-
-ADS soporta colecciones de modelos como **Oracle Labs AutoML**, **PyTorch**, **scikit-learn**, **TensorFlow**, y muchos más.
-
-También tiene la capacidad de soportar **modelos genéricos**. No importa el tipo de modelo que uses, puede ser desplegado con unos pocos comandos.
-
-Una vez que tu modelo está en producción, necesitas entender qué está ocurriendo. Se integra con el servicio de **OCI Logging**, y crea **logs de predicción y acceso**. Esto te permite ver cómo se accede al modelo y cuáles fueron los resultados de predicción.
+| Año | Evento |
+|-----|--------|
+| 1300s | William Ockham propone la **navaja de Ockham**: preferir soluciones simples |
+| 1700s | Tobias Mayer recopila datos lunares → precursor del análisis cuantitativo |
+| 1952 | Arthur Samuel (IBM) acuña el término **machine learning** con un juego de damas |
+| 1962 | John Tukey predice el impacto de la computación en el análisis de datos |
+| 1997 | Deep Blue (IBM) vence a Kasparov en ajedrez con 200 mil millones de cálculos |
+| 2008 | DJ Patil y Jeff Hammerbacher acuñan el término **data science** en LinkedIn y Facebook |
+| 2021 | Anthony Klotz define la **Gran Renuncia** → caso de uso para predicción de rotación laboral |
 
 ---
 
-## 🧾 Recapitulación del Módulo
+### 3. Caso de uso del curso
 
-En este módulo aprendiste que los objetivos del SDK son tres:
+Usaremos el caso de **rotación de empleados** para conectar el aprendizaje automático con un problema real de negocio.
 
-- Acceder e instalar la biblioteca ADS.
-- Conectar a diferentes fuentes de datos y visualizar rápidamente el análisis exploratorio.
-- Recibir guía para la ingeniería de características, entrenamiento y optimización de modelos.
-
-También aprendiste cómo evaluar modelos, entender su calidad, interpretarlos, y herramientas para desplegarlos en producción.
-
-Muchas gracias.
+🔹 En el laboratorio final, construirás tu propio modelo predictivo.
 
 ---
 
-## 🧩 Conceptos Básicos de Configuración de Tenancy
+### 4. Evolución del dato
 
-Hola, soy Jon Stanesby. En esta lección vamos a cubrir los conceptos básicos de configuración de **tenancy** para ciencia de datos.
+Antes: solo datos estructurados de aplicaciones empresariales  
+Ahora: también datos **no estructurados** como:
 
-Aunque es conocimiento común y probablemente solo un repaso para vos, repasemos rápidamente estos conceptos:
+- Sensores
+- Apps móviles
+- Redes sociales
+- Voz, texto, imágenes, video, documentos
 
-- **Compartments (Compartimientos)**: Son contenedores lógicos para organizar recursos de OCI.
-- **User Groups (Grupos de Usuarios)**: Simplemente un grupo de usuarios.
-- **Dynamic Groups (Grupos Dinámicos)**: Grupos especiales de *principals* de recursos.
-- **Policies (Políticas)**: Se usan para otorgar acceso a grupos dentro de compartimientos.
+🔹 Las organizaciones quieren usar **todos los datos** para:
 
-Veamos cómo estos componentes trabajan juntos para habilitar el acceso a los recursos de ciencia de datos:
-
-1. Asignás usuarios a grupos de usuarios apropiados.
-2. Creamos grupos dinámicos para recursos de ciencia de datos.
-3. Finalmente, se crean políticas que otorgan acceso a esos recursos dentro de un compartimiento.
-
----
-
-## 🧩 Compartimientos
-
-Empezando entonces con los **compartimientos**, estos te permiten organizar y controlar el acceso a tus recursos en la nube. Un compartimiento es un agrupamiento lógico de recursos que solo pueden ser accedidos por ciertos grupos. Se les ha otorgado permiso por parte de un administrador.
-
-Al configurar tu tenencia (*tenancy*), el primer paso es hacer un plan sobre cómo vas a organizar tus recursos de ciencia de datos de ahora en adelante. Una vez que tengas el plan, puedes comenzar a crear uno o varios compartimientos. Mostraremos esto al final de la lección. Por ahora, veamos el proceso rápido y sencillo de tres pasos para crear un compartimiento:
-
-Desde la consola de Identidad, ve a **Identity** y selecciona **Compartments**. Haz clic en **Create Compartment**, ingresa un nombre y una descripción, y luego haz clic en **Create Compartment**.
+- Mejorar operaciones
+- Anticipar demanda
+- Prevenir fallas
+- Crear mejores experiencias
 
 ---
 
-## 👥 Grupos de usuarios
+### 5. Arquitectura de Oracle AI
 
-Pasando ahora a los **grupos de usuarios**, son usuarios individuales que se agrupan en OCI y se les otorga acceso a los recursos de ciencia de datos dentro de los compartimientos.
+| Capa | Descripción |
+|------|-------------|
+| **Datos** | Base de todo: estructurados y no estructurados |
+| **Servicios ML** | Para científicos de datos: entrenar, desplegar, gestionar |
+| **Servicios AI** | Modelos preentrenados o entrenables vía API |
+| **Aplicaciones** | Consumen los modelos: apps, procesos, analítica |
 
-Los administradores pueden realizar tres pasos simples para crear grupos de usuarios:
-
-1. Crear los usuarios.
-2. Crear los grupos.
-3. Agregar usuarios a los grupos.
-
-Al configurar grupos, primero decidí cómo accederán los usuarios a los recursos dentro de los compartimientos.
-
----
-
-## 🔄 Grupos dinámicos
-
-Ahora, sobre un tipo especial de grupo llamado **grupos dinámicos** (*dynamic groups*), contienen recursos que coinciden con reglas que vos definís. Recursos como sesiones de notebook de ciencia de datos, ejecuciones de tareas (*job runs*), y despliegues de modelos pueden incluirse en un grupo dinámico.
-
-Estas reglas permiten que la membresía del grupo cambie dinámicamente a medida que se crean o eliminan recursos que coincidan con esas reglas.
-
-Estos recursos actúan como **principales** (*principal actors*). Pueden hacer llamadas a la API de servicios de acuerdo con las políticas que hayas escrito para el grupo dinámico. Veremos políticas en breve.
-
-Por ejemplo: usando el principal de recurso de una sesión de notebook en ciencia de datos, donde su grupo dinámico tiene una política que habilita el acceso a almacenamiento de objetos, podrías hacer una llamada a la API de Object Storage para leer datos desde un bucket.
-
-Entonces, los recursos coinciden con reglas, y las reglas se aplican a grupos dinámicos. Una vez que le das a tu grupo dinámico un nombre y una descripción, llenás las reglas de coincidencia (*matching rules*), donde el OCID del compartimiento es reemplazado por el identificador del compartimiento que creaste para ciencia de datos.
-
-En este ejemplo, con estas reglas, el grupo dinámico estará compuesto por todos los recursos de esos tres tipos que existan en el compartimiento. Lo que estos recursos pueden hacer, como se mencionó antes, dependerá de las **políticas**.
+🔹 OCI Data Science es el servicio central para científicos de datos.  
+🔹 Compatible con frameworks open source y Python.
 
 ---
 
-## 🛡️ Políticas
+### 6. Servicios complementarios
 
-Las **políticas** definen qué principales, como usuarios y recursos, tienen acceso en OCI. El acceso se otorga a nivel de grupo y de compartimiento, lo que significa que podés escribir una política que dé a un grupo un tipo específico de acceso dentro de un compartimiento específico.
+- **Oracle Database ML**: algoritmos integrados
+- **OCI Data Labeling**: etiquetado de datos para entrenar modelos
+- **AI Services**: modelos listos para usar vía API
+- **Infraestructura OCI**: analítica, grafos, integración y gestión de datos
 
-Las políticas tienen una sintaxis básica:
-
-> `allow group nombre-del-grupo to do acción on tipo-de-recurso in compartment nombre-del-compartimiento`
-
-Veamos más de cerca cada variable de la sintaxis:
-
-- **Group name**: nombre del grupo de usuarios o grupo dinámico.
-- **Verb (Verbo)**: define el nivel de acceso. Veremos los tipos de verbo a continuación.
-- **Resource type**: especifica el tipo de recurso o familia de recursos.
-- **Compartment name**: nombre del compartimiento.
+🔹 Estos servicios se combinan para crear arquitecturas flexibles y escalables.
 
 ---
 
-## ✅ Tipos de verbos (acciones permitidas)
+### 7. Principios fundamentales del servicio
 
-Los verbos definen el nivel de acceso permitido al recurso o familia de recursos. De menor a mayor permisividad:
-
-- `inspect`: permite listar recursos sin acceder a metadatos definidos por el usuario.
-- `read`: incluye inspect + acceso a metadatos y al recurso mismo.
-- `use`: incluye read + posibilidad de trabajar con el recurso (por ejemplo, actualizar). No suele incluir crear o eliminar.
-- `manage`: incluye todos los permisos, incluyendo creación y eliminación.
+| Principio | Descripción |
+|----------|-------------|
+| **1. Aceleración individual** | Facilita el trabajo del científico de datos con librerías open source y potencia de cómputo escalable |
+| **2. Colaboración** | Permite compartir activos, evitar duplicaciones y asegurar reproducibilidad y trazabilidad |
+| **3. Nivel empresarial** | Infraestructura gestionada, integrada con seguridad OCI, sin necesidad de aprovisionamiento manual |
 
 ---
 
-## 🧬 Tipos de recursos
+### 8. Características del servicio
 
-El tipo de recurso en la política define para qué recurso estás escribiendo la política. Por ejemplo, “data science” incluye modelos y tareas de ciencia de datos.
+- Servicio en la nube para **construir, entrenar, desplegar y gestionar modelos ML**
+- Soporte completo para **Python** y librerías **open source**
+- Interfaz basada en **JupyterLab notebooks**
+- Modelos almacenados en el **Model Catalog**
+- Despliegue como **endpoints HTTP** sobre infraestructura gestionada
 
-Para facilitar la escritura de políticas para recursos relacionados, hay tipos **agregados** que abarcan familias. El tipo agregado para ciencia de datos es `data-science-family`.
+---
 
-🔸 Importante: estos son ejemplos **críticos** de políticas requeridas, no simplemente ilustraciones.
+### 9. Terminología clave
 
-1. Política para permitir que científicos de datos gestionen todos los recursos de ciencia de datos en un compartimiento específico:
+| Término | Definición |
+|--------|------------|
+| **Project** | Contenedor colaborativo para notebooks, modelos y activos |
+| **Notebook Session** | Entorno JupyterLab con librerías preinstaladas y recursos configurables (CPU/GPU, almacenamiento) |
+| **Conda** | Sistema de gestión de entornos y paquetes para Python |
+| **ADS SDK** | Librería Python de Oracle para automatizar el flujo de trabajo de ciencia de datos |
+| **Model** | Representación matemática del negocio y los datos |
+| **Model Catalog** | Repositorio centralizado para almacenar, rastrear y compartir modelos |
+| **Model Deployment** | Despliegue de modelos como endpoints HTTP para inferencia en tiempo real |
+| **Data Science Job** | Tareas ML repetibles sobre infraestructura gestionada |
 
-```plaintext
-allow group tu-grupo-de-usuarios to manage data-science-family in tu-compartimiento
+---
+
+### 10. Acceso al servicio
+
+| Método | Descripción |
+|--------|-------------|
+| **OCI Console** | Interfaz web principal para notebooks y recursos |
+| **REST API** | Acceso programático a funcionalidades del servicio |
+| **SDKs** | Interfaces para Java, Python, JS, .NET, Go, Ruby |
+| **CLI** | Acceso rápido y completo desde terminal, sin scripting obligatorio |
+
+---
+
+### 11. Disponibilidad global
+
+- OCI Data Science está disponible en **regiones distribuidas globalmente**
+- Incluye regiones comerciales, gubernamentales y dedicadas
+- Oracle agrega nuevas regiones frecuentemente → [oracle.com/cloud](https://oracle.com/cloud)
+
+---
+
+### 12. Conclusión
+
+En esta lección conociste:
+
+- Los principios que guían OCI Data Science
+- Sus componentes clave
+- La terminología que se usará en todo el curso
+
+🔜 En la próxima lección: **provisionamiento y configuración del entorno cloud** para usar OCI Data Science en todo el ciclo de vida del ML.
+
+---
+
+---
+
+# 🧰 2.2 Lección: ADS SDK Overview
+## 📘 Introducción al Accelerated Data Science SDK
+
+### 1. Bienvenida
+
+Hola, soy **John Peach**, científico de datos en el equipo de OCI Data Science.  
+En este módulo vas a conocer los objetivos y capacidades del **ADS SDK**.
+
+---
+
+### 2. ¿Qué es ADS SDK?
+
+- Librería diseñada **por y para científicos de datos**
+- Cubre todo el **ciclo de vida del machine learning**
+- Integra servicios de OCI en flujos de trabajo reales
+
+🔹 Ejemplo: integración con **Autonomous Database** y **Big Data Service** mediante clases como `SecretKeeper` para gestionar credenciales de forma segura.
+
+---
+
+### 3. Capacidades destacadas
+
+| Función | Descripción |
+|--------|-------------|
+| 🔍 Exploración de datos | Feature types, visualización inteligente |
+| 🎯 Optimización | `ADSTuner` para ajuste de hiperparámetros |
+| ⚙️ AutoML | Entrenamiento automatizado de modelos |
+| 🧠 Explicabilidad | Interpretación de modelos para generar confianza |
+
+---
+
+### 4. Versiones disponibles
+
+| Versión | Acceso |
+|--------|--------|
+| **Pública** | Instalación vía GitHub o PyPi |
+| **Privada (OCI)** | Incluida en entornos Conda de OCI con AutoML y explicabilidad activados
+
+---
+
+### 5. Formas de acceso
+
+- Preinstalado en entornos **Conda** de OCI Data Science
+- Instalación manual vía:
+  - `pip install oracle-ads`
+  - Clonación desde GitHub
+
+---
+
+### 6. Funcionalidades clave
+
+#### 🔗 Conexión a fuentes de datos
+- ADS ofrece **conectores** para múltiples orígenes
+- Permite limitar la transferencia de datos cuando son muy grandes
+- Acceso directo a:
+  - 📦 Almacenamiento local (block storage)
+  - ☁️ Object Storage vía protocolo **OCI + APE Spec** → compatible con `pandas`
+
+#### 📊 Visualización de datos
+- Smart plotting: gráficos automáticos según tipo de dato
+- Feature types: visualización reutilizable por tipo de medición
+- Correlaciones entre variables
+
+#### 🧪 Ingeniería de features
+- ADS analiza los datos y sugiere transformaciones
+- Mejora la calidad del modelo con recomendaciones automáticas
+
+#### 🏋️‍♂️ Entrenamiento de modelos
+- AutoML con Oracle Labs
+- `ADSTuner` para optimización manual
+- Clases para empaquetar modelos y prepararlos para despliegue
+
+#### 📈 Evaluación de modelos
+- Métricas estándar con pocas líneas de código
+
+#### 🧠 Interpretabilidad
+- Explicación de qué aprende el modelo
+- Herramientas para comunicar resultados a otros
+
+#### 🚀 Despliegue de modelos
+- Soporte para modelos comunes y genéricos
+- Despliegue con pocas líneas de código
+
+---
+
+### 7. Conexión a fuentes de datos
+
+ADS facilita el acceso a múltiples orígenes:
+
+| Origen | Acceso |
+|--------|--------|
+| **Oracle DB** | Con `SecretKeeper` y credenciales en OCI Vault |
+| **Autonomous DB** | Integración directa con `ADBSecretKeeper` |
+| **Cloud externos** | Compatible con S3, GCS, Azure, Dropbox, etc. vía `pandas` |
+| **NoSQL** | Conexión vía `DataSetFactory` |
+| **Big Data Service (BDS)** | Acceso directo a HDFS sin copiar datos |
+| **Web (HTTP/HTTPS)** | Lectura directa de archivos a `DataFrame`
+
+---
+
+### 8. Visualización y análisis exploratorio
+
+- 📊 Clases `FeatureType` para visualización reutilizable
+- 📈 Estadísticas resumen por feature
+- 🔥 Mapas de correlación
+- 🎨 Personalización y reutilización en distintos proyectos
+
+---
+
+### 9. Ingeniería de features
+
+- Clase `ADSDataSet` envuelve un `DataFrame` de `pandas`
+- Sugerencias automáticas de transformación
+- Soporte para:
+  - Codificación categórica
+  - Imputación de nulos
+  - Recomendaciones para mejorar calidad del modelo
+
+---
+
+### 10. Entrenamiento de modelos
+
+| Método | Descripción |
+|--------|-------------|
+| **AutoML** | Entrenamiento automatizado con múltiples algoritmos |
+| **ADSTuner** | Optimización de hiperparámetros |
+
+🔹 ADS empaqueta los artefactos del modelo, los guarda en el **Model Catalog** y los prepara para producción.
+
+---
+
+### 11. Evaluación de modelos
+
+- Comparación entre modelos con `ADSEvaluator`
+- Métricas y gráficos automáticos según tipo de problema:
+  - Clasificación binaria
+  - Multiclase
+  - Regresión
+
+🔹 Evita la necesidad de generar gráficos manualmente.
+
+---
+
+### 12. Interpretabilidad y explicabilidad
+
+ADS ofrece herramientas **agnósticas al tipo de modelo**:
+
+| Tipo | Descripción |
+|------|-------------|
+| **Local** | Explica predicciones específicas (modelo tipo caja negra) |
+| **Global** | Explica comportamiento general del modelo |
+
+🔹 Herramientas incluidas:
+- Gráficos de dependencia parcial (PDP)
+- Gráficos ALE (Accumulated Local Effects)
+- Pruebas de escenarios "what-if"
+
+---
+
+### 13. Despliegue de modelos
+
+- Framework de despliegue con clases específicas
+- Compatible con:
+  - AutoML Oracle Labs
+  - PyTorch
+  - scikit-learn
+  - TensorFlow
+  - Modelos genéricos
+
+🔹 Despliegue con pocos comandos  
+🔹 Integración con **OCI Logging** para:
+  - Logs de acceso
+  - Logs de predicción
+
+---
+
+### 14. Conclusión del módulo
+
+En este módulo aprendiste:
+
+- Objetivos del ADS SDK
+- Cómo instalar y acceder a la librería
+- Conexión a múltiples fuentes de datos
+- Visualización y análisis exploratorio
+- Ingeniería de features guiada
+- Entrenamiento y optimización de modelos
+- Evaluación automatizada
+- Interpretabilidad y explicabilidad
+- Despliegue seguro y escalable
+
+---
+
+Perfecto, Claudio ✅. Aquí tenés la **traducción al español** de la primera parte de la lección *Tenancy Configuration Basics*, estructurada como ficha técnica para tu manual de OCI Data Science.
+
+---
+
+# 🛠️ 2.3 Lección: Tenancy Configuration Basics
+## 📘 Fundamentos de configuración de tenancy en OCI para ciencia de datos
+
+### 1. Bienvenida
+
+Hola, soy **Jon Stanesby**. En esta lección repasamos los conceptos básicos de configuración de tenancy en Oracle Cloud Infrastructure (OCI), aplicados al uso de **OCI Data Science**.
+
+---
+
+### 2. Componentes clave
+
+| Componente | Descripción |
+|------------|-------------|
+| **Compartments** | Contenedores lógicos para organizar recursos |
+| **User Groups** | Grupos de usuarios con permisos compartidos |
+| **Dynamic Groups** | Grupos de recursos que cumplen reglas dinámicas |
+| **Policies** | Reglas que otorgan acceso a grupos dentro de compartimentos
+
+---
+
+### 3. Flujo de configuración
+
+1. 🔹 Asignar usuarios a grupos de usuarios  
+2. 🔹 Crear grupos dinámicos para recursos de ciencia de datos  
+3. 🔹 Definir políticas que otorguen acceso dentro de compartimentos
+
+---
+
+### 4. Compartments
+
+- Permiten **organizar y controlar el acceso** a recursos en la nube
+- Solo los grupos con permisos pueden acceder
+- Primer paso: **planificar** cómo organizar los recursos de ciencia de datos
+- Luego: crear uno o varios compartimentos
+
+🔹 Proceso rápido para crear un compartimento:
+
+1. Ir a **Identity Console**
+2. Seleccionar **Compartments**
+3. Hacer clic en **Create Compartment**
+4. Ingresar nombre y descripción
+5. Confirmar con **Create**
+
+---
+
+### 5. User Groups
+
+- Agrupan usuarios individuales en OCI
+- Permiten otorgar acceso a recursos dentro de compartimentos
+
+🔹 Pasos para configurar grupos:
+
+1. Crear usuarios  
+2. Crear grupos  
+3. Agregar usuarios a grupos
+
+---
+
+### 6. Dynamic Groups
+
+- Agrupan **recursos** (no personas) que cumplen reglas definidas
+- Ejemplos: notebook sessions, job runs, model deployments
+- La membresía cambia dinámicamente según las reglas
+
+🔹 Los recursos actúan como **principales** (principals)  
+🔹 Pueden hacer llamadas a APIs según las políticas del grupo dinámico
+
+Ejemplo:  
+Un notebook session puede acceder a Object Storage si su grupo dinámico tiene una política que lo permite.
+
+---
+
+### 7. Reglas de coincidencia
+
+- Se definen con el **OCID del compartimento**
+- El grupo dinámico incluirá todos los recursos que cumplan las reglas
+
+🔹 Lo que esos recursos pueden hacer depende de las **políticas** asociadas
+
+---
+
+### 8. Políticas
+
+- Definen qué pueden hacer los usuarios o recursos en OCI
+- Se aplican a nivel de **grupo** y **compartimento**
+
+🔹 Sintaxis básica:
+
+```
+Allow group <nombre_del_grupo> to <verbo> <tipo_de_recurso> in compartment <nombre_del_compartimento>
 ```
 
-2. Política para permitir que recursos de ciencia de datos (como notebook sessions), dentro de un grupo dinámico que hayas creado, gestionen todos los recursos de ciencia de datos:
+| Elemento | Significado |
+|----------|-------------|
+| **Group name** | Nombre del grupo de usuarios o dinámico |
+| **Verb** | Nivel de acceso (ej. read, manage) |
+| **Resource type** | Tipo de recurso (ej. object-storage, data-science) |
+| **Compartment name** | Nombre del compartimento destino
 
-```plaintext
-allow dynamic-group tu-grupo-dinamico to manage data-science-family in tu-compartimiento
+---
+
+### 9. Verbos en políticas (niveles de acceso)
+
+| Verbo | Permisos otorgados |
+|-------|--------------------|
+| **inspect** | Listar recursos (sin metadatos) |
+| **read** | `inspect` + ver metadatos y contenido |
+| **use** | `read` + modificar (sin crear/eliminar) |
+| **manage** | Todos los permisos (crear, modificar, eliminar) |
+
+---
+
+### 10. Tipos de recursos
+
+- Podés escribir políticas para recursos individuales (ej. `data-science-model`)
+- O usar tipos agregados como **data-science-family** para abarcar todos los recursos de ciencia de datos
+
+---
+
+### 11. Políticas requeridas para Data Science
+
+| Política | Sintaxis |
+|----------|----------|
+| Acceso total para usuarios | `Allow group <grupo> to manage data-science-family in compartment <nombre>` |
+| Acceso para recursos (notebooks, jobs, deployments) | `Allow dynamic-group <grupo> to manage data-science-family in compartment <nombre>` |
+
+---
+
+### 12. Políticas para métricas y logs
+
+| Acción | Sintaxis |
+|--------|----------|
+| Leer métricas | `Allow group <grupo> to read metrics in compartment <nombre>` |
+| Acceder a logs | `Allow dynamic-group <grupo> to use log-content in compartment <nombre>` |
+| Gestionar grupos de logs | `Allow group <grupo> to manage log-groups in compartment <nombre>` |
+| Usar contenido de logs | `Allow group <grupo> to use log-content in compartment <nombre>` |
+
+---
+
+### 13. Políticas para redes personalizadas
+
+| Acción | Sintaxis |
+|--------|----------|
+| Servicio accede a red | `Allow service data-science to use virtual-network-family in compartment <nombre>` |
+| Grupo de usuarios accede | `Allow group <grupo> to use virtual-network-family in compartment <nombre>` |
+| Grupo dinámico accede | `Allow dynamic-group <grupo> to use virtual-network-family in compartment <nombre>` |
+
+---
+
+### 14. Políticas útiles adicionales
+
+- Acceso a Object Storage:
+
+```
+Allow group <grupo> to manage object-family in compartment <nombre>
+Allow dynamic-group <grupo> to manage object-family in compartment <nombre>
 ```
 
 ---
 
-## 📊 Políticas para métricas y logs
+### 15. Pasos prácticos en la consola
 
-Las siguientes políticas permiten acceso a métricas y registros (*logging*):
+#### Crear un compartimento
 
-- Permitir que el grupo de usuarios lea métricas:
+1. Ir a **Identity > Compartments**
+2. Hacer clic en **Create Compartment**
+3. Ingresar nombre, descripción y etiquetas (opcional)
+4. Guardar el **OCID** para usarlo en reglas
 
-```plaintext
-allow group tu-grupo to read metrics in compartment tu-compartimiento
-```
+#### Crear usuarios
 
-- Permitir que el grupo dinámico use contenido de logs:
+1. Ir a **Identity > Users**
+2. Hacer clic en **Create User**
+3. Ingresar nombre, descripción y email
+4. Repetir para cada usuario
 
-```plaintext
-allow dynamic-group tu-grupo to use log-content in compartment tu-compartimiento
-```
+#### Crear grupo de usuarios
 
-- Permitir que el grupo de usuarios gestione grupos de logs:
+1. Ir a **Identity > Groups**
+2. Hacer clic en **Create Group**
+3. Ingresar nombre y descripción
+4. Agregar usuarios con **Add User to Group**
 
-```plaintext
-allow group tu-grupo to manage log-groups in compartment tu-compartimiento
-```
+#### Crear grupo dinámico
 
-- Permitir que el grupo de usuarios use contenido de logs:
+1. Ir a **Identity > Dynamic Groups**
+2. Hacer clic en **Create Dynamic Group**
+3. Ingresar nombre, descripción y reglas de coincidencia:
+   - Notebook Sessions
+   - Model Deployments
+   - Job Runs
+4. Usar el OCID del compartimento creado
 
-```plaintext
-allow group tu-grupo to use log-content in compartment tu-compartimiento
-```
+#### Crear políticas
 
----
-
-## 🌐 Políticas para red personalizada
-
-Si planeás usar networking personalizado (tema del próximo módulo), necesitarás estas políticas:
-
-- Para el servicio de data science:
-
-```plaintext
-allow service data-science to use virtual-network-family in compartment tu-compartimiento
-```
-
-- Para el grupo de usuarios:
-
-```plaintext
-allow group tu-grupo to use virtual-network-family in compartment tu-compartimiento
-```
-
-- Para el grupo dinámico:
-
-```plaintext
-allow dynamic-group tu-grupo to use virtual-network-family in compartment tu-compartimiento
-```
+1. Ir a **Identity > Policies**
+2. Hacer clic en **Create Policy**
+3. Ingresar nombre, descripción
+4. Usar el **editor manual** para pegar las políticas requeridas
+5. Guardar y luego **editar** para agregar políticas adicionales si es necesario
 
 ---
 
-## 🛠️ Creación de recursos en la consola de Identidad
-
-- **Crear un compartimiento**: ir a Compartments → Create Compartment → agregar nombre, descripción y etiquetas (opcional). Esperar unos momentos hasta su creación. Anotar el OCID para uso posterior.
-
-- **Crear un usuario**: ir a Users → Create User → añadir nombre de usuario, descripción y correo electrónico. Repetir para cada usuario que desees agregar.
-
-- **Crear un grupo de usuarios**: ir a Groups → Create Group → añadir nombre y descripción → Create. Luego, hacer clic en Add User to Group, seleccionar el usuario y confirmar.
-
-- **Crear grupo dinámico**: ir a Dynamic Groups → Create Dynamic Group → añadir nombre y descripción. Luego ingresar las reglas de coincidencia:
-
-   1. Para sesiones de notebook.
-   2. Para despliegues de modelos.
-   3. Para ejecuciones de tareas.
-
-   Sustituir el ID del compartimiento por el que creaste antes. Hacer clic en Create para finalizar.
-
----
-
-## 🔐 Paso final: crear políticas para habilitar acceso
-
-Ahora, para el paso final, necesitamos permitir que nuestros recursos y usuarios accedan a ciencia de datos en nuestro compartimiento. Para esto vamos a crear una **política**.
-
-En esta política, voy a cubrir las políticas requeridas para ciencia de datos. Le doy un nombre y descripción relevante. En el **Policy Builder**, cambio al editor manual para poder pegar mis declaraciones de política. Una vez agregadas, hago clic en **Create** para crear la política.
-
-Había algunas políticas adicionales requeridas, específicamente para que usuarios y grupos dinámicos accedan a métricas. Así que edito esta política y agrego las siguientes declaraciones:
-
-- Que mi grupo de usuarios pueda leer métricas en el compartimiento.
-- Que mi grupo dinámico acceda a contenido de logs.
-- Que mi grupo de usuarios acceda a grupos de logs.
-- Finalmente, que mi grupo de usuarios acceda a contenido de logs.
-
-Una vez agregadas estas declaraciones, guardo mis cambios.
-
-Ya que cubrimos las políticas requeridas, mostramos algunas políticas **útiles** que también conviene crear, especialmente cuando queremos que los recursos o usuarios de un servicio de ciencia de datos accedan a otros servicios de OCI.
-
-En este caso, estoy agregando **políticas útiles** para ciencia de datos. Nuevamente, les doy un nombre y una descripción, y cambio al editor manual para agregarlas. Estas políticas son específicas para **Object Storage**, así que quiero permitir que **mi grupo dinámico y mi grupo de usuarios** gestionen la familia de objetos (*object-family*) en mi compartimiento. Puedo repetir este proceso para todas las políticas que quiera agregar.
-
----
-
-## 🧭 Resumen de conceptos de configuración de tenencia
-
-- Compartimientos
-- Grupos de usuarios
-- Grupos dinámicos
-- Políticas
-
-Repasamos reglas de coincidencia para agrupar recursos en grupos dinámicos, la sintaxis de las políticas y sus variantes. Discutimos las políticas requeridas para ciencia de datos, las relacionadas, y algunas opcionales que pueden resultar útiles.
-
-Gracias.
-
----
-
-## ⚙️ Configurar la tenencia con OCI Resource Manager
-
-Hola, soy John Stanesby. En esta lección vamos a mostrar cómo configurar una tenencia con **OCI Resource Manager**.
-
-En vez de configurar tu tenencia manualmente, podés usar la **plantilla del servicio de ciencia de datos** que viene preconfigurada en Oracle Resource Manager. Esta plantilla crea automáticamente los grupos de usuarios, grupos dinámicos y políticas requeridas para un caso básico.
-
-La plantilla crea:
-
-- Un grupo de usuarios (nombre definido por vos).
-- Un grupo dinámico (nombre definido por vos).
-- Reglas de coincidencia para: `datasciencenotebooksession`, `datasciencemodeldeployment`, `datasciencejobrun`.
-
-También crea una política con las siguientes declaraciones:
-
-- Permitir que el grupo de usuarios gestione `data-science-family` en el compartimiento.
-- Permitir que el grupo dinámico gestione `data-science-family` de recursos en el compartimiento.
-- Permitir que el grupo de usuarios lea métricas en el compartimiento.
-- Permitir que el grupo dinámico use contenido de logs en el compartimiento.
-
-Haremos una demo al final de la lección.
-
----
-
-## 🔁 Proceso general para usar el ORM Stack
-
-1. Crear el **Stack**.
-2. Seleccionar tu plantilla.
-3. Seleccionar el compartimiento.
-4. Ejecutar el stack.
-5. Agregar usuarios al grupo creado.
-
-Recordá: las plantillas solo están disponibles en la consola. Y podés editar tu stack en cualquier momento.
-
----
-
-## 🧱 Opciones alternativas
-
-Además de usar la plantilla de muestra, también podés usar tu propio **script Terraform**, ubicado en este repo público de GitHub.
-
-Ahora voy a mostrar la configuración de una tenencia con OCI Resource Manager:
-
-- Navegar a Resource Manager → Stacks → Create Stack.
-- Seleccionar **Template** como origen.
-- Ir a **Service** y elegir **Data Science** → Select Template.
-- Elegir el compartimiento deseado → Next.
-- Completar variables adicionales si querés → Next.
-- Ejecutar `apply` sobre el stack → Click Create.
-- Esperar que corra el job.
-- Una vez creado, solo necesitás agregar tus usuarios al grupo generado.
-
-También podés acceder al script Terraform en el repo público de GitHub.
-
----
-
-## 📡 Networking para Ciencia de Datos
-
-Hola, soy Jon Stanesby. En esta lección veremos **networking en ciencia de datos**. Vamos a presentar algunos componentes útiles de red en la nube, con una introducción de alto nivel para entender cómo se relacionan con ciencia de datos. Este curso no entra en profundidad sobre networking.
-
-### 🔧 Componentes clave:
-
-- **VCN (Virtual Cloud Network)**  
-- **Subnets**
-- **VNICs (Virtual Network Interface Cards)**
-- **DRG (Dynamic Routing Gateway)**
-- **NAT Gateway (Network Address Translation)**
-- **Service Gateway**
-
----
-
-## 🔌 Cómo trabajan juntos
-
-- El **VCN** es una red privada virtual que configurás en los data centers de Oracle.
-- Las **subnets** son subdivisiones dentro de un VCN. Contienen **VNICs**, que se adjuntan a instancias.
-- Todas las VNICs en una subnet comparten las mismas políticas de red: tabla de rutas, listas de seguridad y opciones DHCP.
-
----
-
-### 🚪 Enrutadores virtuales opcionales
-
-1. **DRG**: Provee ruta de tráfico privado entre el VCN y tu red on-premise.  
-   Se puede usar para establecer conexión mediante VPN sitio a sitio o **FastConnect**.
-
-   También conecta tu VCN con otro VCN en otra región.
-
-   Da acceso a internet para recursos sin IP pública, sin exponerlos a conexiones entrantes.
-
-2. **Service Gateway**: Permite tráfico privado entre tu VCN y servicios de Oracle.  
-   Ejemplo: sistemas de bases de datos en subnet privada pueden respaldar datos en Object Storage sin IP pública ni acceso a internet.
-
----
-
-## 🖥️ Workloads en ciencia de datos
-
-Podés crear varios tipos de recursos que ejecutan código para distintos usos:
-
-- **Notebook sessions**
-- **Jobs y job runs**
-- **Model deployments**
-
-En esta lección los llamaremos **workloads**.
-
-Muchas veces vas a querer acceder a recursos externos desde tu workload: archivos de código, datos, bibliotecas, secretos y logs.
-
-También podrías querer ejecutar otros workloads en Data Science o en otra plataforma como Data Flow.
-
-Estos recursos externos pueden estar en internet público o en una red privada.
-
----
-
-## 🌐 Patrones de Networking
-
-Para acceder a estos recursos, necesitás conectividad entre tu workload y la ubicación de red donde estén.
-
-Hay **dos patrones de red** que podés usar:
-
-1. **Default networking**:  
-   El workload se conecta mediante una VNIC secundaria a una subnet gestionada por el servicio.
-
-   Esta subnet permite salida a internet por un **NAT Gateway** y acceso a servicios de OCI vía **Service Gateway**.
-
-   Si solo necesitás acceso a internet y/o servicios OCI, esta es la forma más rápida y sencilla de comenzar, ya que no requiere crear recursos de red propios ni escribir políticas de permisos.
-
----
-
-## 🌐 Configuración personalizada de red
-
-Cuando seleccionás **custom networking** (red personalizada) al crear un recurso de ciencia de datos, vas a especificar una **subnet preexistente** que pertenezca a tu tenencia y que querés usar para los workloads (cargas de trabajo) de ciencia de datos. Cuando se crea el workload, el servicio de ciencia de datos se conectará a tu subnet seleccionada mediante una conexión secundaria con VNIC (interfaz de red virtual).
-
-Esta configuración de “trae tu propia red” (*bring-your-own-network*) mediante red personalizada te permitirá acceder a los recursos y activos definidos por tu subnet.
-
-Si necesitás acceso a activos externos dentro de una **red privada**, como archivos de código en un servidor empresarial de Git o datos en una base de datos on-prem, vas a necesitar usar **custom networking** para asegurar la conectividad de tus workloads. Por favor, trabajá con el administrador de red de tu tenencia para configurar tu subnet VCN para ciencia de datos.
-
-Como se discutió en la lección sobre configuración de tenencia, necesitarás **políticas adicionales** para usar red personalizada en ciencia de datos.
-
----
-
-## 🧰 Asistente de configuración rápida de red (VCN Wizard)
-
-Voy a mostrarte una forma rápida de configurar red para ciencia de datos. Para hacerlo, vamos a usar el **VCN Wizard**.
-
-- Navegá a **Networking > Virtual Cloud Networks**.
-- Hacé clic en **Start VCN wizard**, y luego elegí **Create VCN with Internet Connectivity**.
-- Al iniciar el asistente, solo necesitás darle un **nombre** a tu VCN.
-
-Al desplazarte hacia abajo, verás varias opciones que suelen usar los usuarios avanzados. Si querés continuar con la red por defecto, simplemente hacé clic en **Next** y luego en **Create**.
-
-Esperá un momento mientras se crean varios recursos dentro de tu compartimiento. Una vez finalizado, hacé clic en **View Virtual Cloud Network**.
-
-Ahora podemos ver que nuestra red ha sido creada. Si vuelvo a la pantalla de **Virtual Cloud Network**, puedo ver que mi ejemplo *DS VCN* ya fue creado.
-
-📝 *Nota: no necesitás realizar este paso si configuraste tu tenencia usando OCI Resource Manager, ya que el VCN se crea automáticamente.*
-
----
-
-## 🧵 Conectividad: red por defecto vs red personalizada
-
-En esta lección vimos:
-
-- Componentes y definiciones de red en la nube.
-- Cómo se combinan esos componentes.
-- Las dos opciones de conectividad: **default networking** o **custom networking**.
-
----
-
-## 🔑 Autenticación en APIs de OCI
-
-Hola, soy Jon Stanesby. En esta lección veremos cómo autenticarse en las **APIs de OCI**.
-
-Los recursos de ciencia de datos (como notebook sessions, jobs y model deployments) te permiten ejecutar código personalizado.
-
-Como parte de tu código, podrías querer interactuar con otros servicios de OCI mediante las APIs REST. Esto permitiría, por ejemplo, leer o escribir datos en Object Storage desde un job, o crear/ejecutar aplicaciones de Data Flow desde una notebook session.
-
-Para interactuar con las APIs de OCI, necesitás operar como un **usuario autenticado**.
-
-En ciencia de datos, los métodos más comunes para interactuar con las APIs de OCI son:
-
-- **ADS SDK**
-- **OCI Python SDK**
-- **OCI Command Line Interface (CLI)**
-
-Esta lección explica las opciones de autenticación para cada uno de estos interfaces.
-
-📌 *Importante: esta lección solo trata sobre autenticación (verificación de identidad reconocida por OCI), no sobre autorización (nivel de acceso), ya cubierto en la lección 2 del módulo de configuración de tenencia.*
-
----
-
-## 👥 Principios de recurso (Resource Principals)
-
-Un **resource principal** es una funcionalidad de IAM (Identity and Access Management) que permite que los recursos sean actores principales autorizados para realizar acciones sobre otros servicios.
-
-Cada recurso tiene su propia identidad, y se autentica usando certificados que se le asignan automáticamente. Estos certificados son creados, asignados y rotados sin que vos tengas que guardar credenciales en tu sesión de notebook o job.
-
-El servicio de ciencia de datos permite autenticarse usando el **resource principal** de la notebook session o de la ejecución del job para acceder a otros recursos de OCI. Este método es más seguro que usar configuración de OCI y claves API.
-
-Además, es más práctico para jobs que no tienen una interfaz interactiva como la notebook para crear y mover archivos de configuración.
-
-🔐 *Si no usás explícitamente resource principals al invocar un SDK o CLI, se usará el enfoque tradicional de archivo de configuración + clave API.*
-
----
-
-## ⏳ Token de resource principal
-
-- Se **almacena en caché por 15 minutos**.
-- Si cambiás la política o el grupo dinámico, deberás **esperar 15 minutos** para que el cambio tenga efecto.
-- El código para establecer resource principal como mecanismo de autenticación varía levemente según el interfaz usado.
-
-📌 Puede ser útil **pausar la lección y anotar los ejemplos de código**.
-
----
-
-## 👤 Autenticarse como usuario IAM personal
-
-Podés operar como tu propio usuario IAM creando:
-
-- Un **archivo de configuración de OCI**.
-- Una **clave API (.pem)**
-
-Este es el método por defecto con ADS, OCI SDK de Python o CLI.
-
-Para autenticarte con este enfoque, debés:
-
-1. Subir tu archivo de configuración de OCI a la carpeta `oci/` dentro de la notebook session.
-2. Subir o crear los archivos `.pem` necesarios para el perfil definido.
-
-📓 *En vez de subir archivos existentes, podés usar el notebook `api_key` para generarlos.*
-
-- Para lanzarlo, hacé clic en **Notebook Examples** desde la pestaña de **JupyterLab Launcher**.
-
----
-
-## 🧾 Recapitulación
+### 16. Conclusión
 
 En esta lección cubrimos:
 
-- La importancia de la autenticación en ciencia de datos.
-- La necesidad de autenticar diferentes interfaces.
-- Definición de resource principals.
-- Cómo se combinan con el servicio de ciencia de datos.
-- Cómo trabajar con resource principals en distintos entornos.
-- Uso de archivos de configuración de OCI.
+- Conceptos clave: compartimentos, grupos, grupos dinámicos y políticas
+- Reglas de coincidencia para agrupar recursos
+- Sintaxis de políticas y niveles de acceso
+- Políticas requeridas y útiles para ciencia de datos
+- Pasos prácticos para configurar el tenancy desde la consola
 
-</br>
-</br>
-</br>
+---
+
+---
+
+# ⚙️ 2.4 Lección: Configure a Tenancy with OCI Resource Manager
+## 📘 Automatización de configuración con plantillas y Terraform
+
+### 1. Introducción
+
+Hola, soy **John Stanesby**.
+En esta lección aprenderás a configurar tu **tenancy de OCI** para ciencia de datos usando **OCI Resource Manager (ORM)**.
+
+---
+
+### 2. ¿Por qué usar Resource Manager?
+
+- Evita la configuración manual
+- Usa una **plantilla preconfigurada** para Data Science
+- Crea automáticamente:
+  - Grupos de usuarios
+  - Grupos dinámicos
+  - Políticas requeridas
+
+---
+
+### 3. Recursos creados por la plantilla
+
+| Recurso | Detalles |
+|--------|----------|
+| **User Group** | Nombre definido por el usuario |
+| **Dynamic Group** | Nombre definido por el usuario |
+| **Matching Rules** | Para: `datasciencenotebooksession`, `datasciencemodeldeployment`, `datasciencejobrun` |
+| **Políticas** | Permisos para gestionar recursos, leer métricas y acceder a logs |
+
+---
+
+### 4. Flujo para ejecutar el stack ORM
+
+1. 🧱 Crear el stack
+2. 📄 Seleccionar la plantilla
+3. 📦 Elegir el compartimento
+4. ▶️ Ejecutar el stack (`Apply`)
+5. 👥 Agregar usuarios al grupo creado
+
+🔹 Las plantillas están disponibles **solo desde la consola**  
+🔹 El stack puede editarse posteriormente
+
+---
+
+### 5. Alternativa: usar Terraform
+
+- También podés usar tu propio script Terraform
+- Repositorio público disponible en GitHub
+
+---
+
+### 6. Ejemplo paso a paso
+
+1. Ir a **Resource Manager > Stacks**
+2. Hacer clic en **Create Stack**
+3. Seleccionar **Template** como origen
+4. Ir a **Service > Data Science**
+5. Elegir el compartimento deseado
+6. Completar variables adicionales (opcional)
+7. Hacer clic en **Create** y ejecutar `Apply`
+8. Agregar usuarios al grupo creado
+
+---
+
+### 7. Conclusión
+
+En esta lección aprendiste:
+
+- Cómo usar la plantilla de Data Science en OCI Resource Manager
+- Qué recursos se crean automáticamente
+- Cómo ejecutar el stack paso a paso
+- Dónde acceder al script Terraform alternativo
+
+---
+
+---
+
+# 🌐 2.5 Lección: Networking for Data Science  
+## 📘 Componentes, patrones y configuración de red en OCI
+
+### 1. Introducción
+
+Hola, soy **Jon Stanesby**.  
+En esta lección exploramos los conceptos básicos de **redes en la nube** aplicadas a OCI Data Science.
+
+🔹 No se cubren temas avanzados de redes, solo lo esencial para configurar conectividad en tus workloads.
+
+---
+
+### 2. Componentes clave de red en OCI
+
+| Componente | Descripción |
+|------------|-------------|
+| **VCN (Virtual Cloud Network)** | Red privada virtual en los data centers de Oracle |
+| **Subnets** | Segmentos dentro de un VCN que agrupan VNICs |
+| **VNICs (Virtual Network Interface Cards)** | Interfaces que conectan instancias a la red |
+| **DRG (Dynamic Routing Gateway)** | Conexión privada entre VCN y red on-premises o entre regiones |
+| **NAT Gateway** | Salida a internet sin exponer IP pública |
+| **Service Gateway** | Acceso privado a servicios de Oracle (ej. Object Storage)
+
+---
+
+### 3. Cómo se conectan los componentes
+
+- Las **subnets** contienen VNICs que determinan cómo se conecta una instancia
+- Los **routers virtuales** (DRG, NAT, Service Gateway) permiten:
+  - Conexión privada entre VCNs o con red on-prem
+  - Acceso a internet sin IP pública
+  - Acceso a servicios de Oracle sin salir a internet
+
+---
+
+### 4. Recursos de Data Science como workloads
+
+| Tipo | Ejemplo |
+|------|---------|
+| **Notebook Sessions** | Código interactivo |
+| **Jobs / Job Runs** | Tareas programadas |
+| **Model Deployments** | Inferencia en producción |
+
+🔹 Todos estos se consideran **workloads** que pueden requerir acceso a recursos externos.
+
+---
+
+### 5. Acceso a recursos externos
+
+- Archivos de código, datos, librerías, secretos, logs
+- Otros workloads en OCI (ej. Data Flow)
+- Pueden estar en internet público o en red privada
+
+🔹 Es necesario asegurar **conectividad de red** entre el workload y el recurso externo.
+
+---
+
+### 6. Patrones de red disponibles
+
+| Tipo | Descripción |
+|------|-------------|
+| **Default Networking** | Conexión automática a VCN gestionado por OCI |
+| **Custom Networking** | Conexión a subnet propia del usuario (BYON: Bring Your Own Network) |
+
+---
+
+### 7. Default Networking
+
+- El workload se conecta vía VNIC secundaria a una subnet preconfigurada
+- Permite:
+  - Salida a internet vía NAT Gateway
+  - Acceso a servicios OCI vía Service Gateway
+
+🔹 Ideal para comenzar rápido sin configurar red ni escribir políticas
+
+---
+
+### 8. Custom Networking
+
+- Se especifica una subnet propia del tenancy
+- El workload se conecta vía VNIC secundaria a esa subnet
+- Permite acceso a recursos privados (ej. Git corporativo, base de datos on-prem)
+
+🔹 Requiere:
+  - Configuración de VCN por el administrador de red
+  - Políticas adicionales (ver lección de configuración de tenancy)
+
+---
+
+### 9. Configuración rápida con VCN Wizard
+
+Pasos:
+
+1. Ir a **Networking > Virtual Cloud Networks**
+2. Hacer clic en **Start VCN Wizard**
+3. Elegir **Create VCN with Internet Connectivity**
+4. Ingresar nombre del VCN
+5. Hacer clic en **Next > Create**
+6. Ver el VCN creado en la consola
+
+🔹 Si usaste **OCI Resource Manager**, este paso ya está hecho
+
+---
+
+### 10. Conclusión
+
+En esta lección aprendiste:
+
+- Componentes clave de red en OCI
+- Cómo se conectan entre sí
+- Tipos de workloads en Data Science
+- Patrones de conectividad: default vs custom
+- Cómo crear un VCN rápidamente
+
+---
+---
+
+# 🔐 2.6 Lección: Authenticate to OCI APIs  
+## 📘 Autenticación para acceder a servicios OCI desde ciencia de datos
+
+### 1. Introducción
+
+Hola, soy **Jon Stanesby**.  
+En esta lección aprenderás cómo **autenticarse ante las APIs de OCI** desde recursos de ciencia de datos como:
+
+- 📓 Notebook Sessions  
+- ⚙️ Jobs / Job Runs  
+- 🚀 Model Deployments
+
+---
+
+### 2. ¿Por qué autenticarse?
+
+Para que tu código pueda interactuar con otros servicios OCI, como:
+
+- Leer/escribir en Object Storage  
+- Ejecutar aplicaciones en Data Flow  
+- Acceder a secretos, logs, bases de datos, etc.
+
+🔹 La autenticación verifica tu identidad como usuario o recurso autorizado.  
+🔹 La autorización (permisos) se cubre en la lección de **Tenancy Configuration**.
+
+---
+
+### 3. Interfaces comunes para autenticarse
+
+| Interfaz | Método de autenticación |
+|----------|-------------------------|
+| **ADS SDK** | Resource Principal o archivo de configuración |
+| **OCI Python SDK** | Igual que ADS |
+| **OCI CLI** | Igual que ADS |
+
+---
+
+### 4. ¿Qué es un Resource Principal?
+
+- Funcionalidad de **IAM** que permite a los recursos actuar como actores autorizados
+- Cada recurso tiene su propia identidad
+- Se autentica mediante **certificados gestionados automáticamente**
+- Evita tener que guardar credenciales en notebooks o jobs
+
+🔹 Más seguro y práctico que usar archivos de configuración y claves API  
+🔹 Ideal para jobs que no tienen interfaz interactiva
+
+---
+
+### 5. Funcionamiento del Resource Principal
+
+- El token se **cachea por 15 minutos**
+- Si cambiás la política o el grupo dinámico, hay que esperar ese tiempo para que se refleje
+
+🔹 El código para activar el resource principal varía según la interfaz (ADS, SDK, CLI)
+
+---
+
+### 6. Alternativa: archivo de configuración + clave API
+
+- Método por defecto si no se usa resource principal
+- Requiere:
+  - Subir archivo `config` a la carpeta OCI del notebook
+  - Subir o generar archivos `.pem` correspondientes
+
+🔹 Podés usar el notebook `api_keys` para generar estos archivos  
+🔹 Se accede desde **Notebook Examples** en el launcher de JupyterLab
+
+---
+
+### 7. Conclusión
+
+En esta lección aprendiste:
+
+- La importancia de autenticarse para acceder a servicios OCI
+- Qué interfaces usan autenticación y cómo
+- Qué es un resource principal y cómo funciona
+- Cómo usar archivos de configuración y claves API como alternativa
 
 
 
 
 ---
-<h1>## 🧠 Unidad 3: Diseño y configuración del espacio de trabajo</h1>
+---
+# 🧠 UNIDAD 3: Workspace Design and Setup (Diseño y configuración del espacio de trabajo)
+---
+---
 
-### 🎓 Módulo 2: Workspace Design and Setup  
+# 🎓 3.1 Lección: Projects
+
 Instructor: *John Stanseby*
----
-
-<h2>Projects</h2>
-## 📌 Tema central: El proyecto como componente principal
+## 1. 📌 Tema central: El proyecto como componente principal
 
 Un **proyecto de ciencia de datos** en OCI es un espacio colaborativo donde los equipos organizan su trabajo en torno a un caso de uso o pregunta de negocio.  
 Todos los recursos de ciencia de datos (como notebooks y modelos) se crean **dentro de un proyecto**.
 
 ---
 
-## 🛠️ Creación de proyectos
+## 2. 🛠️ Creación de proyectos
 
 ### 1. Desde la **Consola de OCI**
 
@@ -860,7 +1098,7 @@ Ejemplo: usar la variable de entorno del notebook para crear el proyecto en el m
 
 ---
 
-## 🧾 Gestión de proyectos
+## 3.🧾 Gestión de proyectos
 
 ### 🔍 Visualización
 - Ir a la **Project List page**
@@ -885,7 +1123,7 @@ Ejemplo: usar la variable de entorno del notebook para crear el proyecto en el m
 
 ---
 
-## 🧩 Consideraciones clave
+## 4.🧩 Consideraciones clave
 
 | Elemento | Recomendación |
 |---------|----------------|
@@ -897,9 +1135,9 @@ Ejemplo: usar la variable de entorno del notebook para crear el proyecto en el m
 
 ---
 
-<h2>Notebook Sessions en OCI</h2>
+# 3.2 Lección: Notebook Sessions en OCI
 
-### 🧠 ¿Qué son?
+## 1. 🧠 ¿Qué son?
 - Interfaces JupyterLab gestionadas por OCI para construir y entrenar modelos ML.
 - Infraestructura totalmente administrada: no requiere interacción directa con APIs de cómputo o almacenamiento.
 
@@ -933,18 +1171,17 @@ Ejemplo: usar la variable de entorno del notebook para crear el proyecto en el m
 - Tráfico de red (bytes in/out).
 
 ---
-<h2>JupyterLab</h2>
 
-## 🧪 Unidad: Cómo trabajar con JupyterLab en OCI
+# 3.3  Lección: 🧪 Cómo trabajar con JupyterLab en OCI
 
-### 🧠 ¿Qué es JupyterLab?
+## 1. 🧠 ¿Qué es JupyterLab?
 - Interfaz web de próxima generación para notebooks.
 - Utilizada en las *notebook sessions* de OCI por su familiaridad con data scientists.
 - Permite integrar notebooks, editores de texto, terminales y componentes personalizados.
 
 ---
 
-## 📦 Funcionalidades principales
+## 2.📦 Funcionalidades principales
 
 ### 🔹 Soporte de formatos
 - Compatible con: `.ipynb`, `.txt`, `.csv`, `.json`, `.md`, `.pdf`, imágenes, y visualizaciones Vega/Vega Lite.
@@ -957,7 +1194,7 @@ Aunque la estructura es similar, en OCI se agregan:
 
 ---
 
-## 🧭 Componentes de la interfaz
+## 3. 🧭 Componentes de la interfaz
 
 ### 🔝 Barra superior (Chrome bar)
 - Logo de Oracle: vuelve a la consola principal.
@@ -980,7 +1217,7 @@ Aunque la estructura es similar, en OCI se agregan:
 
 ---
 
-## 🧩 Área de trabajo principal
+## 4. 🧩 Área de trabajo principal
 - Paneles de pestañas redimensionables.
 - Actividad actual marcada con borde azul.
 - **Code Consoles**: espacio temporal para ejecutar código interactivo.
@@ -991,14 +1228,8 @@ Aunque la estructura es similar, en OCI se agregan:
 
 ---
 
-## 🧪 Unidad: Cómo trabajar con JupyterLab – Parte 2
-
-### 🎯 Objetivo
+## 5. 🚀 El Launcher: 🎯 Objetivo
 Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas, kernels, extensiones y herramientas visuales dentro de JupyterLab en OCI.
-
----
-
-## 🚀 El Launcher
 
 - Acceso rápido a:
   - Notebooks
@@ -1017,7 +1248,7 @@ Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas
 
 ---
 
-## 📓 Creación y uso de notebooks
+## 6. 📓 Creación y uso de notebooks
 
 ### 🔹 Crear notebook con kernel Python3
 - Clic en el kernel → *Create Notebook*
@@ -1047,7 +1278,7 @@ Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas
 
 ---
 
-## ✏️ Menú Edit
+## 7. ✏️ Menú Edit
 
 - **Merge cells**: combinar celdas seleccionadas
 - **Split cells**: dividir celdas
@@ -1055,7 +1286,7 @@ Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas
 
 ---
 
-## 📊 Ejemplo avanzado: notebook de clasificación binaria
+## 8. 📊 Ejemplo avanzado: notebook de clasificación binaria
 
 - Desde el launcher → *Notebook Examples* → *Binary Classification Attrition* → *Load Example*
 - Ejecutar todas las celdas
@@ -1063,7 +1294,7 @@ Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas
 
 ---
 
-## 🔍 Herramientas visuales
+## 9. 🔍 Herramientas visuales
 
 ### 🔹 Variable Inspector
 - Ver variables activas
@@ -1075,7 +1306,7 @@ Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas
 
 ---
 
-## 🧰 Explorador de archivos
+## 10. 🧰 Explorador de archivos
 
 - Crear archivos: clic derecho
 - Subir archivos: arrastrar y soltar
@@ -1084,7 +1315,7 @@ Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas
 
 ---
 
-## 🖥️ Terminal
+## 11. 🖥️ Terminal
 
 - Comandos Linux estándar (`ls`, etc.)
 - Herramientas disponibles:
@@ -1094,7 +1325,7 @@ Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas
 
 ---
 
-## 📚 Menú Help
+## 12. 📚 Menú Help
 
 - Acceso a:
   - Documentación
@@ -1103,7 +1334,7 @@ Explorar el uso del **Launcher**, la creación de notebooks, el manejo de celdas
 
 ---
 
-## 🧩 Aplicación en tus flujos
+## 13. 🧩 Aplicación en tus flujos
 
 Podés usar JupyterLab para:
 - Documentar pruebas con Markdown y tabla de contenidos
@@ -1113,14 +1344,11 @@ Podés usar JupyterLab para:
 - Explorar entornos Conda para pruebas familiares
 
 ---
-</br>
-</br>
-
-# <h1>Conda Environments en OCI Data Science</h1>
-
 ---
 
-## 🧪 ¿Qué es un Conda Environment?
+# 3.04 Lección: Conda Environments en OCI Data Science</h1>
+
+## 1. 🧪 ¿Qué es un Conda Environment?
 
 Un **Conda Environment** es un contenedor de software que incluye:
 
@@ -1132,7 +1360,7 @@ Permite trabajar de forma **aislada, reproducible y compartible**.
 
 ---
 
-## 🎯 Beneficios clave
+## 2. 🎯 Beneficios clave
 
 - **Instalación selectiva**: solo los paquetes que necesitás
 - **Aislamiento**: distintos entornos para distintos modelos (ej. visión vs regresión)
@@ -1142,7 +1370,7 @@ Permite trabajar de forma **aislada, reproducible y compartible**.
 
 ---
 
-## 🧭 Tipos de Conda Environments en OCI
+## 3. 🧭 Tipos de Conda Environments en OCI
 
 | Tipo                        | ¿Quién lo gestiona? | ¿Dónde se usa?                          |
 |-----------------------------|---------------------|------------------------------------------|
@@ -1152,7 +1380,7 @@ Permite trabajar de forma **aislada, reproducible y compartible**.
 
 ---
 
-## 🖥️ Environment Explorer
+## 4.🖥️ Environment Explorer
 
 Una interfaz gráfica dentro de JupyterLab que te permite:
 
@@ -1163,13 +1391,8 @@ Una interfaz gráfica dentro de JupyterLab que te permite:
 - Ver detalles técnicos y librerías incluidas
 
 ---
-
-</br>
-</br>
-
-<h1> Conda </h1>
 ---
-# 🧠 Teoría de los Entornos Conda en OCI Data Science
+# 3.05 Lección: 🧠 Teoría de los Entornos Conda en OCI Data Science
 
 ## 1. ¿Qué es un entorno Conda en OCI?
 
@@ -1316,12 +1539,9 @@ Los entornos Conda en OCI Data Science son una solución modular, escalable y de
 | **TensorBoard**          | Visualización de métricas de entrenamiento.                                                | TensorFlow                                         |
 
 
-
-</br>
-</br>
 ---
 
-# 🧠 Gestión de entornos Conda con la herramienta de línea de comandos `odsc`
+# 3.06 Lección: 🧠 Gestión de entornos Conda con la herramienta de línea de comandos `odsc`
 
 ## 1. Introducción
 En este módulo aprenderás a **gestionar entornos Conda** utilizando la herramienta de línea de comandos `odsc` incluida en el servicio **Oracle Cloud Infrastructure (OCI) Data Science**.
@@ -1512,12 +1732,8 @@ La CLI `odsc` es la herramienta más potente para gestionar entornos Conda en OC
 
 
 
-</br>
-</br>
-
 ---
-
-# 🧠 Demo: Gestión de entornos Conda con la CLI `odsc`
+# 3.07 Lección: 🧠 Demo: Gestión de entornos Conda con la CLI `odsc`
 
 ## 1. Introducción
 
@@ -1773,11 +1989,8 @@ Resumen de operaciones vistas
 | **Crear**     | `odsc conda create --file ...`             | Nuevo entorno desde YAML |
 
 
-
-</br>
-</br>
 ---
-# 🧠 OCI Vault: Gestión segura de secretos y claves para Data Science
+# 3.08 Lección: 🧠 OCI Vault: Gestión segura de secretos y claves para Data Science
 
 ## 1. Introducción
 
@@ -1971,12 +2184,8 @@ OCI Vault es la herramienta centralizada para almacenar y gestionar claves y sec
 - Por qué **no** almacenar credenciales en código, sino en el Vault.
 
 
-
-</br>
-</br>
-
 ---
-# 🔐 Gestión de cifrado y secretos en OCI: Oracle Managed Keys vs Customer Managed Keys
+# 3.09 Lección: 🔐 Gestión de cifrado y secretos en OCI: Oracle Managed Keys vs Customer Managed Keys
 
 ## 1. Introducción
 
@@ -2214,13 +2423,9 @@ En este capítulo aprendiste que:
 - El **ADS SDK** simplifica enormemente este flujo con clases como `MySQLDBSecretKeeper`, `ADBSecretKeeper`, `BDSSecretKeeper` y `AuthTokenSecretKeeper`.
 
 
-
-</br>
-</br>
-
 ---
 
-# 📂 Sistemas de Control de Versiones en Ciencia de Datos (Parte 1)
+# 3.10 Lección: 📂 Sistemas de Control de Versiones en Ciencia de Datos (Parte 1)
 
 ## 1. Introducción
 
@@ -2536,11 +2741,9 @@ En este capítulo vimos:
 
 
 
-</br>
-</br>
 ---
-
-# 📂 Demo: Creación y uso de un repositorio Git local y remoto en GitHub
+---
+# 3.11 Lección: 📂 Demo: Creación y uso de un repositorio Git local y remoto en GitHub
 
 ## 1. Objetivo de la demo
 El objetivo de esta demostración es:
@@ -2665,9 +2868,15 @@ En esta demostración:
 📌 **Conclusión**:  
 Este flujo demuestra cómo **integrar Git y GitHub en un entorno de ciencia de datos con JupyterLab**, permitiendo versionar notebooks, colaborar y mantener sincronizados los repositorios locales y remotos.
 
+
 ---
-# 🔄 Módulo: Machine Learning Lifecycle  
-## 📘 Capítulo: ML Lifecycle Overview – Parte 1
+---
+# UNIDAD 4: Machine Learning Lifecycle  (CICLO DE VIDA APRENDIZAJE AUTOMATICO)
+---
+---
+
+# 🔄4.01 Lección:  Módulo Machine Learning Lifecycle  
+## 📘 Capítulo: ML Lifecycle Overview 
 
 ### 1. Introducción
 
@@ -2916,7 +3125,7 @@ Los pasos se repiten múltiples veces hasta alcanzar el objetivo de negocio.
 En las siguientes lecciones, veremos cómo **OCI Data Science** ayuda a los científicos de datos a ejecutar cada etapa del ciclo de vida de ML.
 
 ---
-# 📥 Lección: Access Data – 🔍 Acceso a datos en OCI Data Science
+# 📥 4.02 Lección: Access Data – 🔍 Acceso a datos en OCI Data Science
 
 ## 1. Introducción
 
@@ -3020,10 +3229,6 @@ OCI Data Science soporta ambos servicios de Autonomous Database.
 🔐 Se recomienda usar **bind variables** para evitar ataques de inyección SQL.
 
 📉 El rendimiento puede verse afectado por factores como la red, latencia, etc.
-
----
-# 📥 Lección: Access Data – Parte 2  
-## 🔍 Acceso a datos en OCI Data Science (continuación)
 
 ### 8. Optimización del acceso a bases de datos
 
@@ -3142,7 +3347,7 @@ Este paso es esencial para iniciar cualquier flujo de trabajo de machine learnin
 
 ---
 
-# 🔍 Lección: Data Exploration and Preparation  
+# 🔍 4.03 Lección: Data Exploration and Preparation  
 ## 📘 Exploración y preparación de datos en OCI Data Science
 
 ### 1. Introducción
@@ -3343,7 +3548,7 @@ Esta lección cubrió:
 - División en conjuntos de entrenamiento, prueba y validación.
 
 ---
-# 🧪 Lección: Demo de Preprocesamiento con ADS  
+# 🧪 4.04 Lección: Demo de Preprocesamiento con ADS  
 ## 📘 Ejemplo práctico en OCI Data Science
 
 ### 1. Introducción
@@ -3441,7 +3646,7 @@ Una vez completadas las transformaciones:
 ---
 
 
-# 📊 Lección: Data Visualization and Profiling  
+# 📊 4.05 Lección: Data Visualization and Profiling  
 ## 📘 Visualización de datos y perfilado en OCI Data Science
 
 ### 1. Introducción
@@ -3572,7 +3777,7 @@ En esta lección aprendiste a:
 
 ---
 
-# 🧠 Lección: Model Training  
+# 🧠 4.06 Lección: Model Training  
 ## 📘 Entrenamiento de modelos en OCI Data Science
 
 ### 1. Introducción
@@ -3649,7 +3854,7 @@ En esta lección vimos:
 
 ---
 
-# 🚀 Lección: Expert Tips: Training a ML model on OCI
+# 🚀 4.07 Lección: Expert Tips: Training a ML model on OCI
 ## 📘 Entrenamiento y escalado de modelos AML en Oracle Cloud
 
 ### 1. Introducción
@@ -3733,7 +3938,7 @@ En esta lección aprendiste:
 
 ---
 
-# 🤖 Lección: AutoML en Accelerated Data Science (ADS)  
+# 🤖 4.08 Lección: AutoML en Accelerated Data Science (ADS)  
 ## 📘 Construcción y entrenamiento automatizado de modelos en OCI
 
 ### 1. Introducción
@@ -3860,7 +4065,7 @@ En esta lección aprendiste:
 
 ---
 
-# 🧪 Demo: Construcción de un Clasificador con AutoMLx – Parte 1  
+# 🧪 4.09 Lección: Demo: Construcción de un Clasificador con AutoMLx
 ## 📘 Clasificación binaria con el dataset de ingresos del censo
 
 ### 1. Introducción
@@ -3966,24 +4171,22 @@ También se calcula el porcentaje de valores faltantes por columna.
 
 🔧 Se crea una instancia de AutoMLx para tareas supervisadas (clasificación o regresión).
 
----
-
 ### 10. Etapas del pipeline AutoMLx
 
-1. **Preprocesamiento**:
-   - Limpieza, imputación, ingeniería y normalización de features.
+  1. **Preprocesamiento**:
+    - Limpieza, imputación, ingeniería y normalización de features.
 
-2. **Selección de algoritmo**:
-   - Identifica el mejor clasificador para el dataset.
-   - Algoritmos disponibles:
-     - `AdaBoost`, `DecisionTree`, `TorchMLP`, `LinearSVC`, `LogisticRegression`, `XGBoost`, `GaussianNB`, entre otros.
+  2. **Selección de algoritmo**:
+    - Identifica el mejor clasificador para el dataset.
+    - Algoritmos disponibles:
+      - `AdaBoost`, `DecisionTree`, `TorchMLP`, `LinearSVC`, `LogisticRegression`, `XGBoost`, `GaussianNB`, entre otros.
 
-3. **Muestreo adaptativo**:
-   - Selecciona subconjuntos de datos para entrenar.
-   - Actualiza la estrategia de muestreo según el rendimiento de modelos anteriores.
-   - Se enfoca en regiones del espacio de características más prometedoras.
+  3. **Muestreo adaptativo**:
+    - Selecciona subconjuntos de datos para entrenar.
+    - Actualiza la estrategia de muestreo según el rendimiento de modelos anteriores.
+    - Se enfoca en regiones del espacio de características más prometedoras.
 
-11. Selección de características y ajuste de hiperparámetros
+### 11. Selección de características y ajuste de hiperparámetros
 Después del muestreo adaptativo, AutoMLx:
 
 Selecciona un subconjunto de características relevantes.
@@ -3992,7 +4195,7 @@ Ajusta los hiperparámetros del modelo para maximizar el rendimiento.
 
 🔹 Todo esto se realiza automáticamente dentro del pipeline.
 
-12. Entrenamiento del modelo
+### 12. Entrenamiento del modelo
 Se crea una instancia del pipeline con automl.PipeLine.
 
 Se define la tarea como classification.
@@ -4001,19 +4204,19 @@ Se entrena el modelo con fit(x_train, y_train).
 
 📌 Se usa cv=5 para aplicar validación cruzada con 5 folds.
 
-13. Selección del modelo
+### 13. Selección del modelo
 Algunos algoritmos como SVC y KNeighborsClassifier se deshabilitan si el dataset tiene más de 10.000 muestras o 1.000 features.
 
 El modelo elegido fue LGBMClassifier (Light Gradient Boosting).
 
 Se completó el muestreo adaptativo en los 5 folds.
 
-14. Predicción y evaluación
+### 14. Predicción y evaluación
 Se usa predict_proba(x_test) para obtener probabilidades de clase.
 
 Se evalúa con ROC AUC → resultado: 0.91.
 
-15. Resumen del pipeline
+### 15. Resumen del pipeline
 AutoMLx genera un resumen con:
 
 Features seleccionadas: age, workclass, education_num, etc.
@@ -4028,7 +4231,7 @@ Validación media por algoritmo.
 
 🔍 Se puede visualizar con print_summary().
 
-16. Visualización de selección de algoritmos
+### 16. Visualización de selección de algoritmos
 Se grafican los scores predichos por algoritmo usando Bayesian Optimization.
 
 Métrica usada: negative log loss.
@@ -4037,12 +4240,12 @@ Menor valor → mejor rendimiento.
 
 LGBM fue el mejor algoritmo según esta métrica.
 
-17. Muestreo adaptativo
+### 17. Muestreo adaptativo
 Busca el subconjunto mínimo de datos que mantiene el rendimiento.
 
 En este caso, no se encontró un subconjunto suficiente → se usa el dataset completo.
 
-18. Selección de características
+### 18. Selección de características
 AutoMLx aplica una estrategia inteligente:
 
 Elige algoritmo de selección (ej. RFE, SFS, PCU).
@@ -4055,7 +4258,7 @@ Identifica el subconjunto más pequeño sin pérdida de rendimiento.
 
 📌 Features seleccionadas: age, workclass, education_num, marital_status, etc. 📌 Features eliminadas: 4 columnas no relevantes.
 
-19. Matriz de confusión
+### 19. Matriz de confusión
 Se usa confusion_matrix() de scikit-learn.
 
 Argumentos:
@@ -4074,21 +4277,21 @@ Eje X: predicción
 
 Eje Y: valor real
 
-20. Personalización del AutoML
+### 20. Personalización del AutoML
 Podés limitar los algoritmos considerados:
 
 python
 model_list = ["LogisticRegression"]
 🔹 AutoMLx solo optimizará entre los modelos especificados.
 
-21. Validación personalizada
+### 21. Validación personalizada
 Podés definir un conjunto de validación personalizado para evaluar la calidad de los modelos y configuraciones:
 
 python
 fit(x_train, y_train, validation_data=(x_val, y_val))
 🔹 Esto permite controlar cómo se evalúan los modelos durante el entrenamiento.
 
-22. Optimización de múltiples modelos
+### 22. Optimización de múltiples modelos
 Por defecto, AutoMLx ajusta los hiperparámetros del mejor modelo seleccionado. Pero podés optimizar los top-N modelos:
 
 python
@@ -4096,7 +4299,7 @@ model_list = ["LogisticRegression", "XGBClassifier", "LGBMClassifier"]
 top_n = 2
 🔹 En este ejemplo, se ajustan los dos mejores modelos entre los tres especificados. 🔹 Resultado: ROC AUC = 0.855
 
-23. Métricas de evaluación personalizadas
+### 23. Métricas de evaluación personalizadas
 AutoMLx permite cambiar la métrica de optimización:
 
 Por defecto:
@@ -4119,7 +4322,7 @@ python
 score_metric = "accuracy"
 🔹 Resultado: ROC AUC ≈ 0.855
 
-24. Funciones de puntuación definidas por el usuario
+### 24. Funciones de puntuación definidas por el usuario
 Podés crear tu propia función de evaluación:
 
 python
@@ -4132,14 +4335,14 @@ def custom_score(model, X, y):
 scorer = make_scorer(custom_score)
 🔹 Se pasa como argumento score_metric al pipeline.
 
-25. Límite de tiempo (Time Budget)
+### 25. Límite de tiempo (Time Budget)
 AutoMLx permite definir un presupuesto de tiempo en segundos:
 
 python
 time_budget = 10
 🔹 Si se excede el tiempo, se detiene el proceso y se usan parámetros por defecto. 🔹 Se muestra un mensaje indicando el timeout. 🔹 Resultado: ROC AUC con configuración por defecto.
 
-26. Lista mínima de features
+### 26. Lista mínima de features
 Podés forzar que ciertas features no sean eliminadas durante la selección:
 
 python
@@ -4152,7 +4355,7 @@ float: proporción mínima (ej. 0.5).
 
 1.0: desactiva la selección de features.
 
-27. Conclusión
+### 27. Conclusión
 Esta demo mostró cómo:
 
 Cargar y preparar un dataset real.
@@ -4172,7 +4375,7 @@ Principal: https://github.com/oracle-samples
 
 ---
 
-# 🎯 Lección: Hyperparameter Tuning con ADSTuner  
+# 🎯 4.10 Lección: Hyperparameter Tuning con ADSTuner  
 ## 📘 Ajuste de hiperparámetros en Oracle ADS
 
 ### 1. Introducción
@@ -4281,7 +4484,7 @@ En esta lección aprendiste:
 
 ---
 
-# 📊 Lección: Model Evaluation
+# 📊 4.11 Lección: Model Evaluation
 ## 📘 Evaluación de modelos en Oracle ADS
 
 ### 1. Introducción
@@ -4393,7 +4596,7 @@ En esta lección aprendiste:
 
 ---
 
-# 🧠 Lección: Expert Tips – ADS Evaluators  
+# 🧠 4.12 Lección: Expert Tips – ADS Evaluators  
 ## 📘 Consejos prácticos para evaluar modelos en Oracle ADS
 
 ### 1. Introducción
@@ -4462,7 +4665,7 @@ Los evaluadores de ADS:
 
 ---
 
-# 🧠 Lección: Model Explanations – Global Explainer
+# 🧠 4.13 Lección: Model Explanations – Global Explainer
 ## 📘 Explicabilidad global de modelos en Oracle ADS
 
 ### 1. Introducción
@@ -4655,7 +4858,7 @@ En esta lección aprendiste:
 
 ---
 
-# 🧠 Lección: Model Explanations – Local Explainer  
+# 🧠 4.14 Lección: Model Explanations – Local Explainer  
 ## 📘 Explicaciones locales y análisis What-If en Oracle ADS
 
 ### 1. Introducción
@@ -4764,7 +4967,7 @@ En esta lección aprendiste:
 
 ---
 
-# 🧠 Lección: Expert Tips – Explainers  
+# 🧠 4.15 Lección: Expert Tips – Explainers  
 ## 📘 Uso de objetos Explainer en Oracle AutoMLx
 
 ### 1. Introducción
@@ -4824,13 +5027,1185 @@ Según el tipo de datos, se usan clases específicas:
 ### 5. Recomendación
 
 Se sugiere:
-
+- Documentación oficial: https://docs.oracle.com/en-us/iaas/tools/automlx/latest/legacy/v23.2.0/mlx.html
 - Probar con distintos datasets.
 - Explorar tanto explicaciones **globales** como **locales**.
 - Familiarizarse con la interfaz `MLExplainer`.
 
 ---
 
+---
+
+# 📦 4.16 Lección: Model Catalog
+## 📘 Introducción al catálogo de modelos en OCI
+
+### 1. ¿Qué es el Model Catalog?
+
+Hola, soy John Stanesby.
+El catálogo de modelos en OCI permite:
+
+- 📌 **Almacenar modelos de forma inmutable**
+- 🔍 **Rastrear su procedencia (provenance)**
+- 🔄 **Compartir, reproducir y desplegar modelos**
+
+---
+
+### 2. ¿Qué contiene un modelo en el catálogo?
+
+Un modelo incluye varios artefactos:
+
+| Artefacto | Descripción |
+|-----------|-------------|
+| **Modelo entrenado** | Archivo serializado |
+| **Hiperparámetros** | Configuración usada |
+| **Metadata** | Información del modelo |
+| **Esquema de entrada/salida** | Formato esperado |
+| **score.py** | Script para cargar el modelo y hacer inferencias |
+| **runtime.yaml** | Entorno Conda para despliegue |
+| **validate.py** | Pruebas opcionales de introspección |
+| **requirements.txt** | Dependencias necesarias |
+| **README.md** | Instrucciones paso a paso |
+
+---
+
+### 3. Inmutabilidad del catálogo
+
+- Los artefactos son **inmutables por diseño**.
+- Para modificar un modelo → se crea una **nueva versión**.
+- Esto garantiza trazabilidad total en producción.
+
+📌 Límites de tamaño:
+- Desde consola: **100 MB**
+- Desde ADS, SDK o CLI: **20 GB**
+
+---
+
+### 4. score.py
+
+- Define cómo cargar el modelo y realizar inferencias.
+- Debe incluir:
+  - Función `load_model()`
+  - Función `predict()`
+- Podés agregar funciones auxiliares (ej. transformaciones personalizadas).
+
+📌 El código debe estar **al mismo nivel o por debajo** de `score.py`.  
+Archivos por encima serán ignorados → puede fallar el despliegue.
+
+---
+
+### 5. runtime.yaml
+
+- Define el entorno Conda para despliegue.
+- Requerido si usás **model deployment** en OCI.
+- Incluye:
+  - `inference_environment_slug`
+  - `inference_environment_type`: `data science` o `published`
+  - `inference_environment_path`: ruta en Object Storage → `bucket@namespace/path`
+
+---
+
+### 6. Versión del artefacto
+
+- ADS extrae automáticamente la versión del artefacto al guardarlo.
+- El entorno de inferencia **puede coincidir o diferir** del entorno de entrenamiento.
+
+---
+
+## 📘 Metadata, documentación y políticas en OCI
+
+### 7. Versión de Python
+
+- La versión de Python usada en el entorno Conda para despliegue.
+- Valor por defecto: **Python 3.6**
+- Versiones soportadas: **3.6 y 3.7**
+
+---
+
+### 8. Archivos adicionales
+
+Además de `score.py` y `runtime.yaml`, podés incluir otros archivos necesarios para ejecutar el modelo.
+
+---
+
+### 9. Tipos de documentación en el catálogo
+
+| Tipo | Propósito |
+|------|-----------|
+| **Input/Output Schema** | Define el formato de entrada/salida esperado |
+| **Provenance** | Rastreabilidad: código, datos, entorno |
+| **Introspection Tests** | Pruebas de salud del modelo |
+| **Taxonomy** | Descripción técnica y funcional del modelo |
+
+---
+
+### 10. Input/Output Schema
+
+- Define los **features requeridos** para hacer predicciones.
+- Actúa como un **contrato de entrada** para los clientes del modelo.
+- Solo se usa con fines de documentación.
+- El output schema es opcional.
+
+---
+
+### 11. Provenance (Procedencia)
+
+- Si trabajás en un repo Git, ADS puede extraer automáticamente:
+  - Código fuente
+  - Entorno de entrenamiento
+  - Recursos de cómputo
+  - Datos de entrenamiento
+  - Features generadas
+
+🔹 Esto mejora la **reproducibilidad** y la **auditoría** del modelo.
+
+---
+
+### 12. Introspection Tests
+
+- Son **opcionales**.
+- Se ejecutan antes de guardar el modelo.
+- Generan un archivo local: `test_json_output.json`
+- Podés guardar los resultados como parte del metadata.
+
+---
+
+### 13. Taxonomía del modelo
+
+Permite describir el modelo para facilitar su comprensión dentro del equipo.
+
+| Campo | Ejemplo |
+|-------|---------|
+| **Use case type** | `binary classification`, `regression` |
+| **Framework** | `scikit-learn`, `TensorFlow`, `PyTorch 1.9` |
+| **Algorithm** | `cart algorithm` |
+| **Hyperparameters** | JSON con configuración |
+| **Artifact test results** | JSON del test |
+| **Custom metadata** | Clave, valor, categoría, descripción |
+
+📌 Tamaño máximo permitido para metadata combinada: **32 KB**
+
+---
+
+### 14. Acceso y políticas
+
+- El catálogo de modelos es un **repositorio centralizado y gestionado**.
+- Los modelos pueden ser compartidos y cargados en notebooks.
+- La documentación incluye: provenance, tests, taxonomy y schema.
+
+🔐 Como cualquier recurso de OCI, el acceso requiere **políticas específicas**:
+
+- Para gestión del catálogo.
+- Para invocar el endpoint.
+- Para permitir acceso a otros recursos (ej. Object Storage).
+
+---
+
+---
+
+# 🧾 4.17 Lección: Model Serialization  
+## 📘 Serialización y gestión de modelos en el catálogo de OCI
+
+### 1. ¿Qué es la serialización?
+
+Hola, soy John Stanesby.  
+La **serialización** es el proceso de convertir un objeto (ej. modelo de Python o TensorFlow) en un formato que pueda:
+
+- 🗃️ Ser almacenado
+- 📡 Ser transmitido
+- 🔁 Ser reconstruido más adelante
+
+🔹 También se conoce como **marshaling** en algunos contextos.
+
+---
+
+### 2. Formatos comunes de serialización
+
+| Formato | Uso |
+|--------|-----|
+| **JSON** | Texto legible por humanos |
+| **XML** | Estructurado, interoperable |
+| **HDF5** | Datos científicos |
+| **Pickle (Python)** | Byte array para objetos Python |
+
+---
+
+### 3. Clases de serialización en ADS
+
+- ADS ofrece clases específicas para distintos frameworks:
+  - `PyTorchModel`
+  - `TensorFlowModel`
+  - `GenericModel` (para otros casos)
+
+🔹 No todos los tipos de modelos tienen clases dedicadas.
+
+---
+
+### 4. Método `save()`
+
+Guarda los artefactos del modelo en el catálogo:
+
+- Recarga `score.py` y `runtime.yaml` desde disco.
+- Si `ignore_introspection=False`, ejecuta pruebas de introspección.
+- Sugiere soluciones si detecta problemas.
+- Devuelve el **OCID** del modelo.
+
+🔍 También podés usar `introspect()` después de `prepare()`.
+
+---
+
+### 5. Uso de `prepare(GenericModel)`
+
+- Convierte cualquier modelo en un objeto ADS.
+- ADS genera código estándar que podés modificar.
+- Luego se guarda el objeto y su metadata en el catálogo.
+
+---
+
+### 6. Interfaces para guardar modelos
+
+Podés usar:
+
+| Interfaz | Descripción |
+|----------|-------------|
+| **ADS SDK** | API de alto nivel para notebooks |
+| **OCI Python SDK** | API oficial de OCI |
+| **OCI Console** | Interfaz gráfica web |
+
+---
+
+### 7. Operaciones disponibles
+
+Podés:
+
+- 📋 Ver modelos
+- ✏️ Editar metadata (no el modelo ni sus esquemas)
+- 📦 Mover entre compartimentos (no entre proyectos)
+- ✅ Activar / ❌ Desactivar modelos
+- 🗑️ Eliminar modelos (se conservan 30 días)
+- 🏷️ Agregar etiquetas (definidas o libres)
+
+---
+
+### 8. Vistas del catálogo
+
+| Vista | Contenido |
+|-------|-----------|
+| **Training Resource** | Notebook o job que entrenó el modelo |
+| **Source Code** | Script de entrenamiento |
+| **Taxonomy** | Descripción, atributos personalizados |
+| **Deployments** | Despliegues asociados |
+| **Introspection** | Estado de pruebas (`score.py`, `runtime.yaml`) |
+| **Schemas** | Entrada/salida del modelo |
+
+📌 Los esquemas no pueden editarse una vez definidos.
+
+---
+
+### 9. Activación y eliminación
+
+- **Activar**: habilita el modelo para despliegue.
+- **Desactivar**: lo inhabilita sin eliminarlo.
+- **Eliminar**: requiere confirmar el nombre exacto (no distingue mayúsculas/minúsculas).
+- Modelos eliminados permanecen visibles por **30 días**.
+
+---
+
+### 10. Operaciones vía CLI o SDK
+
+Podés realizar:
+
+- `create`
+- `update`
+- `list`
+- `delete`
+
+---
+
+---
+
+# 🚀 4.18 Lección: Model Deployment  
+## 📘 Despliegue de modelos en OCI Data Science
+
+### 1. Introducción
+
+Hola, soy Himanshu Raj.  
+En esta lección aprenderás a:
+
+- Crear y administrar despliegues de modelos ML.
+- Invocar endpoints de inferencia.
+- Monitorear y desactivar/reactivar despliegues.
+
+---
+
+### 2. ¿Cuándo desplegar un modelo?
+
+Después del entrenamiento y evaluación, los mejores modelos se guardan en el **Model Catalog**.  
+Según el uso previsto, podés desplegar para:
+
+| Tipo | Descripción |
+|------|-------------|
+| **Batch** | Predicciones programadas (ej. cada hora/día) |
+| **Real-time** | Predicciones activadas por eventos (ej. detección de fraude en pagos) |
+
+🔹 El despliegue como **endpoint HTTP** es el método más común.
+
+---
+
+### 3. Arquitectura del despliegue en OCI
+
+| Componente | Función |
+|------------|--------|
+| **Load Balancer** | Distribuye tráfico entre servidores |
+| **VM Instances Pool** | Aloja el modelo, entorno Conda y servidor |
+| **Model Artifact** | Archivo del modelo + código de inferencia |
+| **Conda Environment** | Dependencias Python (ej. NumPy, XGBoost) |
+| **Logs** | Registros de inferencia para monitoreo/debugging |
+
+---
+
+### 4. Archivos clave del modelo
+
+| Archivo | Propósito |
+|--------|-----------|
+| **score.py** | Lógica de inferencia |
+| **runtime.yaml** | Entorno Conda y parámetros de despliegue |
+
+---
+
+### 5. Configuración del despliegue
+
+Desde la consola:
+
+1. Nombre del despliegue
+2. Selección del modelo desde el catálogo
+3. Forma de cómputo (`VM.Standard2.1`, etc.)
+4. Número de instancias
+5. Servicio de logging
+6. Ancho de banda del load balancer
+
+📌 Fórmula para calcular ancho de banda recomendado:
+
+\[
+\text{Bandwidth} = \frac{\text{Payload (KB)} \cdot \text{Requests/sec} \cdot 8}{1024} \cdot 1.2
+\]
+
+Ejemplo:  
+Payload = 1024 KB  
+Requests/sec = 120  
+→ Bandwidth ≈ **1152 Mbps**
+
+---
+
+### 6. Métodos para desplegar
+
+| Método | Herramienta |
+|--------|-------------|
+| `.deploy()` | ADS SDK |
+| `oci ds model-deployment create` | OCI CLI |
+| JSON config | OCI Console / CLI |
+
+🔹 Se puede incluir configuración de logs opcional.
+
+---
+
+### 7. Invocar el endpoint
+
+Una vez activo, se puede invocar el modelo:
+
+- Enviar datos como **HTTP request**
+- Recibir predicción como **HTTP response**
+
+📌 Opciones:
+
+- OCI CLI
+- OCI Python SDK
+- OCI Java SDK
+- Consola web
+
+📌 Límites:
+
+- Tamaño máximo del payload: **10 MB**
+- Timeout: **60 segundos** (no configurable)
+- Si hay latencia → usar **streaming inference**
+- Codificación: **base64**
+
+---
+
+### 8. Gestión del despliegue
+
+Desde la consola podés:
+
+- Ver detalles (OCID, configuración, logs)
+- Cambiar nombre, modelo, forma de cómputo, instancias (sin downtime si está activo)
+- Editar múltiples parámetros si está inactivo
+
+---
+
+### 9. Activar / Desactivar / Eliminar
+
+| Acción | Efecto |
+|--------|--------|
+| **Desactivar** | Detiene instancias y facturación. Endpoint queda inactivo. |
+| **Reactivar** | Vuelve a habilitar el endpoint HTTP |
+| **Eliminar** | Borra el despliegue (requiere confirmación exacta del nombre) |
+
+---
+
+### 10. Monitoreo
+
+Podés usar:
+
+| Herramienta | Métricas |
+|-------------|----------|
+| **OCI Logging** | Logs de acceso e inferencia (`score.py`) |
+| **OCI Monitoring** | CPU, memoria, red, latencia, cantidad de requests |
+
+🔹 Desde el menú de opciones podés:
+
+- Explorar métricas en detalle
+- Crear alarmas por umbral
+
+---
+
+### 11. Conclusión
+
+En esta lección aprendiste:
+
+- Cómo desplegar modelos como endpoints HTTP
+- Cómo invocar, monitorear y administrar despliegues
+- Cómo usar ADS SDK, OCI CLI y la consola web
+
+---
+
+---
+
+# 🚀 4.19 Lección: Model Deployment (Demo)  
+## 📘 Despliegue de un modelo desde la consola de OCI
+
+### 1. Ingreso al proyecto
+
+- Ingresá a tu espacio de trabajo en **OCI Data Science**.
+- Seleccioná tu proyecto (ej. `test-ds`).
+- En el panel izquierdo, hacé clic en **Model Deployments**.
+
+---
+
+### 2. Crear un nuevo despliegue
+
+1. Hacé clic en **Create model deployment**.
+2. Verificá que estés en el **compartimento correcto** (ej. `OCI Data Science`).
+3. Ingresá un **nombre único** (máx. 255 caracteres). Si no lo hacés, se genera uno automáticamente.
+   - Ejemplo: `test-model-deploy`
+4. (Opcional) Agregá una descripción.
+
+---
+
+### 3. Seleccionar el modelo
+
+- Hacé clic en **Select** para elegir un modelo activo del catálogo.
+- Ejemplo: `RF classifier`
+- Luego hacé clic en **Submit**.
+
+---
+
+### 4. Configurar recursos de cómputo
+
+- Seleccioná la **forma de cómputo (VM shape)**:
+  - Ejemplo: 1 OCPU, 15 GB de RAM
+- Elegí la **cantidad de instancias** (ej. 2) para balancear carga.
+
+---
+
+### 5. Habilitar logs (opcional)
+
+- Hacé clic en **Select** en la sección de logging.
+- Activá:
+  - **Access logs**: registra detalles de las solicitudes.
+  - **Predict logs**: captura `stdout` y `stderr` del código de inferencia (`score.py`).
+
+---
+
+### 6. Configurar balanceo de carga (opcional)
+
+- En **Show Advanced Options**, podés definir el ancho de banda del load balancer.
+- Fórmula recomendada:
+
+\[
+\text{Bandwidth (Mbps)} = \frac{\text{Payload (KB)} \cdot \text{Requests/sec} \cdot 8}{1024} \cdot 1.2
+\]
+
+- Ejemplo:
+  - Payload: 124 KB
+  - Requests/sec: 120
+  - Resultado ≈ **1.152 Mbps**
+- Para el demo, se deja en **10 Mbps**.
+
+---
+
+### 7. Crear el despliegue
+
+- Hacé clic en **Create**.
+- Esperá a que el estado cambie a **Active**.
+
+---
+
+### 8. Ver detalles del despliegue
+
+- Hacé clic en el nombre del despliegue (`test-model-deploy`).
+- Podés ver:
+  - Información general
+  - Configuración de cómputo
+  - Etiquetas (tags)
+  - Propietario del despliegue
+
+---
+
+### 9. Monitorear el despliegue
+
+- Métricas disponibles:
+  - Tasa de éxito
+  - Cantidad de solicitudes
+  - Uso de CPU, memoria, red
+- Logs disponibles:
+  - Access logs
+  - Predict logs
+- Estado de la solicitud (`Work Request`): 100% completado
+
+---
+
+### 10. Invocar el modelo
+
+Podés invocar el endpoint usando:
+
+| Método | Herramienta |
+|--------|-------------|
+| **HTTP** | Link del endpoint |
+| **OCI CLI** | Comando generado |
+| **Python SDK** | Código de ejemplo |
+| **Java SDK** | Código de ejemplo |
+
+📌 Límite de payload: **10 MB**  
+📌 Timeout: **60 segundos**
+
+---
+
+### 11. Administrar el despliegue
+
+- **Desactivar**: detiene instancias y facturación.
+- **Reactivar**: vuelve a habilitar el endpoint.
+- **Eliminar**: borra el despliegue cuando ya no se necesita.
+
+---
+
+---
+
+# 🤗 4.20 Lección: Hugging Face  
+## 📘 Despliegue de pipelines Hugging Face en OCI Data Science
+
+### 1. Introducción
+
+Hola, soy Hemant Gahankari, líder principal de entrenamiento en Oracle University.  
+En esta lección veremos cómo **desplegar pipelines de Hugging Face** en OCI Data Science.
+
+---
+
+### 2. ¿Qué es Hugging Face?
+
+La librería **Hugging Face Transformers** permite construir pipelines para tareas como:
+
+- 🧠 Procesamiento de lenguaje natural (NLP)
+- 👁️ Visión por computadora
+- 🔍 Clasificación, generación, traducción, etc.
+
+---
+
+### 3. Flujo de despliegue en OCI
+
+| Paso | Método |
+|------|--------|
+| 1️⃣ Crear pipeline | `transformers.pipeline(...)` |
+| 2️⃣ Envolver pipeline | `HuggingFacePipelineModel(pipeline)` |
+| 3️⃣ Preparar artefactos | `.prepare()` |
+| 4️⃣ Verificar despliegue | `.verify()` |
+| 5️⃣ Guardar en catálogo | `.save()` |
+| 6️⃣ Desplegar modelo | `.deploy()` |
+
+🔹 Este flujo permite convertir un pipeline de Hugging Face en un **modelo desplegable** dentro de OCI.
+
+---
+
+### 4. Recomendación
+
+Se sugiere revisar la documentación oficial de:
+
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers)
+- [Oracle ADS + Hugging Face](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/user_guide/model_management/huggingface.html)
+
+---
+
+---
+
+# 🧠 4.21 Lección: Model Deployment using TensorFlow
+## 📘 Despliegue de modelos TensorFlow con Oracle ADS
+
+### 1. Introducción
+
+Hola, soy Hemant Gahankari.  
+En esta demo aprenderás a **registrar y desplegar un modelo TensorFlow** usando la librería **Accelerated Data Science (ADS)** en OCI.
+https://docs.oracle.com/en-us/iaas/Content/data-science/using/conda-tensor-fam.htm
+
+https://docs.public.content.oci.oraclecloud.com/es-ww/iaas/releasenotes/changes/294a424f-a597-486e-97fc-51c82174b743/index.htm
+
+---
+
+### 2. Flujo general de despliegue
+
+| Paso | Acción |
+|------|--------|
+| 1️⃣ Crear objeto de serialización | `TensorFlowModel(model)` |
+| 2️⃣ Preparar artefactos | `.prepare()` → genera `score.py`, `runtime.yaml`, etc. |
+| 3️⃣ Verificar artefactos | `.verify()` → testea `load_model()` y `predict()` |
+| 4️⃣ Guardar en catálogo | `.save()` |
+| 5️⃣ Desplegar modelo | `.deploy()` → crea endpoint HTTPS |
+| 6️⃣ Invocar predicción | `.predict(data)` → devuelve resultados |
+
+🔹 ADS simplifica todo el proceso con métodos específicos por framework.
+
+---
+
+### 3. Librerías utilizadas
+
+- `ads`: interacción con OCI Data Science
+- `logging`: control de logs
+- `os`: interacción con sistema operativo
+- `pandas`: manejo de datos tabulares
+- `tempfile`: archivos temporales
+- `tensorflow`: entrenamiento del modelo
+- `tensorflow_datasets`: carga de datasets (ej. Fashion-MNIST)
+- `warnings`: supresión de advertencias
+- `matplotlib`: visualización de imágenes
+
+---
+
+### 4. Dataset: Fashion-MNIST
+
+- 🔢 60.000 ejemplos de entrenamiento
+- 🔍 10.000 ejemplos de prueba
+- 📷 Imágenes en escala de grises de 28×28
+- 🎯 10 clases (ropa, calzado, etc.)
+
+---
+
+### 5. Arquitectura del modelo
+
+```text
+Input → Flatten → Dense(128, ReLU) → Dropout → Dense(10, Softmax)
+```
+
+- **Loss**: `SparseCategoricalCrossentropy`
+- **Optimizer**: `Adam`
+- **Métrica**: `Accuracy`
+- **Resultado**: `Loss = 0.7899`, `Accuracy = 0.7235`
+
+---
+
+### 6. Predicción
+
+- Cada muestra genera **10 valores** (uno por clase).
+- El nodo con mayor valor indica la clase predicha.
+
+📌 El objetivo de esta demo no es mejorar el modelo, sino **desplegarlo** usando `TensorFlowModel`.
+
+---
+
+### 7. Preparación para despliegue
+
+- Se convierte el modelo en objeto ADS con `TensorFlowModel(model)`.
+- Se ejecutan:
+  - `.prepare()` → genera artefactos
+  - `.verify()` → testea `score.py`
+  - `.save()` → guarda en catálogo
+  - `.deploy()` → crea endpoint
+
+🔹 ADS también ofrece `summary_status()` para ver el estado de cada paso en formato `DataFrame`.
+
+---
+## 📘 Creación de artefactos y metadata del modelo
+
+### 8. Creación del objeto TensorFlowModel
+
+- Se crea un modelo `Sequential` en TensorFlow.
+- Se envuelve con `TensorFlowModel(model, artifact_dir=...)`.
+- Se genera un **objeto de modelo ADS** que gestiona el despliegue.
+
+---
+
+### 9. Directorio de artefactos
+
+- Se crea un **directorio temporal** para guardar los artefactos.
+- ADS genera automáticamente los archivos necesarios para el despliegue.
+
+---
+
+### 10. Seguimiento del progreso
+
+- Método: `summary_status()`
+- Devuelve un `DataFrame` con los pasos del despliegue:
+
+| Paso | Estado |
+|------|--------|
+| initiate | ✅ |
+| prepare | ✅ |
+| verify | ⏳ |
+| save | ⏳ |
+| deploy | ⏳ |
+| predict | ⏳ |
+
+---
+
+### 11. Archivos generados por `.prepare()`
+
+| Archivo | Descripción |
+|--------|-------------|
+| `input_schema.json` | Define los features de entrada |
+| `model.h5` | Modelo serializado en formato HDF5 |
+| `output_schema.json` | Define la variable objetivo |
+| `runtime.yaml` | Entorno Conda para despliegue |
+| `score.py` | Funciones `load_model()` y `predict()` |
+
+🔹 El archivo `model.h5` puede renombrarse con `model_file_name`.
+
+---
+
+### 12. Verificación del entorno
+
+- `runtime.yaml` incluye:
+  - Nombre del entorno Conda
+  - Tipo de servicio (`data science`)
+  - Versión de Python
+
+---
+
+### 13. Metadata del modelo
+
+El objeto `TensorFlowModel` incluye atributos útiles:
+
+| Atributo | Contenido |
+|----------|-----------|
+| `runtime` | Configuración de despliegue |
+| `_input` | Metadata de features: tipo, nombre, requerido |
+| `metadata_custom` | Metadata personalizada: categoría, descripción, clave/valor |
+| `metadata_provenance` | Código fuente, datos de entrenamiento, entorno (ideal si usás Git) |
+
+🔹 También se incluyen estadísticas descriptivas por feature.
+
+---
+
+## 📘 Verificación, despliegue, predicción y limpieza
+
+### 14. Atributo `metadata_taxonomy`
+
+- Almacena información sobre la **clasificación del modelo**:
+  - Framework
+  - Tipo de uso (use case)
+  - Parámetros relevantes
+  - Otros metadatos clave
+
+---
+
+### 15. Verificación del artefacto (`.verify()`)
+
+- Si modificás `score.py`, debés ejecutar `.verify()` antes de guardar o desplegar.
+- Esto permite:
+  - Probar `load_model()` y `predict()` localmente
+  - Depurar errores sin necesidad de desplegar
+
+🔹 Se puede consultar el estado con `summary_status()`.
+
+---
+
+### 16. Guardar el modelo (`.save()`)
+
+- Una vez verificado, se guarda en el **Model Catalog** con `.save()`.
+- Esto:
+  - Empaqueta los artefactos
+  - Sube el modelo al catálogo
+  - Devuelve el **OCID** del modelo
+
+🔹 Confirmá el guardado desde la consola o con `summary_status()`.
+
+---
+
+### 17. Desplegar el modelo (`.deploy()`)
+
+- Método: `.deploy(display_name="...")`
+- Parámetros opcionales:
+  - Nombre visible
+  - Descripción
+  - Tipo y cantidad de instancias
+  - Ancho de banda
+  - Logging groups
+
+🔹 El despliegue puede tardar unos minutos. Se muestra una barra de progreso.
+
+---
+
+### 18. Confirmar despliegue
+
+- Verificá que el modelo esté en estado **Active**.
+- Usá `summary_status()` para confirmar que `predict()` está disponible.
+
+---
+
+### 19. Realizar predicciones
+
+- Antes: usabas `.predict()` localmente sobre el objeto ADS.
+- Ahora: usás `.predict()` sobre el modelo desplegado → envía datos al endpoint HTTPS.
+
+🔹 La sintaxis es similar, pero ahora se invoca el endpoint remoto.
+
+---
+
+### 20. Limpieza de recursos
+
+🔴 ¡Importante! Siempre liberar recursos al finalizar:
+
+| Recurso | Método |
+|--------|--------|
+| **Despliegue** | `.delete_deployment()` |
+| **Modelo** | `.delete()` |
+| **Artefactos locales** | `shutil.rmtree(artifact_dir)` o similar |
+
+🔹 El modelo debe eliminarse **después** del despliegue.
+
+---
+
+### 21. Conclusión
+
+En esta demo aprendiste a:
+
+- Crear un modelo TensorFlow
+- Preparar y verificar artefactos
+- Guardar y desplegar el modelo en OCI
+- Realizar inferencias desde un endpoint
+- Limpiar recursos correctamente
+
+---
+
+---
+
+# 🧠 4.22 Lección: Entrenamiento de LLM e integración con LangChain
+## 📘 OCI Data Science + ADS + LangChain
+
+### 1. Introducción
+
+Bienvenido a esta lección sobre entrenamiento de modelos de lenguaje grandes (LLM) e integración con LangChain.  
+OCI Data Science Jobs ofrece infraestructura totalmente gestionada para entrenar LLMs a escala.
+
+---
+
+### 2. Tipos de fine-tuning soportados
+
+| Tipo | Descripción |
+|------|-------------|
+| **Full parameter fine-tuning** | Ajuste completo de todos los parámetros del modelo |
+| **Parameter-efficient fine-tuning** | Ajuste parcial (ej. LoRA, adapters) para ahorrar recursos |
+
+---
+
+### 3. Flujo de entrenamiento con ADS
+
+| Paso | Acción |
+|------|--------|
+| 1️⃣ Obtener modelo preentrenado | Desde Meta o Hugging Face |
+| 2️⃣ Definir job de entrenamiento | Usando ADS Python API |
+| 3️⃣ Ejecutar job | `.run()` vía API |
+| 4️⃣ Streaming de logs | Ver salida en tiempo real |
+| 5️⃣ Guardar resultados | Checkpoints → OCI Object Storage |
+
+🔹 ADS configura automáticamente nodos y GPUs según el `replica` y `shape` definidos.  
+No es necesario especificarlos manualmente.
+
+---
+
+### 4. ¿Qué hace el job run?
+
+- Configura entorno Conda
+- Instala dependencias adicionales
+- Clona código desde GitHub (commit específico)
+- Ejecuta script de entrenamiento con argumentos
+- Descarga modelo y dataset
+- Guarda resultados en Object Storage
+
+---
+
+### 5. Integración con LangChain
+
+OCI Generative AI ofrece modelos para:
+
+- ✍️ Generación de texto
+- 🧾 Resumen automático
+- 🧠 Embeddings
+
+🔹 Estos modelos pueden usarse en **LangChain** junto con ADS.
+
+---
+
+### 6. Autenticación
+
+| Método | Uso |
+|--------|-----|
+| `ads.set_auth()` | Configuración por defecto |
+| `auth="resource_principal"` | Alternativa explícita para usar Resource Principal |
+
+---
+
+---
+
+# 🔗 4.23 Lección: Demo – Despliegue de LangChain + RAG en OCI
+## 📘 Aplicación de recuperación aumentada con generación (RAG)
+
+### 1. Introducción
+
+En esta demo se muestra cómo **desplegar una aplicación RAG basada en LangChain** dentro de OCI Data Science.
+
+---
+
+### 2. Flujo general del despliegue
+
+| Paso | Acción |
+|------|--------|
+| 1️⃣ Importar clases necesarias | LangChain, ADS, Generative AI |
+| 2️⃣ Autenticarse | Usando `resource principal` |
+| 3️⃣ Crear embeddings | Con `GenerativeAIEmbeddings` |
+| 4️⃣ Cargar documento | Usando `TextLoader` |
+| 5️⃣ Dividir documento | En fragmentos para indexación |
+| 6️⃣ Crear vector store | Con embeddings + documentos |
+| 7️⃣ Crear retriever | Desde el vector store |
+| 8️⃣ Crear cadena RAG | Con `RetrievalQA` + LLM + retriever |
+| 9️⃣ Crear directorio temporal | Para artefactos del modelo |
+| 🔟 Crear modelo | Usando `ChainDeployment` |
+
+---
+
+### 3. Preparar y verificar el modelo
+
+- Se llama a `.prepare()` para generar artefactos:
+  - `score.py`
+  - `runtime.yaml`
+  - `input_schema.json`
+  - `output_schema.json`
+  - `model.pkl` o equivalente
+
+- Se verifica el modelo con `.verify()` usando un prompt de prueba:
+  - Ejemplo: `"¿Qué es el curso AI Foundations?"`
+
+🔹 El modelo responde correctamente → listo para guardar.
+
+---
+
+### 4. Guardar y desplegar el modelo
+
+- Se guarda con `.save()` → queda registrado en el **Model Catalog**
+- Se despliega con `.deploy()` → crea endpoint HTTPS
+
+📌 Tiempo estimado de despliegue: **10–15 minutos**
+
+---
+
+### 5. Invocar el modelo desplegado
+
+- Se usa `.predict()` para enviar preguntas al endpoint
+- Ejemplo: `"¿Quiénes son los instructores del curso AI Foundations?"`
+
+🔹 El modelo responde con información específica extraída del documento original:
+
+> *"Los instructores son Nemant Cahanthari, Himansha Raj y Nick Commisso."*
+
+---
+
+### 6. Conclusión
+
+- El modelo RAG fue desplegado exitosamente en OCI.
+- Puede integrarse en una aplicación LLM para responder preguntas basadas en documentos.
+- La arquitectura combina:
+  - LangChain
+  - ADS
+  - OCI Generative AI
+  - Vector store + retriever
+
+---
+
+---
+
+# ⚙️ 4.24 Lección: Demo – OCI Data Science Operators
+## 📘 Análisis offline con operadores de bajo código
+
+### 1. ¿Qué son los operadores?
+
+Los **Data Science Operators** son conjuntos de librerías preempaquetadas diseñadas para tareas específicas como:
+
+- 📈 Pronóstico (Forecasting)
+- 🚨 Detección de anomalías (Anomaly Detection)
+- 🔐 Identificación de datos personales (PII Detection)
+
+🔹 Son de **bajo código**, se ejecutan en notebooks de OCI y pueden invocarse fácilmente vía **CLI**.
+
+https://accelerated-data-science.readthedocs.io/en/v2.13.21/user_guide/operators/forecast_operator/quickstart.html
+
+
+---
+
+### 2. Tipos de operadores disponibles
+
+| Operador | Uso |
+|----------|-----|
+| **Forecasting** | Predicción de valores futuros en series temporales |
+| **Anomaly Detection** | Identificación de valores atípicos |
+| **PII Detection** | Detección y redacción de información personal (emails, historial laboral, etc.)
+
+---
+
+### 3. Flujo de uso del operador (ejemplo: Forecasting)
+
+| Paso | Acción |
+|------|--------|
+| 1️⃣ Instalar entorno Conda | Desde Environment Explorer o CLI |
+| 2️⃣ Inicializar operador | `ads op init --output-dir my-forecast` |
+| 3️⃣ Editar configuración | Modificar `forecast.yml` con parámetros deseados |
+| 4️⃣ Activar entorno Conda | `conda activate <env>` |
+| 5️⃣ Ejecutar operador | `ads op run --input forecast.yml` |
+| 6️⃣ Revisar resultados | Archivos en `results/`: `forecast.csv`, `report.html`
+
+---
+
+### 4. Archivos generados
+
+- `forecast.csv`: predicciones generadas
+- `report.html`: visualización de datos históricos + pronóstico
+- Otros archivos YAML para ejecución en distintos entornos
+
+🔹 El reporte incluye:
+  - Primeras y últimas 10 filas
+  - Resumen estadístico
+  - Overlay de datos históricos y predichos
+
+---
+
+### 5. Configuración del operador
+
+- El archivo `forecast.yml` define:
+  - Dataset
+  - Parámetros del modelo
+  - Salida esperada
+
+🔹 Podés copiar la configuración desde la documentación oficial de ADS.
+
+---
+
+### 6. Uso de otros operadores
+
+#### 🔍 Anomaly Detection
+
+- Instalar entorno Conda
+- Activar entorno
+- Inicializar operador
+- Ejecutar operador
+
+#### 🔐 PII Detection
+
+- Instalar entorno Conda
+- Activar entorno
+- Inicializar operador
+- Ejecutar operador
+
+---
+
+### 7. Conclusión
+
+Los operadores de OCI Data Science permiten ejecutar análisis offline de forma rápida y reproducible:
+
+- ✅ Bajo código
+- ✅ Integración con notebooks
+- ✅ Resultados exportables
+
+---
+
+---
+
+# ⚡ 4.25 Lección: Demo – OCI AI Quick Actions  
+## 📘 Despliegue rápido de LLMs preentrenados en OCI
+
+### 1. ¿Qué son las AI Quick Actions?
+
+Una funcionalidad reciente de OCI Data Science que permite:
+
+- 🚀 Desplegar modelos de lenguaje grandes (LLMs) preentrenados
+- 🛠️ Ajustarlos con datasets personalizados (fine-tuning)
+- 📊 Evaluarlos con datos de prueba
+- 🔗 Integrarlos fácilmente en aplicaciones
+
+---
+
+### 2. Acceso desde notebooks
+
+- Disponible directamente en sesiones de notebook de OCI
+- Requiere configurar políticas específicas (ver documentación oficial)
+
+---
+
+### 3. Interfaz de AI Quick Actions
+
+Al hacer clic en el botón **AI Quick Actions**, se accede a tres pestañas:
+
+| Pestaña | Función |
+|--------|---------|
+| **Models** | Ver y seleccionar LLMs preentrenados |
+| **Deployments** | Crear y administrar despliegues |
+| **Evaluations** | Evaluar modelos con datasets específicos |
+
+---
+
+### 4. Crear un despliegue
+
+Pasos para desplegar un modelo:
+
+1. Ir a la pestaña **Deployments**
+2. Hacer clic en **Create Deployment**
+3. Ingresar un nombre para el despliegue
+4. Seleccionar un modelo preentrenado  
+   - Ejemplo: `Mistral 7B Instruct v0.02`
+5. Elegir forma de cómputo  
+   - Ejemplo: `VM.GPU.8NR.1`
+6. Seleccionar grupo de logs (opcional)
+7. Hacer clic en **Deploy**
+
+📌 El modelo queda disponible como endpoint HTTP para invocación vía API.
+
+---
+
+### 5. Probar el modelo desplegado
+
+- Una vez activo, se puede:
+  - Ver el estado del modelo
+  - Obtener el endpoint para integración
+  - Ajustar parámetros del modelo
+  - Probar prompts directamente desde la interfaz
+
+🔹 Ejemplo de prompt: `"Tell us about Las Vegas"`  
+🔹 El modelo responde con información generada en tiempo real.
+
+---
+
+### 6. Conclusión
+
+AI Quick Actions permite:
+
+- Desplegar LLMs en minutos
+- Probarlos y ajustarlos sin escribir código
+- Integrarlos fácilmente en flujos de trabajo y aplicaciones
+
+---
 
 
 </br>
