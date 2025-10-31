@@ -6205,20 +6205,970 @@ AI Quick Actions permite:
 - Probarlos y ajustarlos sin escribir código
 - Integrarlos fácilmente en flujos de trabajo y aplicaciones
 
+
+
+---
+---
+# *** 5. WELCOME TO DATA SCIENCE ***
+---
 ---
 
+# 🧩 5.1 Lección: MLOps Architecture  
+## 📘 Arquitectura de MLOps en Oracle Cloud Infrastructure
 
-</br>
-</br>
-</br>
-</br>
-</br>
+### 1. ¿Qué es MLOps?
+
+**MLOps** (Machine Learning Operations) es el conjunto de prácticas y tecnologías que permiten:
+
+- Estandarizar, automatizar y escalar el ciclo de vida del ML
+- Integrar modelos en producción junto a los servicios que los consumen
+- Asegurar calidad, gobernanza y eficiencia en entornos reales
+
+🔹 Se basa en principios de **DevOps**, adaptados al contexto de datos y modelos.
+
+---
+
+### 2. Comparación entre DevOps y MLOps
+
+| Aspecto | DevOps | MLOps |
+|--------|--------|-------|
+| Ciclo | Build → Test → Deploy → Monitor | Igual, pero con **entrenamiento continuo** |
+| Activos | Código fuente | Datos + modelos ML |
+| Cambios | Poco frecuentes | Constantes (por cambio en datos) |
+| Automatización | CI/CD | CI/CD + retraining automático |
+
+🔹 En MLOps, los modelos deben **reentrenarse continuamente** para evitar degradación por cambio de datos (data drift).
+
+---
+
+### 3. Niveles de madurez en MLOps
+
+| Nivel | Descripción |
+|-------|-------------|
+| **Manual** | Entrenamiento y validación manual (ej. Jupyter Notebooks) |
+| **Automatizado** | Pipeline de ML automatizado: nuevos datos → nuevo modelo |
+| **CI/CD completo** | Pipeline de datos + modelo + despliegue automatizado y monitoreado
+
+---
+
+### 4. Flujo de arquitectura MLOps en OCI
+
+```plaintext
+📥 Ingesta de datos → 📓 Desarrollo en Notebooks → 🔁 CI/CD DevOps Pipeline
+→ 🧪 Validación interna → ✅ Aprobación → 🚀 Despliegue en producción → 👤 Aplicación al usuario final
+```
+
+🔹 El pipeline DevOps ejecuta el entrenamiento y guarda el modelo en el **Model Catalog**  
+🔹 El pipeline de despliegue lo publica como endpoint  
+🔹 El monitoreo continuo verifica métricas de rendimiento y puede disparar reentrenamiento
+
+![alt text](image.png)
+
+---
+
+### 5. Componentes clave en OCI
+
+| Componente | Rol en MLOps |
+|------------|--------------|
+| **Jupyter Notebooks** | Desarrollo y experimentación |
+| **OCI DevOps** | CI/CD pipelines para ML |
+| **Model Catalog** | Registro y versionado de modelos |
+| **Endpoints internos** | Validación previa al despliegue |
+| **Aplicaciones finales** | Consumen el modelo en producción |
+| **Monitoring & Logging** | Verifican rendimiento y disparan retraining
+
+---
+
+### 6. Conclusión
+
+En esta lección aprendiste:
+
+- Qué es MLOps y cómo se diferencia de DevOps
+- Por qué el reentrenamiento continuo es esencial
+- Cómo evoluciona la automatización en MLOps
+- Cómo se estructura una arquitectura MLOps en OCI
+- Qué componentes participan en cada etapa
+
+---
+
+---
+
+# ⚙️ 5.2 Lección: Data Science Jobs  
+## 📘 Automatización de tareas y procesamiento por lotes en OCI
+
+### 1. ¿Qué es el servicio Jobs?
+
+El servicio **Jobs** forma parte de OCI Data Science y es clave para implementar **MLOps**.  
+Permite definir y ejecutar tareas repetibles sobre infraestructura gestionada, que se **provisiona solo cuando se ejecuta el job**, optimizando costos.
+
+---
+
+### 2. Usos típicos
+
+- 📊 Preparación de datos  
+- 🧠 Entrenamiento de modelos  
+- 📦 Inferencia por lotes  
+- 🔁 Automatización de etapas del ciclo ML
+
+🔹 Puede usarse para automatizar una o varias etapas del flujo MLOps, según el tamaño del proyecto.
+
+---
+
+### 3. Beneficios del servicio
+
+| Beneficio | Descripción |
+|-----------|-------------|
+| **Infraestructura gestionada** | No requiere instalar software ni servidores |
+| **Integración nativa OCI** | Acceso seguro a bases de datos, redes, seguridad |
+| **Provisionamiento bajo demanda** | Solo se paga por el tiempo de ejecución |
+
+---
+
+### 4. Conceptos clave
+
+| Concepto | Descripción |
+|----------|-------------|
+| **Job** | Plantilla que define la tarea, infraestructura y artefacto |
+| **Job Run** | Ejecución individual del job, con parámetros personalizados |
+
+---
+
+### 5. Componentes de un Job
+
+- **Job Artifact**: instrucciones del job (inmutable)
+- **Compute Shape**: tipo de máquina (editable entre ejecuciones)
+- **Variables de entorno / argumentos CLI**: configurables por job o por ejecución
+- **Opciones de red, almacenamiento y logging**
+- **Tiempo máximo de ejecución**: 30 días
+
+![alt text](image-2.png)
+
+---
+
+### 6. Ciclo de vida de un Job
+
+```plaintext
+📦 Crear Job → ▶️ Ejecutar Job Run → 📊 Monitorear y registrar → ✅ Completar o cancelar → 🧹 Deprovisionar recursos
+```
+
+🔹 Se pueden ejecutar múltiples Job Runs secuenciales o simultáneos con distintos parámetros (ej. hiperparámetros)
+
+![alt text](image-1.png)
+![alt text](image-4.png)
+---
+
+### 7. Tipos de artefactos soportados
+
+| Tipo | Uso |
+|------|-----|
+| **Python / Bash** | Proyectos simples (archivo único) |
+| **ZIP / TAR** | Proyectos complejos con múltiples scripts |
+| **YAML** | Configuración de entorno y variables |
+| **JOB_RUN_ENTRYPOINT** | Define el script principal en artefactos comprimidos
+
+---
+
+### 8. Acceso y gestión
+
+- Jobs pueden acceder a todos los recursos OCI si las políticas están configuradas
+- Soporte para redes privadas (VCN) y autenticación vía Vault
+- Interfaces soportadas:
+  - OCI Console
+  - OCI CLI
+  - SDKs: Python, Java, JS, Go, Ruby, Terraform
+  - CI/CD: GitHub, Bitbucket, MLOps pipelines
+
+  ![alt text](image-5.png)
+
+---
+
+### 9. Tipos de inferencia por lotes
+
+| Tipo | Descripción | Ejemplo |
+|------|-------------|---------|
+| **Regular Batch** | Procesa grandes volúmenes periódicamente | Análisis diario de ventas |
+| **Mini Batch** | Procesa datos frecuentes en pequeñas cantidades | Detección de fraude bancario cada 5 min |
+| **Distributed Batch** | Divide datos en chunks y ejecuta en paralelo | Procesamiento masivo de imágenes satelitales
+
+🔹 Mini batches son rápidos y livianos  
+🔹 Distributed batches son pesados y paralelos  
+🔹 Regular batches están en el medio
+
+![alt text](image-6.png)
+---
+
+### 10. Escalabilidad
+
+- Podés **escalar recursos** editando:
+  - Compute Shape
+  - Tamaño de Block Storage
+- Aplica tanto a Jobs como a Notebook Sessions
+
+---
+
+### 11. Conclusión
+
+En esta lección aprendiste:
+
+- Qué es el servicio Jobs y cómo habilita MLOps
+- Cómo definir y ejecutar tareas automatizadas
+- Qué tipos de artefactos y ejecuciones se soportan
+- Cómo acceder desde terceros y escalar recursos
+- Qué tipos de inferencia por lotes existen y cuándo usarlos
+
+---
+
+---
+
+# 🧱 5.3 Lección: Demo – Create Artifacts  
+## 📘 Cómo crear artefactos para Jobs en OCI Data Science
+
+### 1. ¿Qué es un Job Artifact?
+
+Un **job artifact** es el archivo que contiene el código que será ejecutado por un Job. Puede ser:
+
+- 🐍 Un archivo Python (.py)
+- 🖥️ Un script Bash (.sh)
+- 📦 Un proyecto completo comprimido en `.zip` o `.tar`
+
+🔹 No hay requisitos especiales sobre cómo escribir el código.  
+🔹 En esta demo se muestra un ejemplo básico con un archivo Python.
+
+---
+
+### 2. Ejemplo básico: Python minimal
+
+```python
+print("Job started")
+print("Job finished")
+```
+
+🔹 Luego se extiende para incluir:
+
+- 🕒 Timestamp de inicio
+- 📛 Lectura de variable de entorno `name`
+- 💬 Lectura de argumento de línea de comandos `--greeting` o `-g`
+
+---
+
+### 3. Lectura de variables y argumentos
+
+```python
+import os
+import argparse
+from datetime import datetime
+
+print(f"Job started at {datetime.now()}")
+
+name = os.getenv("name")
+print(f"Name: {name}")
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-g", "--greeting", required=True)
+args = parser.parse_args()
+
+print(f"{args.greeting}, {name}")
+```
+
+🔹 Código estándar de Python, sin requerimientos específicos de OCI
+
+---
+
+### 4. Uso del OCI SDK y Resource Principal
+
+- Se agrega soporte para autenticación con **Resource Principal**
+- El código detecta si se ejecuta localmente o como Job en OCI
+- Se inicializa el SDK según el entorno
+
+🔹 Esto permite acceder a servicios OCI (ej. Object Storage) desde el Job
+
+---
+
+### 5. Recomendaciones
+
+- ✅ Probar el código localmente antes de subirlo como artifact
+- ✅ Usar variables de entorno y argumentos para parametrizar ejecuciones
+- ✅ Incluir autenticación con Resource Principal si se accede a otros servicios OCI
+- ✅ Comprimir el proyecto si incluye múltiples archivos o dependencias
+
+---
+
+### 6. Próximo paso
+
+En la siguiente parte de la demo se mostrará cómo:
+
+- Crear el Job en OCI Console
+- Subir el artifact
+- Ejecutar el Job con parámetros personalizados
+
+---
+
+---
+
+# ⚙️ 5.4 Lección: Demo – Create and Manage Jobs  
+## 📘 Cómo crear y gestionar Jobs en OCI Data Science
+
+### 1. Acceder al servicio
+
+- Iniciar sesión en tu tenancy de Oracle Cloud
+- Ir al menú hamburguesa → **Analytics and AI → Machine Learning → Data Science**
+- Crear un proyecto si no tenés uno:
+  - Clic en **Create Project**
+  - Ingresar nombre y descripción
+  - Clic en **Create**
+
+---
+
+### 2. Crear un Job
+
+1. Dentro del proyecto, seleccionar **Jobs** en el panel izquierdo  
+2. Clic en **Create Job**
+
+🔹 En la pantalla de creación:
+
+- Cambiar el **compartimento** si es necesario
+- Ingresar nombre y descripción (opcional)
+- Subir el **job artifact** (ej. archivo Python)
+  - Límite: 100 MB vía consola
+  - Para archivos más grandes, usar OCI SDK
+
+---
+
+### 3. Configurar parámetros del Job
+
+| Parámetro | Descripción |
+|-----------|-------------|
+| **Environment Variables** | Ej. `name = Claudio` |
+| **Command Line Arguments** | Ej. `-g Hey` |
+| **Max Runtime** | Ej. `100` minutos |
+| **Compute Shape** |  
+  - **Fast Launch**: preconfigurados, arranque rápido  
+  - **Custom**: incluye GPU e Intel fuera del pool prewarm |
+| **Logging** |  
+  - Activar logs automáticos  
+  - Seleccionar grupo de logs |
+| **Block Storage** |  
+  - Tamaño según necesidad del procesamiento |
+| **Networking** |  
+  - Default: acceso a internet y servicios OCI  
+  - Custom: usar VCN y subnet propios |
+
+---
+
+### 4. Finalizar creación
+
+- Clic en **Create**
+- El Job queda creado con:
+  - Información general
+  - Artifact subido
+  - Configuración de infraestructura y logging
+
+🔹 El Job aún no se ejecuta → requiere iniciar un **Job Run**
+
+---
+
+### 5. Revisar y editar el Job
+
+- Ver configuraciones: argumentos, tiempo máximo, variables
+- Clic en **Edit** para modificar:
+  - Nombre, descripción
+  - Compute shape, almacenamiento
+- Clic en **Save** para guardar cambios
+
+🔹 También podés:
+
+- Descargar el artifact
+- Mover el Job a otro compartimento
+- Agregar etiquetas
+- Eliminar el Job
+
+---
+
+---
+
+# ▶️ 5.5 Lección: Demo – Start and Manage a Job Run  
+## 📘 Cómo iniciar, monitorear y gestionar ejecuciones de Jobs en OCI
+
+### 1. Iniciar una Job Run
+
+- Ir al Job creado en la consola de OCI
+- Clic en **Start Job Run**
+
+🔹 Se abre una pantalla para ajustar parámetros:
+
+| Parámetro | Descripción |
+|-----------|-------------|
+| **Logging** | Activar/desactivar, elegir grupo de logs |
+| **Variables de entorno** | Ej. `name = Claudio` |
+| **Argumentos CLI** | Ej. `-g Hey` |
+| **Tiempo máximo** | Ej. `100` minutos |
+
+Clic en **Start** para iniciar la ejecución.
+
+---
+
+### 2. Estados del ciclo de vida
+
+| Estado | Descripción |
+|--------|-------------|
+| **Accepted** | Job Run aceptada |
+| **Provisioning** | Se prepara la infraestructura |
+| **Running** | Se ejecuta el artifact |
+| **Completed / Failed / Cancelled** | Finalización exitosa, con error o cancelada |
+
+🔹 Solo se paga durante la ejecución activa del Job
+
+---
+
+### 3. Ejecuciones paralelas
+
+- Podés iniciar múltiples Job Runs al mismo tiempo
+- Útil para probar distintos parámetros (ej. hiperparámetros)
+- Cada ejecución puede tener variables o argumentos distintos
+
+---
+
+### 4. Diagnóstico de errores
+
+- Si una Job Run falla:
+  - Clic en la ejecución fallida
+  - Acceder al **log file**
+  - Revisar el error y ajustar el código o parámetros
+
+---
+
+### 5. Gestión de Job Runs
+
+| Acción | Descripción |
+|--------|-------------|
+| **Editar Job** | Cambiar nombre, descripción, shape, storage |
+| **Clonar Job Run** | Reutiliza configuración previa, permite modificar valores puntuales |
+| **Eliminar Job** | Clic en **Delete**, confirmar eliminación |
+| **Cancelar Job Run** | Clic en **Cancel**, confirmar → detiene ejecución y facturación
+
+🔹 La opción de **clonar** está disponible solo en la consola web de OCI
+
+---
+
+### 6. Flujo de cancelación
+
+1. Iniciar una Job Run (puede ser clonada)
+2. Esperar a que se habilite el botón **Cancel**
+3. Clic en **Cancel**
+4. Confirmar cancelación
+
+🔹 La cancelación puede hacerse en cualquier estado (provisioning o ejecución)  
+🔹 La facturación se detiene inmediatamente
+
+---
+
+### 7. Conclusión
+
+En esta demo aprendiste:
+
+- Cómo iniciar y configurar una Job Run
+- Cómo monitorear su estado y revisar logs
+- Cómo ejecutar múltiples Jobs en paralelo
+- Cómo clonar, cancelar o eliminar Jobs
+- Cómo evitar costos innecesarios con cancelación temprana
+
+---
+
+---
+
+# 📈 5.6 Lección: Demo – Scaling  
+## 📘 Cómo escalar Jobs y Notebooks en OCI Data Science
+
+### 1. ¿Por qué escalar?
+
+Si detectás que el uso de CPU, memoria o almacenamiento es alto durante la ejecución de un Job o Notebook, podés **ajustar los recursos** para mejorar el rendimiento.
+
+---
+
+### 2. Escalar un Job
+
+1. Seleccioná el Job en la consola  
+2. Clic en **Edit**
+
+🔹 Podés modificar:
+
+| Parámetro | Descripción |
+|-----------|-------------|
+| **Compute Shape** | Cambiar a una forma con más OCPUs o memoria (ej. GPU para entrenamiento) |
+| **Block Storage** | Aumentar tamaño si el anterior no es suficiente |
+
+3. Clic en **Save Changes**  
+4. Iniciar un nuevo Job Run → usará la nueva configuración
+
+---
+
+### 3. Escalar un Notebook Session
+
+1. Monitorear métricas de CPU y memoria  
+2. Si están al máximo, proceder a escalar
+
+🔹 Pasos:
+
+| Acción | Descripción |
+|--------|-------------|
+| **Deactivate Notebook** | Clic en **Deactivate** → confirmar |
+| **Importante** | Se detiene la facturación, pero **no se borra el block storage** |
+| **Activate Notebook** | Clic en **Activate** → seleccionar nueva shape y tamaño de almacenamiento |
+
+---
+
+### 4. Opciones de Compute Shape
+
+| Tipo | Uso recomendado |
+|------|-----------------|
+| **Intel shape** | Más OCPUs y memoria |
+| **GPU shape** | Entrenamiento intensivo |
+| **Fast launch shape** | Arranque rápido (preconfigurado) |
+
+🔹 También podés aumentar el tamaño del block storage durante la activación
+
+---
+
+### 5. Conclusión
+
+En esta demo aprendiste:
+
+- Cómo escalar Jobs y Notebooks en OCI
+- Qué parámetros ajustar: shape y almacenamiento
+- Cómo hacerlo sin perder datos
+- Cómo optimizar recursos según el tipo de tarea
+
+---
+Perfecto, Claudio ✅. Aquí tenés la **traducción al español** de la lección *Jobs Monitoring and Logging*, estructurada como ficha técnica para tu manual de OCI Data Science.
+
+---
+
+# 📊 5.7 Lección: Jobs Monitoring and Logging  
+## 📘 Monitoreo, logging y eventos en Jobs de OCI Data Science
+
+### 1. ¿Por qué monitorear y registrar?
+
+El monitoreo y logging es la **última etapa del ciclo de vida de un Job**, antes de que se desprovisione la infraestructura.  
+Permite:
+
+- Obtener métricas de rendimiento
+- Diagnosticar errores
+- Registrar ejecuciones para auditoría o referencia futura
+
+---
+
+### 2. Monitoreo: métricas y alarmas
+
+| Componente | Función |
+|------------|---------|
+| **Métricas** | Seguimiento activo de CPU, GPU, memoria, red, disco |
+| **Alarmas** | Notificaciones automáticas cuando se superan umbrales definidos |
+| **Notificaciones** | Envío de alertas por Slack, SMS, email, etc. |
+
+🔹 Ejemplo: alarma si CPU > 80% → se dispara notificación
+
+![alt text](image-7.png)
+
+---
+
+### 3. Métricas disponibles
+
+- Uso de CPU y GPU (según shape)
+- Uso de memoria
+- Tráfico de red (bytes in/out)
+- Uso de disco
+
+🔹 Si se superan ciertos umbrales, podés **escalar recursos** (shape, almacenamiento)
+
+---
+
+### 4. Logging: tipos y configuración
+
+| Tipo de log | Descripción |
+|-------------|-------------|
+| **Service Logs** | Logs estándar (stdout y stderr) enviados al servicio de logging de OCI |
+| **Custom Logs** | Logs definidos por el usuario, con ubicación personalizada |
+
+🔹 Requiere permisos adecuados del **resource principal** para escribir en los logs
+
+---
+
+### 5. Opciones de logging
+
+- Activar logging es **opcional pero recomendado**
+- Podés:
+  - Usar un log por Job Run
+  - Compartir un log entre múltiples ejecuciones
+- Activar **creación automática de logs** al iniciar cada Job Run
+- Los logs **no se eliminan** al borrar el Job o sus ejecuciones
+
+---
+
+### 6. Event Service: eventos y automatización
+
+| Elemento | Función |
+|----------|--------|
+| **Eventos** | Mensajes estructurados que indican cambios (create, read, update, delete) |
+| **Reglas** | Filtran eventos relevantes |
+| **Acciones** | Respuestas automáticas: notificaciones, funciones, streaming |
+
+🔹 Garantiza **al menos una entrega** por acción configurada
+
+![alt text](image-8.png)
+
+---
+
+### 7. Conclusión
+
+En esta lección aprendiste:
+
+- Cómo usar métricas y alarmas para monitorear Jobs
+- Qué tipos de logs existen y cómo configurarlos
+- Cómo usar el Event Service para automatizar respuestas a eventos
+- Por qué el monitoreo y logging son claves para MLOps y trazabilidad
+
+---
+
+---
+
+# 🔄 5.8 Lección: Data Science Pipeline  
+## 📘 Automatización de flujos ML con pipelines en OCI
+
+### 1. ¿Qué es un pipeline?
+
+Un **pipeline** es una nueva funcionalidad del servicio OCI Data Science que permite:
+
+- Ejecutar flujos de trabajo de ML de extremo a extremo
+- Compuestos por múltiples **steps** (etapas)
+- Cada step puede usar distintos lenguajes o entornos (ej. Python, Java)
+
+🔹 Ejemplos de steps: procesamiento de datos, entrenamiento, evaluación, despliegue
+
+---
+
+### 2. Ejecución secuencial o paralela
+
+- Por defecto, los steps se ejecutan en **paralelo**
+- Podés definir **dependencias** para forzar ejecución **secuencial**
+- Esto permite construir flujos lógicos como:
+
+```plaintext
+Step 1 → Step 2a, 2b, 2c → Step 3 → Step N
+```
+
+---
+
+### 3. Configuración del pipeline
+
+| Parámetro | Nivel | Descripción |
+|-----------|-------|-------------|
+| **Compute Shape** | Pipeline | Tipo de máquina para ejecutar |
+| **Block Volume** | Pipeline | Almacenamiento asociado |
+| **Variables de entorno** | Pipeline | Ej. ubicación de datos |
+| **Logging** | Pipeline | Configuración de logs |
+| **Max Runtime** | Pipeline | Tiempo máximo de ejecución |
+
+🔹 Los steps pueden **sobrescribir** la configuración por defecto del pipeline
+
+---
+
+### 4. Tipos de steps
+
+| Tipo | Descripción |
+|------|-------------|
+| **Script** | Artifact en Python, Bash o Java (archivo único o comprimido) |
+| **Job** | Referencia a un Job precreado (via OCID) |
+
+🔹 Los steps pueden acceder a recursos OCI (Object Storage, DB) si se configuran las **políticas** y la **VCN** adecuadas
+
+---
+
+### 5. Ciclo de vida del pipeline
+
+| Estado | Descripción |
+|--------|-------------|
+| **Creating** | Se está creando el recurso |
+| **Active** | Listo para ejecutar |
+| **Pipeline Run** | Instancia de ejecución (puede haber varias) |
+| **Deleted** | Eliminado cuando ya no se necesita
+
+![alt text](image-9.png)
+---
+
+### 6. Ejemplo de demostración
+
+| Step | Acción |
+|------|--------|
+| **Step 1** | Leer archivo desde Object Storage → limpiar columnas, codificar, escalar, dividir en train/test → guardar en Object Storage |
+| **Step 2** | Entrenar 3 modelos (Linear Regression, Random Forest, XGBoost) → guardar en Model Catalog |
+| **Step 3** | Recuperar modelos → seleccionar el mejor → desplegar modelo |
+
+🔹 Se usan **variables de pipeline** para pasar información entre steps
+
+---
+
+### 7. Conclusión
+
+En esta lección aprendiste:
+
+- Qué es un pipeline y cómo se estructura
+- Cómo configurar y ejecutar steps con distintos lenguajes
+- Cómo definir dependencias y automatizar flujos ML
+- Cómo usar recursos OCI dentro de un pipeline
+- Ejemplo práctico de un pipeline completo
+
+---
+
+---
+
+# 🔄 5.9 Lección: Demo – Data Science Pipeline  
+## 📘 Cómo crear y ejecutar un pipeline de ML de extremo a extremo
+
+### 1. Repositorio de código
+
+- Usamos el repositorio oficial: **OCI Data Science AI Samples** en GitHub
+- Descargamos el ZIP → carpeta local → `pipelines/samples/employee-attrition`
+- Contiene múltiples archivos `.zip` para cada step del pipeline
+
+---
+
+### 2. Crear el pipeline
+
+1. Ir al proyecto de Data Science en OCI Console  
+2. Clic en **Pipeline > Create Pipeline**
+
+🔹 Configuración general:
+
+| Parámetro | Valor |
+|----------|-------|
+| **Nombre** | `employee-attrition-pipeline` |
+| **Descripción** | `demo` |
+| **Variable de entorno** | `data_location = pipeline-temp-bucket` |
+| **Compute Shape** | `VM.Standard2.2` |
+| **Block Storage** | `50 GB` |
+| **Log Group** | Precreado y seleccionado |
+
+---
+
+### 3. Crear los steps
+
+| Step | Descripción | Artifact | Entry Point | Dependencias |
+|------|-------------|----------|-------------|--------------|
+| **Step 1** | Procesamiento de datos | `dataproc.zip` | `dataproc.py` | Ninguna |
+| **Step 2a** | Entrenamiento LR | `lr.zip` | `lr.py` | Step 1 |
+| **Step 2b** | Entrenamiento RF | `rf.zip` | `rf.py` | Step 1 |
+| **Step 2c** | Entrenamiento XGB | `xgb.zip` | `xgb.py` | Step 1 |
+| **Step 3** | Evaluación y despliegue | `evaluate_deploy.zip` | `evaluate_deploy.py` | Steps 2a, 2b, 2c |
+
+🔹 Todos los steps son de tipo **script**  
+🔹 Se ejecutan en paralelo salvo Step 3, que espera los anteriores
+
+---
+
+### 4. Ejecutar el pipeline
+
+1. Clic en **Start Pipeline Run**
+2. Nombre del run: `Run-11`
+3. Configurar entorno para cada step:
+   - Tipo: `CONDA_ENV_SLUG`
+   - Se repite para todos los steps
+
+---
+
+### 5. Monitorear ejecución
+
+- Estado inicial: `waiting` → `accepted` → `in progress` → `succeeded`
+- Logs disponibles por step
+- AUC scores registrados:
+
+| Modelo | AUC |
+|--------|-----|
+| Linear Regression | 0.85 ✅ |
+| Random Forest | 0.81 |
+| XGBoost | 0.837 |
+
+🔹 El modelo con mejor AUC (LR) fue **desplegado automáticamente**
+
+---
+
+### 6. Verificar resultados
+
+- Ir a **Project Details > Models**
+- Ver modelo seleccionado y desplegado
+- Confirmar que el pipeline ejecutó todo el flujo de ML de forma automatizada
+
+---
+
+### 7. Conclusión
+
+En esta demo aprendiste:
+
+- Cómo crear un pipeline con múltiples steps
+- Cómo configurar artefactos, entry points y dependencias
+- Cómo ejecutar y monitorear el pipeline
+- Cómo seleccionar y desplegar el mejor modelo automáticamente
+
+---
+Perfecto, Claudio ✅. Aquí tenés la **traducción al español** de la lección *Model Deployment: Autoscaling*, estructurada como ficha técnica para tu manual de OCI Data Science.
+
+---
+
+# 📈 5.10 Lección: Model Deployment – Autoscaling  
+## 📘 Escalado automático de despliegues de modelos en OCI
+
+### 1. ¿Por qué usar autoscaling?
+
+El autoscaling permite ajustar automáticamente la cantidad de instancias de un modelo desplegado según la demanda, resolviendo el dilema entre:
+
+- Disponibilidad constante y rendimiento óptimo  
+- Eficiencia de costos ante cargas variables e impredecibles
+
+---
+
+### 2. ¿Cómo funciona?
+
+- Definís un **rango de instancias** (mínimo y máximo)
+- El servicio escala automáticamente **hacia arriba o hacia abajo**
+- Se basa en **métricas de uso** (ej. CPU, memoria)
+- Podés definir **umbrales de activación** y **períodos de enfriamiento**
+
+---
+
+### 3. Beneficios clave
+
+| Beneficio | Descripción |
+|-----------|-------------|
+| **Ajuste dinámico** | Escala recursos según demanda en tiempo real |
+| **Eficiencia de costos** | Solo se usan y pagan los recursos necesarios |
+| **Alta disponibilidad** | Con balanceador de carga, se redirige tráfico ante fallos |
+| **Triggers personalizables** | Usá expresiones NQL para definir condiciones |
+| **Compatibilidad con Load Balancer** | Escala automáticamente el ancho de banda |
+| **Cooldown period** | Evita escalados excesivos en poco tiempo |
+
+![alt text](image-10.png)
+
+---
+
+### 4. Tipos de autoscaling
+
+| Tipo | Descripción |
+|------|-------------|
+| **Predefinido** | Basado en CPU o memoria, con umbrales fijos |
+| **Personalizado (NQL)** | Usás cualquier métrica del modelo con expresiones NQL avanzadas |
+
+🔹 Solo se puede tener **una política de autoscaling activa** por despliegue
+
+---
+
+### 5. Métricas disponibles
+
+- CPU / Memoria
+- ID de recurso
+- Código y familia de estado
+- ID de instancia
+- Resultado
+- Tipo de red
+
+🔹 Las métricas se emiten automáticamente desde el recurso de despliegue  
+🔹 No es necesario habilitar el servicio de monitoreo
+
+---
+
+### 6. Política requerida
+
+Para que autoscaling funcione, agregá esta política a tu tenancy:
+
+```plaintext
+allow service autoscaling to read metrics in tenancy where target.metrics.namespace='oci_datascience_modeldeploy'
+```
+
+---
+
+### 7. Consideraciones de configuración
+
+| Estado del despliegue | Qué se puede modificar |
+|------------------------|------------------------|
+| **Activo** | Solo campos de política de autoscaling (no simultáneos con otros cambios) |
+| **Inactivo** | Se pueden modificar todas las opciones a la vez |
+
+🔹 Podés crear despliegues con autoscaling desde:
+- OCI Console
+- OCI CLI
+- Data Science API
+
+---
+
+### 8. Recomendaciones
+
+- Usá autoscaling para cargas variables o impredecibles
+- Combiná con Load Balancer para mayor disponibilidad
+- Usá métricas personalizadas si necesitás control fino
+- Definí cooldowns adecuados para evitar sobreescalado
+
+---
+
+### 9. Conclusión
+
+En esta lección aprendiste:
+
+- Qué es y cómo funciona el autoscaling en despliegues de modelos
+- Qué métricas y políticas se requieren
+- Cómo configurarlo con triggers predefinidos o personalizados
+- Cómo mantener eficiencia, disponibilidad y control de costos
+
+---
+
+Perfecto, Claudio ✅. Aquí tenés la **traducción al español** de la lección final *Expert Tips: Pipelines*, estructurada como cierre de unidad para tu manual de OCI Data Science.
+
+---
+
+# 🧠 5.11 Lección final: Expert Tips – Pipelines  
+## 📘 Recomendaciones para automatizar flujos de ML en OCI
+
+### 1. Felicitaciones
+
+Has llegado al final de esta unidad sobre **OCI Data Science Pipelines**.  
+🎉 ¡Felicitaciones por tu progreso y compromiso!
+
+---
+
+### 2. ¿Por qué usar Pipelines?
+
+- Permiten automatizar flujos completos de machine learning
+- Incluyen múltiples etapas como:
+  - Extracción de datos
+  - Validación
+  - Preparación
+  - Entrenamiento
+  - Evaluación
+  - Despliegue
 
 
+  Pipelines, doc: https://docs.oracle.com/en-us/iaas/Content/data-science/using/pipelines-about.htm
 
+🔹 Las etapas pueden ejecutarse en **secuencia** o en **paralelo**, según tus necesidades
 
+---
 
+### 3. Recomendación experta
 
+> “Pipelines es una funcionalidad muy poderosa para automatizar flujos de ML.  
+> Recomiendo revisar la documentación oficial y explorar su uso en tus proyectos.”  
+> — Hemant Gahankari, Oracle University
+
+---
+
+### 4. Conclusión de la unidad
+
+En esta unidad aprendiste:
+
+- Qué es un pipeline y cómo se estructura
+- Cómo crear, configurar y ejecutar pipelines en OCI
+- Cómo integrar jobs, scripts, artefactos y dependencias
+- Cómo monitorear, registrar y escalar tus ejecuciones
+- Cómo seleccionar y desplegar el mejor modelo automáticamente
+
+---
 
 
 
